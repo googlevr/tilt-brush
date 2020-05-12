@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd66b8f767459f44e84273c6abbfc402, type: 3}
+  m_Name: TiltBrushToolkitSettings
+  m_EditorClassIdentifier: 
+  m_SurfaceShaderMaterials:
+  - shaderUrl: https://vr.google.com/shaders/w/gvrss/paper.json
+    material: {fileID: 2100000, guid: 8fbdd8c77c3f8b84faba601e88846f48, type: 2}
+    descriptor: {fileID: 11400000, guid: 0e87b49c65463a343a448a556d7d6c3e, type: 2}
+  - shaderUrl: https://vr.google.com/shaders/w/gvrss/gem.json
+    material: {fileID: 2100000, guid: 79b25d2d8ffdf4c4eb448df9609dfdc7, type: 2}
+    descriptor: {fileID: 11400000, guid: d6c87eafa4cdba042933c1b4f6da46f7, type: 2}
+  - shaderUrl: https://vr.google.com/shaders/w/gvrss/glass.json
+    material: {fileID: 2100000, guid: 537db0387b31e004888533b91562f23d, type: 2}
+    descriptor: {fileID: 11400000, guid: ba0e0f27d49da824aa74ab60edd90a56, type: 2}
+  m_PbrOpaqueSingleSided:
+    material: {fileID: 2100000, guid: a24c5cab5717b124889fe758761686b4, type: 2}
+    descriptor: {fileID: 11400000, guid: 987198ed6dc42fb48861ac40965edb58, type: 2}
+  m_PbrOpaqueDoubleSided:
+    material: {fileID: 2100000, guid: a24c5cab5717b124889fe758761686b4, type: 2}
+    descriptor: {fileID: 11400000, guid: 987198ed6dc42fb48861ac40965edb58, type: 2}
+  m_PbrBlendSingleSided:
+    material: {fileID: 2100000, guid: b2b07ce943390e34993803beeb1e8548, type: 2}
+    descriptor: {fileID: 11400000, guid: 84463df8784ac6646ab814a16602c250, type: 2}
+  m_PbrBlendDoubleSided:
+    material: {fileID: 2100000, guid: b2b07ce943390e34993803beeb1e8548, type: 2}
+    descriptor: {fileID: 11400000, guid: 84463df8784ac6646ab814a16602c250, type: 2}

@@ -1,0 +1,46 @@
+InstallScript {
+  Registry {
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\.tilt" {
+      string {
+        "(Default)"      "Google.TiltBrush.File"
+      }
+    }
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\Google.TiltBrush.File" {
+      string {
+        "(Default)"      "Tilt Brush sketch file"
+      }
+    }
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\Google.TiltBrush.File\\DefaultIcon" {
+      string {
+        "(Default)"      "%INSTALLDIR%\\TiltBrush.exe"
+      }
+    }
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\Google.TiltBrush.File\\Shell\\Open\\Command" {
+      string {
+        "(Default)"      "%WINDIR%\\System32\\WindowsPowershell\\v1.0\\powershell -windowstyle hidden -c \"try { $s=[uri]::EscapeDataString('%1'); (new-object System.Net.WebClient).DownloadString('http://localhost:40074/load?'+$s) } catch { & '%INSTALLDIR%\\TiltBrush.exe' '%1' }\""
+      }
+    }
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\tiltbrush" {
+      string {
+        "(Default)"      "URL:Tilt Brush"
+      }
+      string {
+        "URL Protocol"   ""
+      }
+    }
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\tiltbrush\\DefaultIcon" {
+      string {
+        "(Default)"      "%INSTALLDIR%\\TiltBrush.exe"
+      }
+    }
+    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\tiltbrush\\Shell\\Open\\Command" {
+      string {
+        "(Default)"      "%WINDIR%\\System32\\WindowsPowershell\\v1.0\\powershell -windowstyle hidden -c \"try { $s=[uri]::EscapeDataString('%1'); (new-object System.Net.WebClient).DownloadString('http://localhost:40074/load?'+$s) } catch { & '%INSTALLDIR%\\TiltBrush.exe' '%1' }\""
+      }
+    }
+  }
+
+  Firewall {
+    "Tilt Brush" "%INSTALLDIR%\\TiltBrush.exe"
+  }
+}

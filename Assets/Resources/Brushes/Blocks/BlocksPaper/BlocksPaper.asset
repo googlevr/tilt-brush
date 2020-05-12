@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b2ac88638c5c41a0a0681f70d2512, type: 3}
+  m_Name: BlocksPaper
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: 0e87b49c-6546-3a34-3a44-8a556d7d6c3e
+  m_DurableName: BlocksBasic
+  m_CreationVersion: 14.0
+  m_ShaderVersion: 10.0
+  m_BrushPrefab: {fileID: 1000010482034202, guid: c285351e01d69194e9333b9cb1511fd7,
+    type: 3}
+  m_Nondeterministic: 0
+  m_Supersedes: {fileID: 0}
+  m_LooksIdentical: 0
+  m_ButtonTexture: {fileID: 0}
+  m_Description: 
+  m_DescriptionExtra: 
+  m_BrushAudioLayers: []
+  m_BrushAudioBasePitch: 0
+  m_BrushAudioMaxPitchShift: 0.05
+  m_BrushAudioMaxVolume: 0
+  m_BrushVolumeUpSpeed: 4
+  m_BrushVolumeDownSpeed: 4
+  m_VolumeVelocityRangeMultiplier: 1
+  m_AudioReactive: 0
+  m_ButtonAudio: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8fbdd8c77c3f8b84faba601e88846f48, type: 2}
+  m_TextureAtlasV: 0
+  m_TileRate: 0
+  m_UseBloomSwatchOnColorPicker: 0
+  m_BrushSizeRange: {x: 0, y: 0}
+  m_PressureSizeRange: {x: 0, y: 0}
+  m_SizeVariance: 0
+  m_PreviewPressureSizeMin: 0.001
+  m_Opacity: 0
+  m_PressureOpacityRange: {x: 0, y: 0}
+  m_ColorLuminanceMin: 0
+  m_ColorSaturationMax: 0
+  m_ParticleSpeed: 0
+  m_ParticleRate: 0
+  m_ParticleInitialRotationRange: 0
+  m_RandomizeAlpha: 0
+  m_SprayRateMultiplier: 0
+  m_RotationVariance: 0
+  m_PositionVariance: 0
+  m_SizeRatio: {x: 0, y: 0}
+  m_M11Compatibility: 0
+  m_SolidMinLengthMeters_PS: 0.002
+  m_TubeStoreRadiusInTexcoord0Z: 0
+  m_RenderBackfaces: 0
+  m_BackIsInvisible: 0
+  m_BackfaceHueShift: 0
+  m_BoundsPadding: 0
+  m_PlayBackAtStrokeGranularity: 0
+  m_BlendMode: 0
+  m_EmissiveFactor: 0
+  m_AllowExport: 1
+  m_SupportsSimplification: 1
+  m_HeadMinPoints: 1
+  m_HeadPointStep: 1
+  m_TailMinPoints: 1
+  m_TailPointStep: 1
+  m_MiddlePointStep: 0

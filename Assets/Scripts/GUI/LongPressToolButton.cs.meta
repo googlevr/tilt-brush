@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0eca91ea617987a4a8b8d03e685fc648
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ButtonTexture: {instanceID: 0}
+  - m_ButtonAlertTexture: {instanceID: 0}
+  - m_ToggleOnTexture: {instanceID: 0}
+  - m_LinkedUIObject: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

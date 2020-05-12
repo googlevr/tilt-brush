@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b2ac88638c5c41a0a0681f70d2512, type: 3}
+  m_Name: Slice
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: 8d1510b2-1fc5-4c90-8db7-4c07eecfd849
+  m_DurableName: Slice
+  m_CreationVersion: 
+  m_ShaderVersion: 10.0
+  m_BrushPrefab: {fileID: 100000, guid: e6717b72d0f3d4856ba5816864630b5f, type: 3}
+  m_Nondeterministic: 0
+  m_Supersedes: {fileID: 0}
+  m_LooksIdentical: 0
+  m_ButtonTexture: {fileID: 2800000, guid: 987b425505fd9904c864627f4de6b625, type: 3}
+  m_Description: Slice
+  m_DescriptionExtra: 
+  m_BrushAudioLayers: []
+  m_BrushAudioBasePitch: 1
+  m_BrushAudioMaxPitchShift: 0.05
+  m_BrushAudioMaxVolume: 1
+  m_BrushVolumeUpSpeed: 4
+  m_BrushVolumeDownSpeed: 4
+  m_VolumeVelocityRangeMultiplier: 1
+  m_AudioReactive: 0
+  m_ButtonAudio: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 870912362e6844b6698859f0e8b85e4e, type: 2}
+  m_TextureAtlasV: 1
+  m_TileRate: 1
+  m_UseBloomSwatchOnColorPicker: 0
+  m_BrushSizeRange: {x: 0.25, y: 0.65}
+  m_PressureSizeRange: {x: 1, y: 1}
+  m_SizeVariance: 0
+  m_PreviewPressureSizeMin: 0.001
+  m_Opacity: 1
+  m_PressureOpacityRange: {x: 1, y: 1}
+  m_ColorLuminanceMin: 0
+  m_ColorSaturationMax: 1
+  m_ParticleSpeed: 0
+  m_ParticleRate: 1
+  m_ParticleInitialRotationRange: 0
+  m_RandomizeAlpha: 0
+  m_SprayRateMultiplier: 1
+  m_RotationVariance: 360
+  m_PositionVariance: 0
+  m_SizeRatio: {x: 1, y: 1}
+  m_M11Compatibility: 0
+  m_SolidMinLengthMeters_PS: 0.002
+  m_TubeStoreRadiusInTexcoord0Z: 0
+  m_RenderBackfaces: 0
+  m_BackIsInvisible: 0
+  m_BackfaceHueShift: 0
+  m_BoundsPadding: 0
+  m_PlayBackAtStrokeGranularity: 0
+  m_BlendMode: 2
+  m_EmissiveFactor: 0
+  m_AllowExport: 1
+  m_SupportsSimplification: 1
+  m_HeadMinPoints: 1
+  m_HeadPointStep: 1
+  m_TailMinPoints: 1
+  m_TailPointStep: 1
+  m_MiddlePointStep: 0

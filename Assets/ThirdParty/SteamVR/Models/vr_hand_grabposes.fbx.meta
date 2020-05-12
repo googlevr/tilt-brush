@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: 5b1b3324d9af1db498a8cb294cc8d274
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: controller
+    100004: finger_index_0_r
+    100006: finger_index_1_r
+    100008: finger_index_2_r
+    100010: finger_index_meta_r
+    100012: finger_index_r_aux
+    100014: finger_index_r_aux_end
+    100016: finger_index_r_end
+    100018: finger_index_r_end_end
+    100020: finger_middle_0_r
+    100022: finger_middle_1_r
+    100024: finger_middle_2_r
+    100026: finger_middle_meta_r
+    100028: finger_middle_r_aux
+    100030: finger_middle_r_aux_end
+    100032: finger_middle_r_end
+    100034: finger_middle_r_end_end
+    100036: finger_pinky_0_r
+    100038: finger_pinky_1_r
+    100040: finger_pinky_2_r
+    100042: finger_pinky_meta_r
+    100044: finger_pinky_r_aux
+    100046: finger_pinky_r_aux_end
+    100048: finger_pinky_r_end
+    100050: finger_pinky_r_end_end
+    100052: finger_ring_0_r
+    100054: finger_ring_1_r
+    100056: finger_ring_2_r
+    100058: finger_ring_meta_r
+    100060: finger_ring_r_aux
+    100062: finger_ring_r_aux_end
+    100064: finger_ring_r_end
+    100066: finger_ring_r_end_end
+    100068: finger_thumb_0_r
+    100070: finger_thumb_1_r
+    100072: finger_thumb_2_r
+    100074: finger_thumb_r_aux
+    100076: finger_thumb_r_aux_end
+    100078: finger_thumb_r_end
+    100080: finger_thumb_r_end_end
+    100082: renderMesh0
+    100084: Root
+    100086: //RootNode
+    100088: wrist_r
+    400000: Armature
+    400002: controller
+    400004: finger_index_0_r
+    400006: finger_index_1_r
+    400008: finger_index_2_r
+    400010: finger_index_meta_r
+    400012: finger_index_r_aux
+    400014: finger_index_r_aux_end
+    400016: finger_index_r_end
+    400018: finger_index_r_end_end
+    400020: finger_middle_0_r
+    400022: finger_middle_1_r
+    400024: finger_middle_2_r
+    400026: finger_middle_meta_r
+    400028: finger_middle_r_aux
+    400030: finger_middle_r_aux_end
+    400032: finger_middle_r_end
+    400034: finger_middle_r_end_end
+    400036: finger_pinky_0_r
+    400038: finger_pinky_1_r
+    400040: finger_pinky_2_r
+    400042: finger_pinky_meta_r
+    400044: finger_pinky_r_aux
+    400046: finger_pinky_r_aux_end
+    400048: finger_pinky_r_end
+    400050: finger_pinky_r_end_end
+    400052: finger_ring_0_r
+    400054: finger_ring_1_r
+    400056: finger_ring_2_r
+    400058: finger_ring_meta_r
+    400060: finger_ring_r_aux
+    400062: finger_ring_r_aux_end
+    400064: finger_ring_r_end
+    400066: finger_ring_r_end_end
+    400068: finger_thumb_0_r
+    400070: finger_thumb_1_r
+    400072: finger_thumb_2_r
+    400074: finger_thumb_r_aux
+    400076: finger_thumb_r_aux_end
+    400078: finger_thumb_r_end
+    400080: finger_thumb_r_end_end
+    400082: renderMesh0
+    400084: Root
+    400086: //RootNode
+    400088: wrist_r
+    2300000: controller
+    3300000: controller
+    4300000: controller
+    4300002: renderMesh0
+    7400000: Armature|pinchGrab
+    7400002: Armature|Rest
+    7400004: Armature|SphereGrab
+    7400006: Armature|StickGrab
+    7400008: Rest
+    7400010: pinchGrab
+    7400012: SphereGrab
+    7400014: StickGrab
+    9500000: //RootNode
+    13700000: renderMesh0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: knuckles_right
+    second: {fileID: 2100000, guid: dc89eae32e82ada4b873dd07678c67e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: models_hands_vr_glove.vmat
+    second: {fileID: 2100000, guid: fad1eadf5b103e94ebbe02490afe0503, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: pinchGrab
+      takeName: Root|pinchGrab
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: controller
+        weight: 1
+      - path: renderMesh0
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/finger_index_r_aux
+        weight: 1
+      - path: Root/finger_index_r_aux/finger_index_r_aux_end
+        weight: 1
+      - path: Root/finger_middle_r_aux
+        weight: 1
+      - path: Root/finger_middle_r_aux/finger_middle_r_aux_end
+        weight: 1
+      - path: Root/finger_pinky_r_aux
+        weight: 1
+      - path: Root/finger_pinky_r_aux/finger_pinky_r_aux_end
+        weight: 1
+      - path: Root/finger_ring_r_aux
+        weight: 1
+      - path: Root/finger_ring_r_aux/finger_ring_r_aux_end
+        weight: 1
+      - path: Root/finger_thumb_r_aux
+        weight: 1
+      - path: Root/finger_thumb_r_aux/finger_thumb_r_aux_end
+        weight: 1
+      - path: Root/wrist_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end/finger_index_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end/finger_middle_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end/finger_pinky_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end/finger_ring_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end/finger_thumb_r_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Rest
+      takeName: Root|Rest
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: controller
+        weight: 1
+      - path: renderMesh0
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/finger_index_r_aux
+        weight: 1
+      - path: Root/finger_index_r_aux/finger_index_r_aux_end
+        weight: 1
+      - path: Root/finger_middle_r_aux
+        weight: 1
+      - path: Root/finger_middle_r_aux/finger_middle_r_aux_end
+        weight: 1
+      - path: Root/finger_pinky_r_aux
+        weight: 1
+      - path: Root/finger_pinky_r_aux/finger_pinky_r_aux_end
+        weight: 1
+      - path: Root/finger_ring_r_aux
+        weight: 1
+      - path: Root/finger_ring_r_aux/finger_ring_r_aux_end
+        weight: 1
+      - path: Root/finger_thumb_r_aux
+        weight: 1
+      - path: Root/finger_thumb_r_aux/finger_thumb_r_aux_end
+        weight: 1
+      - path: Root/wrist_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end/finger_index_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end/finger_middle_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end/finger_pinky_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end/finger_ring_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end/finger_thumb_r_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SphereGrab
+      takeName: Root|SphereGrab
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: controller
+        weight: 1
+      - path: renderMesh0
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/finger_index_r_aux
+        weight: 1
+      - path: Root/finger_index_r_aux/finger_index_r_aux_end
+        weight: 1
+      - path: Root/finger_middle_r_aux
+        weight: 1
+      - path: Root/finger_middle_r_aux/finger_middle_r_aux_end
+        weight: 1
+      - path: Root/finger_pinky_r_aux
+        weight: 1
+      - path: Root/finger_pinky_r_aux/finger_pinky_r_aux_end
+        weight: 1
+      - path: Root/finger_ring_r_aux
+        weight: 1
+      - path: Root/finger_ring_r_aux/finger_ring_r_aux_end
+        weight: 1
+      - path: Root/finger_thumb_r_aux
+        weight: 1
+      - path: Root/finger_thumb_r_aux/finger_thumb_r_aux_end
+        weight: 1
+      - path: Root/wrist_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end/finger_index_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end/finger_middle_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end/finger_pinky_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end/finger_ring_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end/finger_thumb_r_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: StickGrab
+      takeName: Root|StickGrab
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: controller
+        weight: 1
+      - path: renderMesh0
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/finger_index_r_aux
+        weight: 1
+      - path: Root/finger_index_r_aux/finger_index_r_aux_end
+        weight: 1
+      - path: Root/finger_middle_r_aux
+        weight: 1
+      - path: Root/finger_middle_r_aux/finger_middle_r_aux_end
+        weight: 1
+      - path: Root/finger_pinky_r_aux
+        weight: 1
+      - path: Root/finger_pinky_r_aux/finger_pinky_r_aux_end
+        weight: 1
+      - path: Root/finger_ring_r_aux
+        weight: 1
+      - path: Root/finger_ring_r_aux/finger_ring_r_aux_end
+        weight: 1
+      - path: Root/finger_thumb_r_aux
+        weight: 1
+      - path: Root/finger_thumb_r_aux/finger_thumb_r_aux_end
+        weight: 1
+      - path: Root/wrist_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_index_meta_r/finger_index_0_r/finger_index_1_r/finger_index_2_r/finger_index_r_end/finger_index_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_middle_meta_r/finger_middle_0_r/finger_middle_1_r/finger_middle_2_r/finger_middle_r_end/finger_middle_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_pinky_meta_r/finger_pinky_0_r/finger_pinky_1_r/finger_pinky_2_r/finger_pinky_r_end/finger_pinky_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_ring_meta_r/finger_ring_0_r/finger_ring_1_r/finger_ring_2_r/finger_ring_r_end/finger_ring_r_end_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end
+        weight: 1
+      - path: Root/wrist_r/finger_thumb_0_r/finger_thumb_1_r/finger_thumb_2_r/finger_thumb_r_end/finger_thumb_r_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

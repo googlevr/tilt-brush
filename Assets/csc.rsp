@@ -1,0 +1,3 @@
+-nowarn:0649,618
+-r:System.IO.Compression.dll
+-r:System.IO.Compression.FileSystem.dll

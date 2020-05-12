@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8c12500f3afdeb24d9444042960a4cb9
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - shader: {fileID: 4800000, guid: 6581f8d2f208b8340b8d59c7bf38cc9a, type: 3}
+  - lensDirtTexture: {fileID: 2800000, guid: 3f81495aec16dd740a2f9b669a361bf7, type: 3}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 76dae7c941b49454e8d6516188574003, type: 3}
+  userData: 

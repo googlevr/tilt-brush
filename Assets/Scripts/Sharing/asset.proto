@@ -1,0 +1,286 @@
+// Copyright 2020 The Tilt Brush Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package google.internal.vr.assets.v1;
+
+option java_multiple_files = true;
+option java_package = "com.google.internal.vr.assets.v1";
+
+import "google/protobuf/timestamp.proto";
+import "vr/assets/proto/access_level.proto";
+import "vr/assets/proto/asset_license.proto";
+import "vr/assets/proto/element_type.proto";
+import "vr/assets/proto/privilege.proto";
+
+// Contains information specific to an account.
+message Account {
+  // Required. Unique ID of the account.
+  string account_id = 1;
+
+  // Required. Whether an account has been granted adminstrator or moderator
+  // privilege.
+  .vr.assets.Privilege privilege = 2;
+
+  // Required. Display name of account.
+  string display_name = 3;
+
+  // Required. Family name of account.
+  string family_name = 4;
+
+  // Required. Given name of account.
+  string given_name = 5;
+
+  // Required. Profile photo.
+  string photo_url = 6;
+
+  // Required. Description of the account holder.
+  string description = 7;
+
+  // Optional. The location of the account holder.
+  string location = 8;
+
+  // Required. The Person ID of the account, for use in the People API.
+  string person_id = 9;
+}
+
+// Information specific to the type of the element.
+message TypeInfo {
+  // Contains data specific to elements that are of model types, such as
+  // Wavefront Obj and Tilt Brush files.
+  message ModelInfo {
+  }
+
+  // Contains data specific to elements that are of image types.
+  message ImageInfo {
+    // Optional. The FIFE URL of the image.
+    string fife_url = 1;
+  }
+
+  // Contains data specific to elements that are of material types, such as
+  // Wavefront Mat files.
+  message MaterialInfo {
+  }
+
+  // Contains data specific to elements that are of other types, such as
+  // binary GLTF data.
+  message OtherInfo {
+  }
+
+  // Elements are one of the following types:
+  oneof Info {
+    // Information specific to model types.
+    ModelInfo model_info = 1;
+
+    // Information specific to image types.
+    ImageInfo image_info = 2;
+
+    // Information specific to material types.
+    MaterialInfo material_info = 3;
+
+    // Information specific to other types.
+    OtherInfo other_info = 4;
+  }
+}
+
+// An element is a primitive used to compose an asset, such as a mesh, texture
+// or other opaque piece of data. The element message contains information about
+// that data.
+//
+// Once created, an element is immutable. If a dependent asset requires
+// mutation, it must create a new element and reference that instead.
+message Element {
+  // Required. Unique ID of the element.
+  string element_id = 1;
+
+  // Required. The file path of the element as it existed on the host system.
+  // If this is a resource element, this includes the path relative to the
+  // root element.
+  string file_path = 2;
+
+  // Required. The URL at which the element data can be retrieved.
+  string data_url = 3;
+
+  // Required. The file type represented by the element.
+  .vr.assets.ElementType element_type = 5;
+
+  // Required. The type information of the element.
+  TypeInfo type_info = 6;
+
+  // Deprecated.
+  google.protobuf.Timestamp create_time = 4 [deprecated=true];
+}
+
+// Some indication of the size and complexity of the model for a given format.
+message FormatComplexity {
+  // Approximately how many triangles to render this model.
+  int64 triangle_count = 1;
+
+  // Approximate total number of pixels in all textures in the model.
+  int64 texel_count = 2;
+
+  // Approximate number of custom shaders.
+  int64 shader_count = 3;
+
+  // Hint for LOD of this format relative to other formats in this asset.
+  // 0 is the most detailed version.
+  int32 lod_hint = 4;
+
+  // deprected: remove after prod launch
+  int64 texture_count = 1000;
+}
+
+// The scaling properties of a specific format. This is used to give real-world
+// meaning to creations, if needed.
+message FormatScale {
+  // An enum representing the base of a unit system. This is used in combination
+  // with a scaler to represent a format's real-world scale.
+  enum BaseUnit {
+    UNIT_UNKNOWN = 0;        // Unknown
+    UNIT_METER = 1;          // Metric system, SI units
+    UNIT_FOOT = 2;           // Imperial / US
+    UNIT_NAUTICAL_MILE = 3;  // Marine / Aviation
+  }
+
+  // Required. The unit base. This is multiplied or divided by an optional
+  // scaler to determine real-world dimension of 1 unit of the format.
+  BaseUnit base_unit = 1;
+
+  // Optional. The scaling factor to apply to the base unit to determine the
+  // real-world scale of 1 virtual unit. For example, base_unit=UNIT_FOOT and
+  // scaler=0.083 means 1 unit in the format is 1 inch. Default scaler is 1,
+  // i.e. 1 format unit is the base unit itself.
+  double scaler = 2;
+}
+
+// The format for which an asset is encoded, such as an Obj or a Tilt Brush
+// file. Contains the root element data as well as any additional resource
+// dependencies the root needs.
+message Format {
+  // Required. The id of the format.
+  string format_id = 3;
+
+  // Required. An element containing the root of the file hierarchy. For some
+  // types, such as a .tilt or .fbx file, which are self-contained, this is
+  // all of the data. Other formats, such as .obj files often reference other
+  // data elements. These are contained in the resources field below.
+  Element root = 1;
+
+  // Optional. Any external dependencies of the root element. May include, but
+  // is not limited to, materials, textures, and shader programs.
+  repeated Element resource = 2;
+
+  // Optional. Complexity stats about the model as reported by the creating
+  // client.
+  FormatComplexity format_complexity = 4;
+
+  // Optional. The real world scale of the format. By default, formats have no
+  // real world scale.
+  FormatScale format_scale = 5;
+}
+
+// A list of formats of the same type.
+message FormatList {
+  // Required. The mapping from format ID to Format element.
+  repeated Format format = 1;
+}
+
+// Admin-owned data for the Asset.
+message AdminData {
+  // Tags applied by admin.
+  repeated string tag = 1;
+}
+
+// An asset is a set of one or more encoded formats which all represent the
+// same piece of data. For instance, an asset of a model may have both
+// .obj and a .fbx formats.
+message Asset {
+  // Required. Unique ID of the asset.
+  string asset_id = 1;
+
+  // Required. The human-readable name of the asset.
+  string display_name = 2;
+
+  // Optional. The human-readable description of the asset.
+  string description = 3;
+
+  // Optional. Human-readable tags for describing the asset.
+  repeated string tag = 4;
+
+  // Required. Timestamp of when the asset was created.
+  google.protobuf.Timestamp create_time = 5;
+
+  // Required. Timestamp of when the asset was last modified.
+  google.protobuf.Timestamp update_time = 6;
+
+  // Deprecated. A mapping between an ElementType and a Format. Only model types
+  // are supported (see comment for ElementType).
+  map<int32, Format> format = 7 [deprecated = true];
+
+  // Required. A mapping between an ElementType and a FormatList. Only model
+  // types are supported (see comment for ElementType). Each value will contain
+  // one or more formats of the ElementType in the key.
+  map<int32, FormatList> format_list = 14;
+
+  // Optional. A list of elements containing thumbnails of the asset. The
+  // elements must be a browser-viewable image type, such as JPEG, PNG, GIF or
+  // WEBP.
+  repeated Element thumbnail = 8;
+
+  // Required. Unique ID of the user who owns the Asset.
+  string account_id = 9;
+
+  // Required. The level of access allowed to the asset. By default, access
+  // will be set to PRIVATE so that it is only accessible by the owner.
+  .vr.assets.AccessLevel access_level = 10;
+
+  // Tags added by admins.
+  AdminData admin_data = 11;
+
+  // Info about the sources of this asset (i.e. assets that were remixed to
+  // create this asset).
+  message RemixInfo {
+    // Asset ids for the sources of this remix.
+    repeated string source_asset = 1;
+  }
+
+  // The remix info for the asset.
+  RemixInfo remix_info = 12;
+
+  // The id of the last asset that was published as a copy of this one.
+  string published_asset_id = 13;
+
+  // Type of license.
+  .vr.assets.AssetLicense license = 15;
+
+  // Information about the camera used to render the asset.
+  message CameraParams {
+    // A 4x4 matrix representing the position and rotation of the camera in
+    // row-major order.
+    repeated double matrix_4x4 = 1;
+
+    // Optional target - if this is set, it represents the focus of camera
+    // orbit as a 3D vector.
+    repeated double target_vector = 2;
+
+    // Optional - the field of view to use for the camera when rendering the
+    // asset. The same field of view is assumed for both horizontal and vertical
+    // although in practice it may be only one that's locked.
+    double field_of_view = 3;
+  }
+
+  // The camera parameters for rendering this asset.
+  CameraParams camera_params = 16;
+}

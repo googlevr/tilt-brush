@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1000010347874848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4000013362763748}
+  - component: {fileID: 114000010696259084}
+  - component: {fileID: 114000012640608552}
+  m_Layer: 14
+  m_Name: Controller (wand)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4000013362763748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010347874848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4000012024358626}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114000010696259084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010347874848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3675e59c751a794d85c09bbbeeae451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControllerName: 0
+  m_ControllerGeometryPrefab: {fileID: 114000011295956858, guid: 5dc4999f1746f8a4296af50951bb394c,
+    type: 3}
+  m_GeometryOffset: {x: 0, y: 0, z: 0}
+  m_GeometryRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114000012640608552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010347874848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7ffdfe4cb884c41a9225762461aff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HapticBuzzLength: 0.01
+  m_HapticPulses: 7
+  m_MeshMaterialInactive: {fileID: 2100000, guid: fe735f256aaa69c4686707f0b47bcc0d,
+    type: 2}
+  m_TriggerMaterialInactive: {fileID: 2100000, guid: fe735f256aaa69c4686707f0b47bcc0d,
+    type: 2}
+--- !u!1 &1000011815485810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4000011556763520}
+  - component: {fileID: 114000010554989914}
+  - component: {fileID: 114000013641621446}
+  m_Layer: 14
+  m_Name: Controller (brush)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4000011556763520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011815485810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4000012024358626}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114000010554989914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011815485810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c94cee59aeb87c4b8738f004b002294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControllerName: 0
+  m_ControllerGeometryPrefab: {fileID: 114000011295956858, guid: 5dc4999f1746f8a4296af50951bb394c,
+    type: 3}
+  m_GeometryOffset: {x: 0, y: 0, z: 0}
+  m_GeometryRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114000013641621446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011815485810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7ffdfe4cb884c41a9225762461aff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HapticBuzzLength: 0.01
+  m_HapticPulses: 7
+  m_MeshMaterialInactive: {fileID: 2100000, guid: fe735f256aaa69c4686707f0b47bcc0d,
+    type: 2}
+  m_TriggerMaterialInactive: {fileID: 2100000, guid: fe735f256aaa69c4686707f0b47bcc0d,
+    type: 2}
+--- !u!1 &1000011856084730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4000012024358626}
+  - component: {fileID: 114000014157023302}
+  m_Layer: 0
+  m_Name: NonVrControls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012024358626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011856084730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children:
+  - {fileID: 4000013362763748}
+  - {fileID: 4000011556763520}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114000014157023302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011856084730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d9a65c756326949a22644509f24bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Wand: {fileID: 114000010696259084}
+  m_Brush: {fileID: 114000010554989914}
+  m_TrackingComponents: []
+  m_HapticsDurationScale: 1
+  m_HapticAmplitudeScale: 1
+  m_TriggerActivationRange: {x: 0.15, y: 0.8}
+  m_GripActivationRange: {x: 0.15, y: 0.8}
+  m_TouchpadActivationRange: {x: -0.8, y: 0.8}
+  m_LogitechPenActivationRange: {x: 0, y: 1}
+  m_WandRotateJoystickPercent: 0.7

@@ -1,0 +1,135 @@
+#!/bin/env python
+
+import os
+import re
+import subprocess
+import sys
+
+from subprocess import CalledProcessError, PIPE, Popen
+
+
+class Error(Exception): pass
+
+
+def git(*args, **kwargs):
+  """Runs git, returns stdout.
+Raises CalledProcessError if process cannot be started, or exits with an error."""
+  cwd = kwargs.get('cwd', os.getcwd())
+  command = ['git'] + list(args)
+  try:
+    proc = Popen(command, cwd=cwd, stdout=PIPE, stderr=PIPE)
+  except OSError as e:
+    raise CalledProcessError(1, command, str(e))
+
+  (stdout, stderr) = proc.communicate()
+  if proc.wait() != 0:
+    raise CalledProcessError(proc.wait(), command, (stderr+stdout).strip())
+  return stdout
+
+
+def git1(*args, **kwargs):
+  """Run git, returning first line of output."""
+  return git(*args, **kwargs).split('\n', 1)[0].strip()
+
+
+def iter_containing_branches(ref):
+  """Yields branch names that contain the passed ref"""
+  branches = []
+  for line in git('name-rev', '--name-only', '--refs', 'refs/heads/*', ref).split('\n'):
+    line = line.strip()
+    if not line or line == 'undefined':
+      continue
+    m = re.match(r'^(.*?)([~^]\d+)?$', line)  # my_branch~1 or my_branch^0
+    if m is not None:
+      yield m.group(1)
+
+
+def get_upstream(ref, seen=set()):
+  """Returns a (remote, target-branch) tuple.
+ref may be a branch or a sha.
+If it is a sha, returns the upstream for all branches that contain the ref.
+Raises LookupError if the are zero or multiple upstreams."""
+  # the branch name in the config file doesn't have 'refs/heads' in it
+  ref = ref.replace('refs/heads/', '')
+  try:
+    remote = git1('config', 'branch.%s.remote' % ref)
+    upstream = git1('config', 'branch.%s.merge' % ref)
+  except CalledProcessError:
+    # Maybe it's a sha or something. Figure out the branch(es) it's on and recurse.
+    branches = set(iter_containing_branches(ref)) - seen
+    last_err = None
+    upstreams = set()
+    for branch in branches:
+      try: upstreams.add(get_upstream(branch, branches | seen))
+      except LookupError as e: last_err = e
+    if len(upstreams) == 0:
+      raise last_err or LookupError('Not on any branches')
+    elif len(upstreams) > 1:
+      raise LookupError('Ambiguous upstream: %s' % (' '.join(sorted(upstreams))))
+    return upstreams.pop()
+
+  if not remote or not upstream:
+    raise LookupError('No upstream')
+  return (remote, upstream)
+
+
+def main():
+  import argparse
+  parser = argparse.ArgumentParser(
+    usage="%(prog)s [ -r username ] [ commit ]",
+    description='''Upload changes to gerrit. Automatically selects target branch
+    based on upstream of commit, or current branch.''')
+  parser.add_argument(
+    '-r', metavar='username', dest='reviewers',
+    action='append', default=[],
+    help='Reviewer. Can pass multiple times, or comma-separate.')
+  parser.add_argument(
+    'commit', default='HEAD', nargs='?', help='commit to upload, default %(default)s')
+  args = parser.parse_args()
+
+  # Infer target based on the passed commit
+  try:
+    (remote, upstream) = get_upstream(args.commit)
+  except LookupError as e:
+    raise Error("Can't get upstream for %s: %s" % (args.commit, e))
+
+  # Sanity check
+  remote_url = git1('config', 'remote.%s.url' % remote)
+  if not remote_url.startswith('sso'):
+    raise Error("Remote %s doesn't look like gerrit? Should start with sso://\n  %s" % (
+      remote, remote_url))
+
+  # Collect reviewers into gerrit args. Should look like
+  #   %r=machk@google.com,r=jcowles@google.com
+  gerrit_args = []
+  for r in args.reviewers:
+    for email in r.split(','):
+      if '@' not in email:
+        email += '@google.com'
+      gerrit_args.append('r=' + email)
+  if gerrit_args:
+    gerrit_args = '%' + ','.join(gerrit_args)
+  else:
+    gerrit_args = ''
+
+  # upstream should always have refs/heads/
+  if not upstream.startswith('refs/heads/'):
+    raise Error('Internal error: upstream %s' % upstream)
+  target = upstream.replace('refs/heads/', 'refs/for/', 1)
+  cmd = ['git', 'push', remote, '%s:%s%s' % (args.commit, target, gerrit_args)]
+  print 'Uploading %s to %s %s' % (args.commit, remote, target)
+  sys.stdout.flush()
+  proc = Popen(cmd)
+  sys.exit(proc.wait())
+
+
+if __name__ == '__main__':
+  try:
+    main()
+  except Error as e:
+    print 'ERROR:', e
+    sys.exit(1)
+  except CalledProcessError as e:
+    print e
+    print e.output
+    sys.exit(1)

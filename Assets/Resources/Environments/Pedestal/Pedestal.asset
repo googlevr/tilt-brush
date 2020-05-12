@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff8d00fae9f37c488530fd01c202d0f, type: 3}
+  m_Name: Pedestal
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: ab080511-e465-4a6d-8587-53bf495af68b
+  m_Description: Pedestal
+  m_IconTexture: {fileID: 2800000, guid: 4c0ba3492c5b455409d2b513827a0915, type: 3}
+  m_RenderSettings:
+    m_FogEnabled: 1
+    m_FogColor: {r: 0.17254902, g: 0.18039216, b: 0.24313726, a: 1}
+    m_FogDensity: 0.007
+    m_FogStartDistance: 0
+    m_FogEndDistance: 0
+    m_ClearColor: {r: 0.21960784, g: 0.22745098, b: 0.31764707, a: 1}
+    m_AmbientColor: {r: 0.4117647, g: 0.3529412, b: 0.59607846, a: 1}
+    m_SkyboxExposure: 0.61
+    m_SkyboxTint: {r: 0.45882353, g: 0.5137255, b: 0.7882353, a: 1}
+    m_EnvironmentPrefab: EnvironmentPrefabs/Pedestal
+    m_EnvironmentReverbZonePrefab: EnvironmentAudio/ReverbZone_LivingRoom
+    m_SkyboxCubemap: {fileID: 0}
+    m_ReflectionCubemap: {fileID: 8900000, guid: f83cc5a806898db42b092b6dbda6bd0d,
+      type: 3}
+    m_ReflectionIntensity: 1
+  m_Lights:
+  - m_Color: {r: 0.61960787, g: 0.50980395, b: 0.43137255, a: 1}
+    m_Intensity: 1.8
+    m_Position: {x: 0, y: 0, z: 7}
+    m_Rotation: {x: 0.45749807, y: 0.22771324, z: 0.042762473, w: 0.8584949}
+    m_Type: 1
+    m_Range: 5
+    m_SpotAngle: 30
+    m_ShadowsEnabled: 1
+  - m_Color: {r: 0.7137255, g: 0.7019608, b: 0.5764706, a: 1}
+    m_Intensity: 0.5
+    m_Position: {x: 0, y: 0, z: 8}
+    m_Rotation: {x: 0.85642916, y: -0.16658196, z: -0.24482861, w: 0.42289287}
+    m_Type: 1
+    m_Range: 5
+    m_SpotAngle: 30
+    m_ShadowsEnabled: 0
+  m_TeleportBoundsHalfWidth: 80
+  m_ControllerXRayHeight: 0
+  m_WidgetHome: {x: 0, y: 9.675, z: 5}
+  m_SkyboxColorA: {r: 0.34117648, g: 0.34509805, b: 0.4509804, a: 1}
+  m_SkyboxColorB: {r: 0.09411765, g: 0.105882354, b: 0.1764706, a: 1}

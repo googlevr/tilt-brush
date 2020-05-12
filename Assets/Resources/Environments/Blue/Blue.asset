@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff8d00fae9f37c488530fd01c202d0f, type: 3}
+  m_Name: Blue
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: 0ca88298-e5e8-4e94-aad8-4b4f6c80ae52
+  m_Description: Blue
+  m_IconTexture: {fileID: 2800000, guid: c7f49fd0e3637a5438d089f27f262eb2, type: 3}
+  m_RenderSettings:
+    m_FogEnabled: 1
+    m_FogColor: {r: 0.6313726, g: 0.7137255, b: 0.89411765, a: 1}
+    m_FogDensity: 0.005
+    m_FogStartDistance: 0
+    m_FogEndDistance: 0
+    m_ClearColor: {r: 0.27058825, g: 0.30980393, b: 0.47058824, a: 1}
+    m_AmbientColor: {r: 0.20392157, g: 0.29411766, b: 0.36862746, a: 1}
+    m_SkyboxExposure: 1.46
+    m_SkyboxTint: {r: 0.4627451, g: 0.5294118, b: 0.69803923, a: 1}
+    m_EnvironmentPrefab: EnvironmentPrefabs/AmbientGrid_Blue
+    m_EnvironmentReverbZonePrefab: EnvironmentAudio/ReverbZone_Room
+    m_SkyboxCubemap: {fileID: 8900000, guid: 05c49abd569134d4bbc8b50f93eb37ee, type: 3}
+    m_ReflectionCubemap: {fileID: 8900000, guid: f83cc5a806898db42b092b6dbda6bd0d,
+      type: 3}
+    m_ReflectionIntensity: 0.8
+  m_Lights:
+  - m_Color: {r: 0.9137255, g: 0.827451, b: 1.0431373, a: 1}
+    m_Intensity: 1.7
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0.48718503, y: -0.11247552, z: 0.19481331, w: 0.8438292}
+    m_Type: 1
+    m_Range: 5
+    m_SpotAngle: 30
+    m_ShadowsEnabled: 1
+  - m_Color: {r: 0.7137255, g: 0.7019608, b: 0.5764706, a: 1}
+    m_Intensity: 0.38
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0.8830222, y: -0.3213938, z: 0.11697773, w: 0.3213938}
+    m_Type: 1
+    m_Range: 5
+    m_SpotAngle: 30
+    m_ShadowsEnabled: 0
+  m_TeleportBoundsHalfWidth: 100
+  m_ControllerXRayHeight: -1e+9
+  m_WidgetHome: {x: 0, y: 0, z: 0}
+  m_SkyboxColorA: {r: 0.18039216, g: 0.23529412, b: 0.4117647, a: 1}
+  m_SkyboxColorB: {r: 0.35686275, g: 0.39215687, b: 0.6, a: 1}

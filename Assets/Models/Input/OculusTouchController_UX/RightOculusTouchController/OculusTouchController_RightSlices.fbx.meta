@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: a8e05174ee6ad664b8d05f13f618bebb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: OculusTouchController_ThumbstickSlice
+    100004: OculusTouchController_XSlice
+    100006: OculusTouchController_YSlice
+    100008: OculusTouchController_LeftSlices_v02:OculusTouchController_ThumbstickSlice
+    100010: OculusTouchController_LeftSlices_v02:OculusTouchController_XSlice
+    100012: OculusTouchController_LeftSlices_v02:OculusTouchController_YSlice
+    100014: OculusTouchController_ASlice
+    100016: OculusTouchController_BSlice
+    100018: OculusTouchController_ThumbstickSlice1
+    400000: //RootNode
+    400002: OculusTouchController_ThumbstickSlice
+    400004: OculusTouchController_XSlice
+    400006: OculusTouchController_YSlice
+    400008: OculusTouchController_LeftSlices_v02:OculusTouchController_ThumbstickSlice
+    400010: OculusTouchController_LeftSlices_v02:OculusTouchController_XSlice
+    400012: OculusTouchController_LeftSlices_v02:OculusTouchController_YSlice
+    400014: OculusTouchController_ASlice
+    400016: OculusTouchController_BSlice
+    400018: OculusTouchController_ThumbstickSlice1
+    2300000: OculusTouchController_ThumbstickSlice
+    2300002: OculusTouchController_XSlice
+    2300004: OculusTouchController_YSlice
+    2300006: OculusTouchController_LeftSlices_v02:OculusTouchController_ThumbstickSlice
+    2300008: OculusTouchController_LeftSlices_v02:OculusTouchController_XSlice
+    2300010: OculusTouchController_LeftSlices_v02:OculusTouchController_YSlice
+    2300012: OculusTouchController_ASlice
+    2300014: OculusTouchController_BSlice
+    2300016: OculusTouchController_ThumbstickSlice1
+    3300000: OculusTouchController_ThumbstickSlice
+    3300002: OculusTouchController_XSlice
+    3300004: OculusTouchController_YSlice
+    3300006: OculusTouchController_LeftSlices_v02:OculusTouchController_ThumbstickSlice
+    3300008: OculusTouchController_LeftSlices_v02:OculusTouchController_XSlice
+    3300010: OculusTouchController_LeftSlices_v02:OculusTouchController_YSlice
+    3300012: OculusTouchController_ASlice
+    3300014: OculusTouchController_BSlice
+    3300016: OculusTouchController_ThumbstickSlice1
+    4300000: OculusTouchController_ThumbstickSlice
+    4300002: OculusTouchController_YSlice
+    4300004: OculusTouchController_XSlice
+    4300006: OculusTouchController_LeftSlices_v02:OculusTouchController_ThumbstickSlice
+    4300008: OculusTouchController_LeftSlices_v02:OculusTouchController_YSlice
+    4300010: OculusTouchController_LeftSlices_v02:OculusTouchController_XSlice
+    4300012: OculusTouchController_ThumbstickSlice1
+    4300014: OculusTouchController_ASlice
+    4300016: OculusTouchController_BSlice
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

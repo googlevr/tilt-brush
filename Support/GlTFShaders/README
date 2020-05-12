@@ -1,0 +1,21 @@
+This directory contains shader inputs that were assembled into glsl
+shaders to be served by tiltbrush.com and referenced by exported
+glTF geometry.
+
+To make shader changes:
+
+  Modify and/or create a file in Generators/ then use menu item
+    Tilt -> glTF -> Sync Export Materials...
+  This will preprocess and generate files into Support/TiltBrush.com/shaders. These files will not
+  appear in "git status" because they are git ignored
+
+  Alternatively, you can directly edit files in TiltBrush.com/shaders, but
+  your edits will be overwritten the next time you generate them.
+
+To preview shader changes locally:
+
+  - Set up a minimal THREE.js viewer
+  - Set "Copy Assets To Gltf" in App.Config; this will create fully-self-contained
+    gltf exports
+  - Run Tilt Brush, load file, run Tilt -> glTF -> Export to glTF
+  - Load up your .gltf in your local viewer

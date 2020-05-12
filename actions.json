@@ -1,0 +1,165 @@
+{
+  "actions": [
+    {
+      "name": "/actions/TiltBrush/in/Pose",
+      "type": "pose",
+      "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_Trigger",
+      "type": "vector1",
+      "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_Thumbstick",
+      "type": "vector2",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_ThumbstickTouch",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_GripBinary",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_GripAnalog",
+      "type": "vector1",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_MenuButton",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_PadTouch",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_PadDirectional",
+      "type": "vector2",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_PadClick",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_PrimaryButton",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_PrimaryButtonTouch",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_SecondaryButton",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/in/RI_SecondaryButtonTouch",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/TiltBrush/out/Haptic",
+      "type": "vibration",
+      "requirement": "suggested"
+    },
+    {
+      "name": "/actions/mixedreality/in/ExternalCamera",
+      "type": "pose",
+      "requirement": "optional"
+    }
+  ],
+  "action_sets": [
+    {
+      "name": "/actions/TiltBrush",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/mixedreality",
+      "usage": "single"
+    }
+  ],
+  "default_bindings": [
+    {
+      "controller_type": "vive_controller",
+      "binding_url": "bindings_vive_controller.json"
+    },
+    {
+      "controller_type": "oculus_touch",
+      "binding_url": "bindings_oculus_touch.json"
+    },
+    {
+      "controller_type": "knuckles",
+      "binding_url": "bindings_knuckles.json"
+    },
+    {
+      "controller_type": "holographic_controller",
+      "binding_url": "bindings_holographic_controller.json"
+    },
+    {
+      "controller_type": "vive",
+      "binding_url": "binding_vive.json"
+    },
+    {
+      "controller_type": "vive_pro",
+      "binding_url": "binding_vive_pro.json"
+    },
+    {
+      "controller_type": "rift",
+      "binding_url": "binding_rift.json"
+    },
+    {
+      "controller_type": "holographic_hmd",
+      "binding_url": "binding_holographic_hmd.json"
+    },
+    {
+      "controller_type": "vive_tracker_camera",
+      "binding_url": "binding_vive_tracker_camera.json"
+    },
+    {
+      "controller_type": "logitech_stylus",
+      "binding_url": "binding_logitech_stylus.json"
+    },
+    {
+      "controller_type": "vive_cosmos",
+      "binding_url": "bindings_vive_cosmos.json"
+    },
+    {
+      "controller_type": "vive_cosmos_controller",
+      "binding_url": "bindings_vive_cosmos_controller.json"
+    }
+  ],
+  "localization": [
+    {
+      "language_tag": "en_US",
+      "/actions/TiltBrush/in/RI_GripAnalog": "Grip Analog",
+      "/actions/TiltBrush/in/RI_GripBinary": "Grip Binary",
+      "/actions/TiltBrush/in/RI_MenuButton": "Menu Button",
+      "/actions/TiltBrush/in/RI_PadClick": "Pad Click",
+      "/actions/TiltBrush/in/RI_PadDirectional": "Pad Directional",
+      "/actions/TiltBrush/in/RI_PadTouch": "Pad Touch",
+      "/actions/TiltBrush/in/Pose": "Pose",
+      "/actions/TiltBrush/in/RI_PrimaryButton": "Primary Button (B,Y)",
+      "/actions/TiltBrush/in/RI_PrimaryButtonTouch": "Primary Button (B,Y) Touch",
+      "/actions/TiltBrush/in/RI_SecondaryButton": "Secondary Button (A,X)",
+      "/actions/TiltBrush/in/RI_SecondaryButtonTouch": "Secondary Button (A,X) Touch",
+      "/actions/TiltBrush/in/RI_Thumbstick": "Thumbstick",
+      "/actions/TiltBrush/in/RI_ThumbstickTouch": "Thumbstick Touch",
+      "/actions/TiltBrush/in/RI_Trigger": "Trigger",
+      "/actions/TiltBrush/out/Haptic": "Haptic",
+      "/actions/mixedreality/in/ExternalCamera": "External Camera"
+    }
+  ]
+}

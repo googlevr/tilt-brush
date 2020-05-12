@@ -1,0 +1,14 @@
+{
+  "bindings": {
+    "/actions/default": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    }
+  },
+  "controller_type": "holographic_hmd",
+  "description": "Default bindings for Tilt Brush v20",
+  "name": "Tilt Brush - Windows Mixed Reality HMD"
+}

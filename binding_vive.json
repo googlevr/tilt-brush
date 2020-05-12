@@ -1,0 +1,14 @@
+{
+  "bindings": {
+    "/actions/default": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    }
+  },
+  "controller_type": "vive",
+  "description": "Default bindings for Tilt Brush v20",
+  "name": "Tilt Brush - Vive HMD"
+}

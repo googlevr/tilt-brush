@@ -1,0 +1,322 @@
+// Copyright 2020 The Tilt Brush Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package google.internal.vr.assets.v1;
+
+option java_multiple_files = true;
+option java_package = "com.google.internal.vr.assets.v1";
+
+import "google/api/annotations.proto";
+import "google/internal/vr/assets/v1/asset.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "vr/assets/proto/access_level.proto";
+
+// Services for creating and reading VR asset data.
+service VrAssetsService {
+  // Creates a new asset and returns it.
+  rpc CreateAsset(CreateAssetRequest) returns (Asset) {
+    option (google.api.http) = {
+      post: "/v1/assets"
+      body: "*"
+    };
+  }
+
+  // Returns the asset requested by the user.
+  // Only returns assets with an access level of PUBLIC or UNLISTED unless
+  // the logged-in user is the owner of the asset.
+  rpc GetAsset(GetAssetRequest) returns (Asset) {
+    option (google.api.http) = {
+      get: "/v1/assets/{asset_id=*}"
+    };
+  }
+
+  // Retrieve account information for the requested account.
+  // To retrieve the account information for the logged-in user, set the
+  // account_id equal to "me".
+  rpc GetAccount(GetAccountRequest) returns (Account) {
+    option (google.api.http) = {
+      get: "/v1/accounts/{account_id=*}"
+    };
+  }
+
+  // Updates the metadata of an existing asset.
+  rpc UpdateAsset(UpdateAssetRequest) returns (Asset) {
+    option (google.api.http) = {
+      patch: "/v1/assets/{asset.asset_id=*}"
+      body: "*"
+    };
+  }
+
+  // Updates the element data of an existing asset.
+  rpc UpdateAssetData(UpdateAssetDataRequest) returns (Asset) {
+    option (google.api.http) = {
+      patch: "/v1/assets/{asset_id=*}:updateData"
+      body: "*"
+    };
+  }
+
+  // Updates the metadata of an existing account.
+  rpc UpdateAccount(UpdateAccountRequest) returns (Account) {
+    option (google.api.http) = {
+      patch: "/v1/accounts/{account.account_id=*}"
+      body: "*"
+    };
+  }
+
+  // Lists all assets with an access level of PUBLIC.
+  // Defaults to 100 items per page.
+  rpc ListAssets(ListAssetsRequest) returns (ListAssetsResponse) {
+    option (google.api.http) = {
+      get: "/v1/assets"
+    };
+  }
+
+  // Delete a single asset asset.
+  rpc DeleteAsset(DeleteAssetRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/assets/{asset_id=*}"
+    };
+  }
+
+  // Lists all assets for the given account.
+  // If the requested account is not the logged-in user, only assets which have
+  // an access level of PUBLIC will be returned.
+  // To retrieve assets of the logged-in user, set the account_id equal to "me".
+  // Defaults to 100 items per page.
+  rpc ListAssetsByAccount(ListAssetsByAccountRequest)
+    returns (ListAssetsResponse) {
+    option (google.api.http) = {
+      get: "/v1/accounts/{account_id=*}/assets"
+    };
+  }
+}
+
+// Request message for creating a format - used in CreateAssetRequest.
+message CreateFormatRequest {
+  // Required. The ID of an element containing the root of the asset
+  // hierarchy. For some types, such as a .tilt or .fbx file, which are
+  // self-contained, this is all of the data. Other formats, such as .obj
+  // files often reference other data elements. These are specified in the
+  // resource_id field below.
+  string root_id = 1;
+
+  // Optional. A list of IDs to elements containing any external dependencies
+  // of the root element. May include, but is not limited to, materials,
+  // textures, and shader programs.
+  repeated string resource_id = 2;
+
+  // Optional. Self-reported complexity stats about the format.
+  FormatComplexity format_complexity = 3;
+
+  // Optional. The real-world scale of the format, if one exists.
+  FormatScale format_scale = 4;
+}
+
+// Request message for VrAssetsService.CreateAsset.
+message CreateAssetRequest {
+  // Required. The human-readable name of the asset.
+  string display_name = 1;
+
+  // Optional. The human-readable description of the asset.
+  string description = 2;
+
+  // Optional. Human-readable tags for describing the asset.
+  repeated string tag = 3;
+
+  // Optional. The level of access allowed to the asset. By default, access
+  // will be set to PRIVATE so that it is only accessible by the owner.
+  .vr.assets.AccessLevel access_level = 4;
+
+  // Required. One or more CreateFormatRequest messages which describe the
+  // asset. The first format (which is required) is the canonical source asset.
+  // Additional formats represent alternative encodings of the same asset.
+  repeated CreateFormatRequest format = 5;
+
+  // Optional. A list of IDs to elements containing thumbnails of the asset. The
+  // elements must be a browser-viewable image type, such as JPEG, PNG, GIF or
+  // WEBP.
+  repeated string thumbnail_id = 6;
+
+  // Optional. Remix info to attach to the asset.
+  Asset.RemixInfo remix_info = 7;
+
+  // Optional. Default parameters to use for camera controls when the asset is
+  // rendered. This is in right-handed coordinate space, which is the assumed
+  // coordinate space of assets.
+  Asset.CameraParams camera_params = 8;
+}
+
+// Request message for VrAssetsService.GetAsset.
+message GetAssetRequest {
+  // Required. The ID of the asset to get.
+  string asset_id = 1;
+}
+
+// Request message for VrAssetsService.GetAccount.
+message GetAccountRequest {
+  // Required. The ID of the account to get. May be set to "me" to get the
+  // account information for the logged-in user.
+  string account_id = 1;
+}
+
+// Request message for VrAssetsService.UpdateAsset.
+message UpdateAssetRequest {
+  // Required. The asset to update. The updated fields must be specified in the
+  // update_mask. Only metadata fields, such as name, description and tags
+  // may be updated. Trying to update others will return an error.
+  Asset asset = 1;
+
+  // Required. Indicates which fields in the provided asset to update.
+  // The root 'asset' is implied and should not be specified.
+  // Valid fields are 'name', 'description', and 'tag'.
+  // Additionally '*', may be used to specify all valid fields.
+  google.protobuf.FieldMask update_mask = 2;
+
+  // Optional. Indicates the thumbnail id to be updated for this asset.
+  string new_thumbnail_id = 3;
+}
+
+// Request message for VrAssetsService.UpdateAssetData.
+message UpdateAssetDataRequest {
+  // Required. The ID of the asset to update.
+  string asset_id = 1;
+
+  // Required. One or more CreateFormatRequest messages which describe the
+  // asset. The first format (which is required) is the canonical source asset.
+  // Additional formats represent alternative encodings of the same asset. These
+  // formats will replace all formats currently in the asset.
+  repeated CreateFormatRequest format = 2;
+
+  // Optional. A list of IDs to updated elements containing thumbnails of the
+  // asset. The elements must be a browser-viewable image type, such as JPEG,
+  // PNG, GIF or WEBP.
+  repeated string thumbnail_id = 3;
+}
+
+// Request message for VrAssetsService.UpdateAccount.
+message UpdateAccountRequest {
+  // Required. The account to update. The updated fields must be specified in
+  // the update_mask. Only metadata fields, such as description may be updated.
+  // Trying to update others will return an error.
+  Account account = 1;
+
+  // Required. Indicates which fields in the provided asset to update.
+  // The root 'account' is implied and should not be specified.
+  // Valid fields are 'description'.
+  // Additionally '*', may be used to specify all valid fields.
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+// Request message for VrAssetsService.ListAssets
+message ListAssetsRequest {
+  // Optional. The filter used on the results. Expected syntax is a comma
+  // separated list of keys and values, separated by a ":".
+  //
+  // For example: "format_type:TILT_BRUSH".
+  //
+  // Supported keys are:
+  // - "account_id"
+  // - "admin_tag"
+  // - "category"
+  // - "format_type" (see //depot/google3/vr/assets/proto/element_type.proto)
+  // - "license" (see //depot/google3/vr/assets/proto/asset_license.proto)
+  // - "liked"
+  string filter = 1;
+
+  // Optional. The order applied to the results. Expected syntax is a comma
+  // separated list of fields. To specify descending order for a field, a
+  // suffix " desc" may be appended to the field name.
+  //
+  // For example: "create_time desc".
+  //
+  // Supported fields are:
+  // - "create_time"
+  string order_by = 2;
+
+  // Optional. The maximum number of items to return.
+  // Defaults to 100.
+  int32 page_size = 3;
+
+  // Optional. The continuation token for pagination.
+  // Defaults to the first page.
+  string page_token = 4;
+
+  reserved 5;  // Was "liked"
+}
+
+// Response message for VrAssetsService.ListAssets and ListAssetsByAccount.
+message ListAssetsResponse {
+  // Required. The list of assets.
+  repeated Asset asset = 1;
+
+  // Optional. The continuation token for retreiving the next page. If empty,
+  // indicates that there are no more pages.
+  string next_page_token = 2;
+
+  // Required. The total number of assets in the list, without pagination.
+  int32 total_items = 3;
+
+  // Required. A map containing the public account information of the asset
+  // owners. This is given as a map from AccountId to Account in order to
+  // reduce overhead for multiple assets with the same owner.
+  map<string, Account> account = 4;
+}
+
+// Request message for VrAssetsService.DeleteAsset.
+message DeleteAssetRequest {
+  // Required. Unique identifier for the deleted asset.
+  string asset_id = 1;
+}
+
+// Request message for VrAssetsService.ListAssetsByAccount.
+message ListAssetsByAccountRequest {
+  // Required. The account ID of the asset owner. If set to "me", will return
+  // the assets of the logged-in user.
+  string account_id = 1;
+
+  // Optional. The filter used on the results. Expected syntax is a comma
+  // separated list of keys and values, separated by a ":".
+  //
+  // For example: "type:TILT_BRUSH".
+  //
+  // Supported keys are:
+  // - "type"
+  // - "admin_tag"
+  // - "category"
+  // - "format_type" (see //depot/google3/vr/assets/proto/element_type.proto)
+  // - "license" (see //depot/google3/vr/assets/proto/asset_license.proto)
+  // - "liked"
+  string filter = 2;
+
+  // Optional. The order applied to the results. Expected syntax is a comma
+  // separated list of fields. To specify descending order for a field, a
+  // suffix " desc" may be appended to the field name.
+  //
+  // For example: "create_time desc".
+  //
+  // Supported fields are:
+  // - "create_time"
+  string order_by = 3;
+
+  // Optional. The maximum number of items to return.
+  // Defaults to 100, limit 1000.
+  int32 page_size = 4;
+
+  // Optional. The continuation token for pagination.
+  // Defaults to the first page.
+  string page_token = 5;
+}

@@ -1,0 +1,14 @@
+{
+    "name": "SteamVR",
+    "references": [
+        "SteamVR_Windows_EditorHelper"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

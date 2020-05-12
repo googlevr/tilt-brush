@@ -1,0 +1,21 @@
+# Unity generates these with LF, so keep them LF to prevent
+# spurious diffs when Unity overwrites CRLF with LF
+*.mat text eol=lf
+*.asset text eol=lf
+*.meta text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.gradle text eol=lf
+Packages/manifest.json text eol=lf
+UnityPackageManager/manifest.json text eol=lf
+ProjectSettings/ProjectVersion.txt text eol=lf
+
+# Resharper generates these with LF; keep them LF even on Windows
+*.DotSettings text eol=lf
+
+# protoc generates files with LF
+Support/Python/**/*_pb2.py text eol=lf
+Assets/Scripts/Protobuf/**/*.cs text eol=lf
+
+# Oculus ships its files with LFs; let's just keep them that way
+Assets/ThirdParty/Oculus/** -text

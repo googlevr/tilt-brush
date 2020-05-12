@@ -1,0 +1,70 @@
+fileFormatVersion: 2
+guid: 36fa5b356bc9b9f4792bb2c38b8d8b5f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - instance__default: {fileID: 11400000, guid: 0d1e20c7ce10b6f43b3f035fcd845963,
+      type: 2}
+  - instance___actions_default_in_MoveLeft: {fileID: 11400000, guid: 644b5e773109a1042834fcfcdf16cdde,
+      type: 2}
+  - instance___actions_default_in_UseLeft: {fileID: 11400000, guid: 3ce7063d595d7f642bf145bc8b3112ad,
+      type: 2}
+  - instance___actions_default_in_GripLeft: {fileID: 11400000, guid: 3e2d026209eff5546a50cd9d19ed5fd2,
+      type: 2}
+  - instance___actions_default_in_MoveRight: {fileID: 11400000, guid: 1148ab5daa5fa08478e9a0eeba0ea9ec,
+      type: 2}
+  - instance___actions_default_in_UseRight: {fileID: 11400000, guid: 18de162de53cbca42829380e5b4f9de2,
+      type: 2}
+  - instance___actions_default_in_GripRight: {fileID: 11400000, guid: e54c6d9ac7e2e7243a40a3a4878cd0e4,
+      type: 2}
+  - instance___actions_default_in_PoseRight: {fileID: 11400000, guid: 87905fb081a4c504b923ca4ac770cfeb,
+      type: 2}
+  - instance___actions_default_in_PoseLeft: {fileID: 11400000, guid: 75e4798b27c821f43b1123a13898313c,
+      type: 2}
+  - instance___actions_default_in_SkeletonLeft: {fileID: 11400000, guid: 2976b089587b3c24587ac8ab443bf085,
+      type: 2}
+  - instance___actions_default_in_SkeletonRight: {fileID: 11400000, guid: b143487871e42444aab4ac13efc64ce3,
+      type: 2}
+  - instance___actions_default_in_InteractLeft: {fileID: 11400000, guid: 436fa2cdc587e184b9dd9f6b80aae648,
+      type: 2}
+  - instance___actions_default_in_InteractRight: {fileID: 11400000, guid: 9d039000f41a8fc45ae135164e949b05,
+      type: 2}
+  - instance___actions_default_in_TeleportLeft: {fileID: 11400000, guid: b7a681135a0ad074c903dde256616aff,
+      type: 2}
+  - instance___actions_default_in_TeleportRight: {fileID: 11400000, guid: 078682bf487d2454f80d5d0a81a94060,
+      type: 2}
+  - instance___actions_default_in_PinchForceLeft: {fileID: 11400000, guid: ad9b1ee6855b6be42a85c28c041dc7b5,
+      type: 2}
+  - instance___actions_default_in_GripForceLeft: {fileID: 11400000, guid: 0fdde54056cc46c4c8ea8f01583a1118,
+      type: 2}
+  - instance___actions_default_in_PinchForceRight: {fileID: 11400000, guid: cbc39c9fb3e4ba04193b2ce9c320c6fc,
+      type: 2}
+  - instance___actions_default_in_GripForceRight: {fileID: 11400000, guid: 383e7132b624b08429395c74a495e412,
+      type: 2}
+  - instance___actions_default_out_VibrateLeft: {fileID: 11400000, guid: d91c98e803a76cc4f8ce87c066cab82c,
+      type: 2}
+  - instance___actions_default_out_VibrateRight: {fileID: 11400000, guid: 4261c30da8676114884b5249ac2a9df0,
+      type: 2}
+  - instance_hands: {fileID: 11400000, guid: e0f18f490c3b0c641b7d498d7f89fcf9, type: 2}
+  - instance___actions_hands_in_IndexCurlLeft: {fileID: 11400000, guid: 40f90426848c6194eb6d5ef436b466d7,
+      type: 2}
+  - instance___actions_hands_in_MiddleCurlLeft: {fileID: 11400000, guid: 117f365bb09bd9740918dc824ee26774,
+      type: 2}
+  - instance___actions_hands_in_RingCurlLeft: {fileID: 11400000, guid: 5782949d8952ebe4d92f5c081d6d1f9e,
+      type: 2}
+  - instance___actions_hands_in_PinkyCurlLeft: {fileID: 11400000, guid: 24fca5b37f6d95547909338aedbcc71c,
+      type: 2}
+  - instance___actions_hands_in_IndexCurlRight: {fileID: 11400000, guid: 1a5712b61810ac847a82214a7cae2f03,
+      type: 2}
+  - instance___actions_hands_in_MiddleCurlRight: {fileID: 11400000, guid: 240fa8b0dc9a220488e1304befa95032,
+      type: 2}
+  - instance___actions_hands_in_RingCurlRight: {fileID: 11400000, guid: 22d6b216fbb546c44862aa17a428bf42,
+      type: 2}
+  - instance___actions_hands_in_PinkyCurlRight: {fileID: 11400000, guid: d747312e731775548a1e5d37c1ecc872,
+      type: 2}
+  executionOrder: -31000
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

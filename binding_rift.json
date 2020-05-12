@@ -1,0 +1,14 @@
+{
+  "bindings": {
+    "/actions/default": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    }
+  },
+  "controller_type": "rift",
+  "description": "Default bindings for Tilt Brush v20",
+  "name": "Tilt Brush - Oculus Rift HMD"
+}

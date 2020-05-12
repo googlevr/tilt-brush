@@ -1,0 +1,321 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1118433077968626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4641833538049162}
+  - component: {fileID: 114211856982259948}
+  - component: {fileID: 114928365383124312}
+  m_Layer: 0
+  m_Name: GvrControlsBasil
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4641833538049162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118433077968626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children:
+  - {fileID: 4397587325257750}
+  - {fileID: 4961575842565808}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114211856982259948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118433077968626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d9a65c756326949a22644509f24bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Wand: {fileID: 114545860365598300}
+  m_Brush: {fileID: 114918171191901166}
+  m_TrackingComponents:
+  - {fileID: 114838626559115220}
+  - {fileID: 114828745654748708}
+  m_HapticsDurationScale: 1
+  m_HapticAmplitudeScale: 1
+  m_TriggerActivationRange: {x: 0.15, y: 0.8}
+  m_GripActivationRange: {x: 0.15, y: 0.8}
+  m_TouchpadActivationRange: {x: -0.8, y: 0.8}
+  m_LogitechPenActivationRange: {x: 0, y: 1}
+  m_WandRotateJoystickPercent: 0.7
+--- !u!114 &114928365383124312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118433077968626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41251d5f89d5546bb9d8ba907686b71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emulatorConnectionMode: 1
+--- !u!1 &1711514705614708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4397587325257750}
+  - component: {fileID: 114918171191901166}
+  - component: {fileID: 114554916098361476}
+  - component: {fileID: 114618605986985296}
+  - component: {fileID: 114838626559115220}
+  - component: {fileID: 114382946144521284}
+  m_Layer: 14
+  m_Name: Controller (brush)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4397587325257750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711514705614708}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4641833538049162}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114918171191901166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711514705614708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c94cee59aeb87c4b8738f004b002294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControllerName: 1
+  m_ControllerGeometryPrefab: {fileID: 114825397291356590, guid: 500e5978d6024394da081322b180c663,
+    type: 3}
+  m_GeometryOffset: {x: 0, y: 0, z: 0}
+  m_GeometryRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114554916098361476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711514705614708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7ffdfe4cb884c41a9225762461aff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HapticBuzzLength: 0.01
+  m_HapticPulses: 7
+  m_MeshMaterialInactive: {fileID: 2100000, guid: 85e73f0e0bb274342bfbfed25661ab50,
+    type: 2}
+  m_TriggerMaterialInactive: {fileID: 10303, guid: 0000000000000000f000000000000000,
+    type: 0}
+--- !u!114 &114618605986985296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711514705614708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dda4bb2d5509e44e978d2bf56e25d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedElbowHeight: 0
+  addedElbowDepth: 0
+  pointerTiltAngle: 15
+  fadeDistanceFromFace: 0.32
+  tooltipMinDistanceFromFace: 0.45
+  tooltipMaxAngleFromCamera: 80
+  followGaze: 1
+  useAccelerometer: 0
+  isLockedToHead: 0
+--- !u!114 &114838626559115220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711514705614708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311793381eb9d45149dc1a422000a9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserVisual: {fileID: 0}
+  controllerVisual: {fileID: 0}
+  armModel: {fileID: 114618605986985296}
+  isLaserVisualEnabled: 1
+  isControllerVisualEnabled: 1
+  isVisibleWhenDisconnected: 0
+--- !u!114 &114382946144521284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711514705614708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b185dc34a16a7487e99971711f86abc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: 0
+  controllerID: 1
+  armModel: {fileID: 0}
+--- !u!1 &1848877852035276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4961575842565808}
+  - component: {fileID: 114545860365598300}
+  - component: {fileID: 114549963988976538}
+  - component: {fileID: 114963360598221906}
+  - component: {fileID: 114828745654748708}
+  - component: {fileID: 114676716466749358}
+  m_Layer: 14
+  m_Name: Controller (wand)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4961575842565808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848877852035276}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4641833538049162}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114545860365598300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848877852035276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3675e59c751a794d85c09bbbeeae451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControllerName: 0
+  m_ControllerGeometryPrefab: {fileID: 114825397291356590, guid: 500e5978d6024394da081322b180c663,
+    type: 3}
+  m_GeometryOffset: {x: 0, y: 0, z: 0}
+  m_GeometryRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114549963988976538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848877852035276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7ffdfe4cb884c41a9225762461aff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HapticBuzzLength: 0.01
+  m_HapticPulses: 7
+  m_MeshMaterialInactive: {fileID: 2100000, guid: 85e73f0e0bb274342bfbfed25661ab50,
+    type: 2}
+  m_TriggerMaterialInactive: {fileID: 10303, guid: 0000000000000000f000000000000000,
+    type: 0}
+--- !u!114 &114963360598221906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848877852035276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dda4bb2d5509e44e978d2bf56e25d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedElbowHeight: 0
+  addedElbowDepth: 0
+  pointerTiltAngle: 15
+  fadeDistanceFromFace: 0.32
+  tooltipMinDistanceFromFace: 0.45
+  tooltipMaxAngleFromCamera: 80
+  followGaze: 1
+  useAccelerometer: 0
+  isLockedToHead: 0
+--- !u!114 &114828745654748708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848877852035276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311793381eb9d45149dc1a422000a9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserVisual: {fileID: 0}
+  controllerVisual: {fileID: 0}
+  armModel: {fileID: 114963360598221906}
+  isLaserVisualEnabled: 1
+  isControllerVisualEnabled: 1
+  isVisibleWhenDisconnected: 0
+--- !u!114 &114676716466749358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848877852035276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b185dc34a16a7487e99971711f86abc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: 0
+  controllerID: 0
+  armModel: {fileID: 0}

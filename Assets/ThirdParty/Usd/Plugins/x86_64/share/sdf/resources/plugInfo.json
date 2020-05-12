@@ -1,0 +1,36 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "SdfMetadata": {
+                    "payloadAssetDependencies": {
+                        "appliesTo": "prims",
+                        "displayGroup": "Pipeline",
+                        "type": "asset[]"
+                    }
+                },
+                "Types": {
+                    "SdfFileFormat": {
+                        "displayName": "Sdf file format base class",
+                        "target": "sdf"
+                    },
+                    "SdfTextFileFormat": {
+                        "bases": [
+                            "SdfFileFormat"
+                        ],
+                        "displayName": "Sdf Text File Format",
+                        "extensions": [
+                            "sdf"
+                        ],
+                        "formatId": "sdf"
+                    }
+                }
+            },
+            "LibraryPath": "../../libusd_ms.dll",
+            "Name": "sdf",
+            "ResourcePath": "resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

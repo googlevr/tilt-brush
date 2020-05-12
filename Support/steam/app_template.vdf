@@ -1,0 +1,14 @@
+"appbuild"
+{
+    "appid"        "327140"
+    "desc"         ${DESC}           // description for this build
+    "buildoutput"  ${TMP_STEAM}      // build output folder for .log, .csm & .csd files, relative to location of this file
+    "contentroot"  ${CONTENT_ROOT}   // root content folder, relative to location of this file
+    "setlive"      ${STEAM_BRANCH}         // if non-empty, branch to set live after successful build
+    "preview"      "0"               // to enable preview builds
+    "local"        ""                // set to file path of local content server 
+    "depots"
+    {
+        "327141" ${MAIN_DEPOT_VDF}
+    }
+}

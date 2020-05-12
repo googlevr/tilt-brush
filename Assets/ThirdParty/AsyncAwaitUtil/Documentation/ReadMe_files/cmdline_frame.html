@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/cmdline_frame.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/cmdline_frame.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/cvimrc_parser.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/session.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/utils.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/dom.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/hints.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/bookmarks.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/keys.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/clipboard.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/complete.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/mappings.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/find.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/cursor.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/status.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/hud.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/visual.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/command.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/scroll.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/search.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/frames.js"></script>
+        <script src="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/messenger.js"></script>
+        <link rel="stylesheet" href="chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/content_scripts/main.css">
+    <style>#cVim-command-bar, #cVim-command-bar-mode, #cVim-command-bar-input, #cVim-command-bar-search-results,
+.cVim-completion-item, .cVim-completion-item .cVim-full, .cVim-completion-item .cVim-left,
+.cVim-completion-item .cVim-right {
+  font-family: Helvetica, Helvetica Neue, Neue, sans-serif, monospace, Arial;
+  font-size: 10pt !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#cVim-command-bar {
+  position: fixed;
+  z-index: 2147483646;
+  background-color: #1b1d1e;
+  color: #bbb;
+  display: none;
+  box-sizing: content-box;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+#cVim-command-bar-mode {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding-left: 2px;
+  height: 100%;
+  width: 10px;
+  padding-top: 2px;
+  color: #888;
+}
+
+#cVim-command-bar-input {
+  background-color: #1b1d1e;
+  color: #bbb;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: calc(100% - 10px);
+  position: absolute;
+}
+
+#cVim-command-bar-search-results {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2147483647;
+  left: 0;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+  background-color: #1c1c1c;
+}
+
+.cVim-completion-item, .cVim-completion-item .cVim-full, .cVim-completion-item .cVim-left, .cVim-completion-item .cVim-right {
+  text-overflow: ellipsis;
+  padding: 1px;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cVim-completion-item:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+.cVim-completion-item {
+  width: 100%; left: 0;
+  color: #bcbcbc;
+}
+
+.cVim-completion-item[active] {
+  width: 100%; left: 0;
+  color: #1b1d1e;
+  background-color: #f1f1f1;
+}
+
+.cVim-completion-item[active] span {
+  color: #1b1d1e;
+}
+
+.cVim-completion-item .cVim-left {
+  color: #fff;
+  width: 37%;
+}
+
+.cVim-completion-item .cVim-right {
+  font-style: italic;
+  color: #888;
+  width: 57%;
+}
+
+
+#cVim-link-container, .cVim-link-hint,
+#cVim-hud, #cVim-status-bar {
+  font-family: Helvetica, Helvetica Neue, Neue, sans-serif, monospace, Arial;
+  font-size: 10pt !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#cVim-link-container {
+  position: absolute;
+  pointer-events: none;
+  width: 100%; left: 0;
+  height: 100%; top: 0;
+  z-index: 2147483647;
+}
+
+.cVim-link-hint {
+  position: absolute;
+  color: #302505 !important;
+  background-color: #ffd76e !important;
+  border-radius: 2px !important;
+  padding: 2px !important;
+  font-size: 8pt !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  border: 1px solid #ad810c;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.25) !important;
+}
+
+.cVim-link-hint_match {
+  color: #777;
+  text-transform: uppercase !important;
+}
+
+
+#cVim-hud {
+  background-color: rgba(28,28,28,0.9);
+  position: fixed !important;
+  transition: right 0.2s ease-out;
+  z-index: 24724289;
+}
+
+#cVim-hud span {
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #8f8f8f;
+  font-size: 10pt;
+}
+
+#cVim-frames-outline {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 9999999999;
+  box-sizing: border-box;
+  border: 3px solid yellow;
+}
+</style></head>
+    <body>
+    
+
+</body><div id="cVim-status-bar" style="bottom: 0px;"></div><div id="cVim-command-bar" spellcheck="false" style="bottom: 0px;"><span id="cVim-command-bar-mode"></span><input type="text" id="cVim-command-bar-input"></div><div id="cVim-command-bar-search-results" style="bottom: 20px;"></div></html>

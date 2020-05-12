@@ -1,0 +1,19 @@
+"controller_mappings"
+{
+	"buttons"
+	{
+	}
+	"pads"
+	{
+	}
+	"settings"
+	{
+		"left_trackpad_mode"	"none"
+		"right_trackpad_mode"	"none"
+	}
+	"metadata"
+	{
+		"title"	"Raw Steam Controller"
+		"description"	""
+	}
+}

@@ -1,0 +1,16 @@
+# -*- bash -*-
+
+# Set the tabs->spaces width to 4; the catch is that the only option
+# that sets that width also tries to force the use of tabs.
+--indent=force-tab-x=4  # set tabLength, shouldForceTashouldForceTabIndentation
+--indent=tab            # unset shouldForceTashouldForceTabIndentation
+--convert-tabs
+
+--style=google
+--keep-one-line-blocks
+--keep-one-line-statements
+--indent=spaces=2
+
+# Mimic the (incorrect) MonoDevelop and Visual Studio behavior of
+# double-indenting code in a "case: { ... }" block.
+--indent-cases

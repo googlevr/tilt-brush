@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>USD.NET.Unity</name>
+    </assembly>
+    <members>
+        <member name="M:USD.NET.Unity.CameraSample.CopyFromCamera(UnityEngine.Camera,System.Boolean)">
+            <summary>
+            Copys all relevant values of the given camera to the current camera sample.
+            </summary>
+            <param name="camera">The camera to copy.</param>
+            <param name="convertTransformToUsd">
+              If true, converts the transform matrix from left handed(Unity) to right handed(USD). If
+              you're unsure about this parameter, it should be left to the default value of true.
+            </param>
+        </member>
+        <member name="M:USD.NET.Unity.CameraSample.CopyToCamera(UnityEngine.Camera)">
+            <summary>
+            Copyies the current sample values to the given camera.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.MeshSample.SetTriangles(System.Int32[])">
+            <summary>
+            Sets the faceVertexIndicies and faceVertexCounts from triangle indices alone.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.XformSample.ConvertTransform">
+            <summary>
+            Converts the transform from Unity to USD or vice versa. This is required after reading
+            values from USD or before writing values to USD.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.MaterialBindingSample">
+            <summary>
+            Provides access to the material binding (if any) on the UsdPrim.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.MaterialSample.ReadMaterial(USD.NET.Scene,System.String,USD.NET.Unity.MaterialSample,System.String@)">
+            <summary>
+            Reads the material associated with the geometry at the target path. If a valid material is
+            bound, the "surface" shader is inspected, if valid, the shader ID is queried and returned
+            via the shaderId output parameter. Returns true when shaderId is set.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.MaterialSample.Bind(USD.NET.Scene,System.String,System.String)">
+            <summary>
+            Binds the prim to the given material.
+            https://graphics.pixar.com/usd/docs/api/class_usd_shade_material.html#a116ed8259600f7a48f3792364252a4e1
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.MaterialSample.Unbind(USD.NET.Scene,System.String)">
+            <summary>
+            Unbinds the prim from all materials.
+            https://graphics.pixar.com/usd/docs/api/class_usd_shade_material.html#a6fc9d56d2e2e826aa3d96711c7b0e605
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.ParameterInfo">
+            <summary>
+            A class describing a single shader parameter, used to simplify reading values from USD.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.ParameterInfo.value">
+            <summary>
+            The value to use when the parameter is not connected.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.ParameterInfo.connectedPath">
+            <summary>
+            A source connected to the parameter, null if not connected.
+            Note that this path will always target an attribute, not the prim itself.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.ParameterInfo.usdName">
+            <summary>
+            The name of the parameter, as declared in the USD Sample class.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.ParameterInfo.unityName">
+            <summary>
+            The name of the parameter, as declared in the Unity shader source file.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.ParameterInfo.requiredShaderKeywords">
+            <summary>
+            Some shaders require enabling keywords to enable features, this is the list of required
+            keywords associated with this parameter.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.PrimvarReaderSample`1">
+            <summary>
+            The following is based on the Pixar specification found here:
+            https://graphics.pixar.com/usd/docs/UsdPreviewSurface-Proposal.html
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PrimvarReaderSample`1.varname">
+            <summary>
+            Name of the primvar to be read from the primitive.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PrimvarReaderSample`1.fallback">
+            <summary>
+            Name of the primvar to be read from the primitive.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.TextureReaderSample">
+            <summary>
+            The following is based on the Pixar specification found here:
+            https://graphics.pixar.com/usd/docs/UsdPreviewSurface-Proposal.html
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.file">
+            <summary>
+            Path to the texture.  Following the 1.36 MaterialX spec, Mari UDIM substitution in file
+            values uses the "UDIM" token, so for example in USD, we might see a value
+            @textures/occlusion.UDIM.tex@
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.st">
+            <summary>
+            Texture coordinate to use to fetch this texture.  This node defines a mathematical/cartesian
+            mapping from st to uv to image space: the (0, 0) st coordinate maps to a (0, 0) uv
+            coordinate that samples the lower-left-hand corner of the texture image, as viewed on a
+            monitor, while the (1, 1) st coordinate maps to a (1, 1) uv coordinate that samples the
+            upper-right-hand corner of the texture image, as viewed on a monitor.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.wrapS">
+            <summary>
+            Wrap mode when reading this texture.  Irrelevant for implementations that handle UDIMs
+            inside the shader, when given a UDIM filename.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.wrapT">
+            <summary>
+            See WrapS.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.fallback">
+            <summary>
+            Fallback value used when texture can not be read.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.scale">
+            <summary>
+            Scale to be applied to all components of the texture. value * scale + bias
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.TextureReaderSample.bias">
+            <summary>
+            Bias to be applied to all components of the texture. value * scale + bias 
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.InputParameterAttribute">
+            <summary>
+            A declaration that a given value is a shader input, used to discover shader parameters at
+            runtime. Implicitly declares the parameter to be in the "inputs" namespace.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.InputParameterAttribute.#ctor(System.String)">
+            <param name="unityName">The corresponding name in the Unity shader.</param>
+        </member>
+        <member name="T:USD.NET.Unity.InputTextureAttribute">
+            <summary>
+            Declares a given parameter to be a texture, used to discover shader textures at runtime.
+            Implicitly declares the parameter to be in the "inputs" namespace.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.InputTextureAttribute.#ctor(System.String)">
+            <param name="unityName">The corresponding name in the Unity shader.</param>
+        </member>
+        <member name="T:USD.NET.Unity.RequireShaderKeywordsAttribute">
+            <summary>
+            Declares required keywords when the given parameter is used.
+            Only currently applicable to textures.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.ShaderSample">
+            <summary>
+            A base class for all shader samples.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.PreviewSurfaceSample">
+            <summary>
+            The following is based on the Pixar specification found here:
+            https://graphics.pixar.com/usd/docs/UsdPreviewSurface-Proposal.html
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.diffuseColor">
+            <summary>
+            When using metallic workflow this is interpreted as albedo.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.emissiveColor">
+            <summary>
+            Emissive component. 
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.useSpecularWorkflow">
+            <summary>
+            This node can fundamentally operate in two modes : Specular workflow where you provide a
+            texture/value to the "specularColor" input. Or, Metallic workflow where you provide a
+            texture/value to the "metallic" input.  Depending on the 0 or 1 value of this parameter, the
+            following parameters are conditionally enabled.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.specularColor">
+            <summary>
+            Specular color to be used. This is the color at 0 incidence. Edge color is assumed white.
+            Transition between the two colors according to Schlick fresnel approximation.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.metallic">
+            <summary>
+            Use 1 for metallic surfaces and 0 for non-metallic.
+            
+             - If metallic is 1.0, then F0(reflectivity at 0 degree incidence) will be derived from
+               ior( (1-ior)/(1+ior) )^2, then multiplied by Albedo; while edge F90 reflectivity will
+               simply be the Albedo. (As an option, you can set ior to 0 such that F0 becomes equal to
+               F90 and thus the Albedo).
+               
+             - If metallic is 0.0, then Albedo is ignored; F0 is derived from ior and F90 is white.
+               In between, we interpolate.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.roughness">
+            <summary>
+            Roughness for the specular lobe. The value ranges from 0 to 1, which goes from a perfectly
+            specular surface at 0.0 to maximum roughness of the specular lobe. This value is usually
+            squared before use with a GGX or Beckmann lobe.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.clearcoat">
+            <summary>
+            Second specular lobe amount. The color is white.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.clearcoatRoughness">
+            <summary>
+            Roughness for the second specular lobe.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.opacity">
+            <summary>
+            When opacity is 1.0 then the prim is fully opaque, if it is smaller than 1.0 then the prim
+            is translucent, when it is 0 the prim is transparent. 
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.ior">
+            <summary>
+            Index of Refraction to be used for translucent objects.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.normal">
+            <summary>
+            Expects normal in tangent space [(-1,-1,-1), (1,1,1)] This means your texture reader
+            implementation should provide data to this node that is properly scaled and ready to be
+            consumed as a tangent space normal.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.displacement">
+            <summary>
+            Displacement in the direction of the normal.
+            </summary>
+        </member>
+        <member name="F:USD.NET.Unity.PreviewSurfaceSample.occlusion">
+            <summary>
+            Extra information about the occlusion of different parts of the mesh that this material is
+            applied to. Occlusion only makes sense as a surface-varying signal, and pathtracers will
+            likely choose to ignore it. An occlusion value of 0.0 means the surface point is fully
+            occluded by other parts of the surface, and a value of 1.0 means the surface point is
+            completely unoccluded by other parts of the surface.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Unity.PreviewSurfaceSample.Outputs">
+            <remarks>
+            In UsdShade, by convention and limitation of Usd/SdfLayer's native representable types,
+            'token' is assigned as the SdfValueTypeName type to all inputs and outputs of "rich types"
+            (e.g. structs), while allowing use of renderType metadata (a string) on UsdShadeInput and
+            UsdShadeOutput to carry typeName information that may be useful to a renderer or shading
+            system.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.Unity.DiagnosticHandler">
+            <summary>
+            Implements a DiagnosticHandler which pipes messages to Unity's debug logger.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.DiagnosticHandler.Register">
+            <summary>
+            Registers this class a the global diagnostic handler.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.DiagnosticHandler.OnFatalError(System.String)">
+            <summary>
+            Messages sent when an unrecoverable fatal error occured in the USD API.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.DiagnosticHandler.OnError(System.String)">
+            <summary>
+            Messages sent when an error occured in the USD API, but was not fatal.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.DiagnosticHandler.OnWarning(System.String)">
+            <summary>
+            Warning messages sent from the USD API upon misuse or unexpected run-time conditions.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.DiagnosticHandler.OnInfo(System.String)">
+            <summary>
+            Informational messages sent from the USD API.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ChangeBasis(UnityEngine.Matrix4x4)">
+            <summary>
+            Converts to and from the USD transform space.
+            This method should be applied to all Unity matrices before being written and all USD
+            matrices after being read, unless the USD file is stored in the Unity transform space
+            (though doing so will result in a non-standard USD file).
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.SetTransform(UnityEngine.Matrix4x4,UnityEngine.Transform)">
+            <summary>
+            Sets the local transform matrix on the given Unity Transform given a Matrix4x4.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractTrs(UnityEngine.Matrix4x4,UnityEngine.Vector3@,UnityEngine.Quaternion@,UnityEngine.Vector3@)">
+            <summary>
+            Extracts the local position, rotation and scale from the given Matrix4x4.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractRotation(UnityEngine.Matrix4x4)">
+            <summary>
+            Extracts the local rotation from the given matrix.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractPosition(UnityEngine.Matrix4x4)">
+            <summary>
+            Extracts the local position from the given matrix.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractScale(UnityEngine.Matrix4x4)">
+            <summary>
+            Extracts the local scale from the given matrix.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.GetPath(UnityEngine.Transform)">
+            <summary>
+            Returns a valid UsdPath for the given Unity GameObject.
+            </summary>
+            <remarks>
+            Note that illegal characters are converted into legal characters, so invalid names may
+            collide in the USD namespace.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractRgb(UnityEngine.Color32[])">
+            Returns just the RGB elements of a Color array as a new Vector3 array.
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractAlpha(UnityEngine.Color32[])">
+            Returns just the alpha component of a Color array as a new array of float.
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractRgb(UnityEngine.Color[])">
+            Returns just the RGB elements of a Color array as a new Vector3 array.
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeConverter.ExtractAlpha(UnityEngine.Color[])">
+            Returns just the alpha component of a Color array as a new array of float.
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeBindings.#cctor">
+            Static constructor automatically registers conversions with the global type binder.
+        </member>
+        <member name="M:USD.NET.Unity.UnityTypeBindings.RegisterTypes">
+            <summary>
+            Registers Unity-specifc data type conversions in the global type binder (UsdIo.Bindings).
+            </summary>
+        </member>
+    </members>
+</doc>

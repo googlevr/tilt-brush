@@ -1,0 +1,64 @@
+Version 0.8:
+	Build fixes for certain platforms and compilers.
+
+	libdeflate now produces the same output on all CPU architectures.
+
+	Improved documentation for building libdeflate on Windows.
+
+Version 0.7:
+	Fixed a very rare bug that caused data to be compressed incorrectly.
+	The bug affected compression levels 7 and below since libdeflate v0.2.
+	Although there have been no user reports of the bug, and I believe it
+	would have been highly unlikely to encounter on realistic data, it could
+	occur on data specially crafted to reproduce it.
+
+	Fixed a compilation error when building with clang 3.7.
+
+Version 0.6:
+	Various improvements to the gzip program's behavior.
+
+	Faster CRC-32 on AVX-capable processors.
+
+	Other minor changes.
+
+Version 0.5:
+	The CRC-32 checksum algorithm has been optimized with carryless
+	multiplication instructions for x86_64 (PCLMUL).  This speeds up gzip
+	compression and decompression.
+
+	Build fixes for certain platforms and compilers.
+
+	Added more test programs and scripts.
+
+	libdeflate is now entirely MIT-licensed.
+
+Version 0.4:
+	The Adler-32 checksum algorithm has been optimized with vector
+	instructions for x86_64 (SSE2 and AVX2) and ARM (NEON).  This speeds up
+	zlib compression and decompression.
+
+	To avoid naming collisions, functions and definitions in libdeflate's
+	API have been renamed to be prefixed with "libdeflate_" or
+	"LIBDEFLATE_".  Programs using the old API will need to be updated.
+
+	Various bug fixes and other improvements.
+
+Version 0.3:
+	Some bug fixes and other minor changes.
+
+Version 0.2:
+	Implemented a new block splitting algorithm which typically improves the
+	compression ratio slightly at all compression levels.
+
+	The compressor now outputs each block using the cheapest type (dynamic
+	Huffman, static Huffman, or uncompressed).
+
+	The gzip program has received an overhaul and now behaves more like the
+	standard version.
+
+	Build system updates, including: some build options were changed and
+	some build options were removed, and the default 'make' target now
+	includes the gzip program as well as the library.
+
+Version 0.1:
+	Initial official release.

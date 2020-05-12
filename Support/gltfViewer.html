@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<!--
+Copyright 2020 The Tilt Brush Authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ 
+ 
+See bin/gltfViewer/README.txt on how to use this file.
+-->
+
+<html lang="en">
+  <head>
+  <title>three.js glTF Viewer</title>
+  <meta charset="utf-8">
+  <meta name="viewport">
+  <meta content="width=device-width, user-scalable=no">
+  <style>
+  body {
+    font-family: Monospace;
+    background-color: #222222;
+    margin: 0px;
+    overflow: hidden;
+  }
+  #console {
+    position: absolute;
+    width: 400px;
+    bottom: 0px;
+    left: 0px;
+    padding: 10px;
+    background-color: White;
+  }
+  </style>
+  </head>
+
+  <body>
+  <div id="container"></div>
+  <div id="console">
+  <div id="status">Loading...</div>
+  <div>
+    <input type="checkbox" id="pixelBloom" checked onclick="togglePixelBloom();">
+    Pixel Bloom
+    </input>
+    &nbsp;
+    <input type="checkbox" unchecked onclick="toggleWireframe();">
+    Wireframe
+    &nbsp;
+    <input type="checkbox" id="envColor" checked onclick="toggleEnvColor();">
+    EnvColor
+    </input>
+  <br>
+  <input type="range" id="bgLevel" value="100">Background Level</input><br>
+  <input type="range" id="brightness" value="50", min="0">Brightness</input>
+  </div>
+  </div>
+  <script src="ThirdParty/gltfViewer/three.js"></script>
+  <script src="ThirdParty/gltfViewer/OrbitControls.js"></script>
+  <script src="ThirdParty/gltfViewer/GLTFLoader.js"></script>
+  <script src="ThirdParty/gltfViewer/stats.min.js"></script>
+
+  <script src="ThirdParty/gltfViewer/postprocessing/EffectComposer.js"></script>
+  <script src="ThirdParty/gltfViewer/postprocessing/RenderPass.js"></script>
+  <script src="ThirdParty/gltfViewer/postprocessing/MaskPass.js"></script>
+  <script src="ThirdParty/gltfViewer/postprocessing/ShaderPass.js"></script>
+  <script src="ThirdParty/gltfViewer/postprocessing/UnrealBloomPass.js"></script>
+  <script src="ThirdParty/gltfViewer/shaders/CopyShader.js"></script>
+  <script src="ThirdParty/gltfViewer/shaders/FXAAShader.js"></script>
+  <script src="ThirdParty/gltfViewer/shaders/ConvolutionShader.js"></script>
+  <script src="ThirdParty/gltfViewer/LuminosityHighPassShader.js"></script>
+
+  <script src="ThirdParty/gltfViewer/postfx.js"></script>
+  <script>
+
+// Global scene values.
+var sceneInfo = {
+  objectScale: new THREE.Vector3(1.0, 1.0, 1.0),
+  objectRotation: new THREE.Euler(0, - 3 * Math.PI / 4, 0),
+  animationTime: 3,
+};
+
+var stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild(stats.dom);
+
+var orbitControls = null;
+var container = null;
+var camera = null;
+var ssaa = null;
+var bloom = null;
+var lens = null;
+var scene = null;
+var renderer = null;
+var composer = null;
+
+var gltf = null;
+var mixer = null;
+var clock = new THREE.Clock();
+
+var brightness = 1.0;
+var pixelBloom = true;
+var useEnvColor = true;
+var envColor = [1.0, 1.0, 1.0];
+
+var clock = new THREE.Clock();
+
+
+// Returns URL parameter value correpsonding to name, e.g.
+// given http://localhost:8000/viewer.html?uri=token
+//   getURLParam("name") returns "token".
+function getURLParam(name) {
+  var re = new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)');
+  var found = (re.exec(location.search) || [null, ''])[1];
+  return decodeURIComponent(found.replace(/\+/g, '%20')) || null;
+}
+
+
+function updateTime() {
+  var time = clock.getElapsedTime();
+  lens.uniforms["u_time"] = {
+    type: "v4",
+    value: new THREE.Vector4(time / 20.0, time, 2.0 * time, 3.0 * time)
+  };
+    var unifFunc = function (obj) {
+        if (obj.hasOwnProperty("material") && obj.material.hasOwnProperty("uniforms")) {
+            obj.material.needsInverseMatrices = true;
+          var uniforms = obj.material.uniforms;
+            uniforms["u_time"] = {
+              type: "v4",
+              value: new THREE.Vector4(time / 20.0, time, 2.0 * time, 3.0 * time)
+            }
+        }
+    }
+    scene.traverse(unifFunc);
+}
+
+function onload() {
+  clock.start();
+  window.addEventListener('resize', onWindowResize, false);
+  initScene();
+  animate();
+}
+
+function initScene() {
+  container = document.getElementById('container');
+  scene = new THREE.Scene();
+  var nearDist = 0.1;
+  var farDist = 1000.0;
+  var fov = 40.0;
+  var aspect_ratio = container.offsetWidth / container.offsetHeight;
+  camera = new THREE.PerspectiveCamera(fov, aspect_ratio, nearDist, farDist);
+  scene.add(camera);
+
+  var matBlue = new THREE.LineBasicMaterial({ color: 0x0000ff });
+  var matRed = new THREE.LineBasicMaterial({ color: 0xff0000 });
+  var matGreen = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+  
+  var lineGeo = new THREE.Geometry();
+  lineGeo.vertices.push(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 0, 0)
+  );
+  var line = new THREE.Line(lineGeo, matRed);
+  scene.add(line);
+
+  lineGeo = new THREE.Geometry();
+  lineGeo.vertices.push(
+      new THREE.Vector3(0, 1, 0),
+      new THREE.Vector3(0, 0, 0)
+  );
+  line = new THREE.Line(lineGeo, matGreen);
+  scene.add(line);
+
+  lineGeo = new THREE.Geometry();
+  lineGeo.vertices.push(
+      new THREE.Vector3(0, 0, 1),
+      new THREE.Vector3(0, 0, 0)
+  );
+  line = new THREE.Line(lineGeo, matBlue);
+  scene.add(line);
+
+  renderer = new THREE.WebGLRenderer({antialias: false});
+  //renderer.extensions.get("EXT_color_buffer_half_float");
+  renderer.extensions.get("OES_texture_half_float");
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  var copyShader = new THREE.ShaderPass(THREE.CopyShader);
+  copyShader.renderToScreen = true;
+
+  ssaa = new SuperSamplePass(renderer, new THREE.Vector2(1024, 1024), true);
+  ssaa.enableSSAA(true);
+  ssaa.setSampleCount(2);
+  bloom = new BloomPass(renderer, new THREE.Vector2(1024, 1024));
+  lens = new THREE.ShaderPass(blurVignetteLensShader);
+  renderScene = new THREE.RenderPass(scene, camera);
+
+  var renderTargetParams = {
+			minFilter: THREE.LinearFilter,
+			magFilter: THREE.LinearFilter,
+			format: THREE.RGBAFormat,
+			stencilBuffer: false,
+			type: THREE.FloatType
+		};
+  var size = renderer.getSize();
+  renderTarget = new THREE.WebGLRenderTarget( size.width, size.height, renderTargetParams);
+
+  // XXX: Is this the right way to do this?
+  lens.uniforms["resolution"].value = new THREE.Vector2(window.innerWidth, window.innerHeight);
+  lens.uniforms["blurTexture1"].value = bloom.renderTargets_[0].texture;
+  lens.uniforms["blurTexture2"].value = bloom.renderTargets_[2].texture;
+  lens.uniforms["blurTexture3"].value = bloom.renderTargets_[4].texture;
+  
+  composer = new THREE.EffectComposer(renderer, renderTarget);
+  composer.setSize(window.innerWidth, window.innerHeight);
+  composer.addPass(renderScene);
+  //composer.addPass(bloom);
+  //composer.addPass(lens);
+  //composer.addPass(ssaa);
+  composer.addPass(copyShader);
+  
+  container.appendChild(renderer.domElement);
+
+  THREE.GLTFLoader.Shaders.removeAll(); // remove all previous shaders
+  var loader = new THREE.GLTFLoader;
+
+  var uri = getURLParam('uri')
+  if (uri == null) {
+    // If no URI was specified, we show a default sample model.
+    uri = "samples/duck.glb";
+  }
+
+  var p_bg = getURLParam("bg")
+  if (p_bg == null) {
+    p_bg = "100"
+  }
+  document.getElementById("bgLevel").value = p_bg;
+
+  var p_bright = getURLParam("bright")
+  if (p_bright == null) {
+    p_bright = "50"
+  }
+  document.getElementById("brightness").value = p_bright;
+
+  var p_bloom = getURLParam("bloom")
+  pixelBloom = document.getElementById("pixelBloom").checked = (p_bloom != "0");
+
+  var p_env = getURLParam("env")
+  useEnvColor = document.getElementById("envColor").checked = (p_env != "0");
+
+  var loadStartTime = performance.now();
+  var status = document.getElementById("status");
+  status.innerHTML = "Loading " + uri + "...";
+
+  var loaded = loader.load(uri, function(data) {
+    gltf = data;
+    var object = gltf.scene !== undefined ? gltf.scene : gltf.scenes[0];
+    var elapsed = (performance.now() - loadStartTime).toFixed(2);
+    status.innerHTML = "Load time: " + elapsed + " ms.";
+    var extras = object.userData;
+    if ("TB_Environment" in extras) {
+      // We could act on this string based on the known set of
+      // environments from TB. But for now we just print it and use
+      // the zenith/horizon colors specified below instead.
+      status.innerHTML += "<br>Env: " + extras["TB_Environment"];
+    }
+    if ("TB_SkyColorHorizon" in extras && "TB_SkyColorZenith" in extras) {
+      // It would be cool to render the environment as a large
+      // inverted sphere with equator-to-zenith color variation, but
+      // to keep things simple, we just set the background color to
+      // the average of the specified colors.
+      horizonColorStr = extras["TB_SkyColorHorizon"].split(", ");
+      zenithColorStr = extras["TB_SkyColorZenith"].split(", ");
+      for (var i = 0; i < 3; ++i) {
+	envColor[i] = 0.5 * (parseFloat(horizonColorStr[i]) +
+			     parseFloat(zenithColorStr[i]));
+      }
+    }
+
+    if (sceneInfo.objectRotation) {
+      object.rotation.copy(sceneInfo.objectRotation);
+    }
+
+    if (sceneInfo.objectScale) {
+      object.scale.copy(sceneInfo.objectScale);
+    }
+
+    var animations = gltf.animations;
+    if (animations && animations.length) {
+      mixer = new THREE.AnimationMixer(object);
+      for (var i = 0; i < animations.length; i++) {
+        var animation = animations[i];
+        if (sceneInfo.animationTime)
+          animation.duration = sceneInfo.animationTime;
+        mixer.clipAction(animation).play();
+      }
+    }
+
+    scene.add(object);
+
+    // Compute triangle and vertex counts so we can display them.
+    var triCount = 0;
+    var vertCount = 0;
+    var countFunc = function(obj) {
+      if (obj instanceof THREE.Mesh) {
+	if (obj.hasOwnProperty("geometry")) {
+	  var geom = obj.geometry;
+	  geom.computeBoundingSphere();
+	  var verts = 0;
+	  var tris = 0;
+	  var pos = geom.getAttribute("position");
+	  if (pos != null) {
+	    verts = pos.count;
+	  }
+	  var index = geom.getIndex();
+	  if (index != null) {
+	    tris = index.count / 3;
+	  } else {
+	    tris = verts / 3;
+	  }
+	  vertCount += verts;
+	  triCount += tris;
+	}
+      }
+    }
+    scene.traverse(countFunc);
+
+    // Compute object bounds, so we can place camera appropriately, and
+    // report object center and bounding radius.
+    var box = new THREE.Box3().setFromObject(object);
+    var boundingSphere = box.getBoundingSphere();
+    var center = boundingSphere.center;
+
+    status.innerHTML += "<br>" + "center: " +
+        center.x.toFixed(2) + ", " +
+        center.y.toFixed(2) + ", " +
+        center.z.toFixed(2)
+    status.innerHTML += "; " + "radius: " + boundingSphere.radius.toFixed(2);
+    orbitControls.target.copy(center);
+
+    // Place camera a reasonable distance from the object center.
+    cameraPos = center;
+    cameraPos.z += 4 * boundingSphere.radius;
+    camera.position.copy(cameraPos);
+
+    var triStr = triCount.toLocaleString();
+    var vertStr = vertCount.toLocaleString();
+    status.innerHTML += "<br>" + triStr + " tris with " + vertStr + " verts.";
+
+    onWindowResize();
+  }, function() {}, function() { status.innerHTML = "Failed to load " + uri;});
+
+  orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+  orbitControls.addEventListener('change', () => {
+          ssaa.resetAccum = true;
+        });
+}
+
+function onWindowResize() {
+  camera.aspect = container.offsetWidth / container.offsetHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function animate() {
+  stats.begin();
+
+  var gl = renderer.context;
+  //gl.enable(gl.CULL_FACE);
+  //gl.cullFace(gl.BACK);
+  //gl.enable(gl.DEPTH_TEST);
+  //gl.depthFunc(gl.LESS);
+
+  requestAnimationFrame(animate);
+  if (mixer) mixer.update(clock.getDelta());
+  THREE.GLTFLoader.Shaders.update(scene, camera);
+  render();
+  orbitControls.update();
+  stats.end();
+}
+
+function render() {
+  updateTime();
+
+  lens.uniforms["blurTexture1"].value = bloom.renderTargets_[0].texture;
+  lens.uniforms["blurTexture2"].value = bloom.renderTargets_[2].texture;
+  lens.uniforms["blurTexture3"].value = bloom.renderTargets_[4].texture;
+
+  var bgLevel = Math.floor(255 * document.getElementById("bgLevel").value / 100);
+  var bgColor = useEnvColor ? envColor : [0.95, 0.95, 0.95];
+
+  renderer.setClearColor(Math.floor(bgColor[2] * bgLevel) +
+      Math.floor(bgColor[1] * bgLevel) * 256 +
+      Math.floor(bgColor[0] * bgLevel) * 65536);
+
+  var newBrightness = document.getElementById("brightness").value / 50.0;
+  if (newBrightness != brightness) {
+    // This will update brightness to newBrightness if materials are found,
+    // which they may not be at startup.
+    setUniforms(newBrightness);
+  }
+  ssaa.adjustProjectionMatrix(camera);
+  if (false && pixelBloom) {
+    composer.render();
+  } else {
+    renderer.render(scene, camera);
+  }
+}
+
+function togglePixelBloom() {
+  pixelBloom = !pixelBloom;
+}
+
+function toggleEnvColor() {
+  useEnvColor = !useEnvColor;
+}
+
+function toggleWireframe() {
+  var f = function(obj) {
+    if (obj.hasOwnProperty("material")) {
+      obj.material.wireframe = !obj.material.wireframe;
+    }
+  }
+  scene.traverse(f);
+}
+
+// Sets brightness global to newBrightness if there's a material present.
+function setUniforms(newBrightness) {
+  var unifFunc = function(obj) {
+    if (obj.hasOwnProperty("material")) {
+      brightness = newBrightness;
+      var uniforms = obj.material.uniforms;
+      if (!uniforms["u_brightness_gain"]) {
+	uniforms["u_brightness_gain"] = [];
+      }
+      uniforms["u_brightness_gain"] = {type: "f", value: brightness - 1.0};
+      obj.material.needsUpdate = true;
+    }
+  }
+  scene.traverse(unifFunc);
+}
+
+onload();
+
+
+
+    </script>
+  </body>
+</html>

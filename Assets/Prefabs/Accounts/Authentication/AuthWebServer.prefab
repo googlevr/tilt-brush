@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5277329131170554394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6695854365496142808}
+  - component: {fileID: 114805078454591730}
+  - component: {fileID: 114427225275620010}
+  m_Layer: 0
+  m_Name: AuthWebServer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6695854365496142808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277329131170554394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114805078454591730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277329131170554394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c7a56c147df8343b25d47f576d4a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PathPrefix: /login
+  m_SourceFilesPath: Support\Html\Authentication
+  m_DestinationAssetPath: Assets\Prefabs\Accounts\Authentication
+  m_Entries:
+  - Asset: {fileID: 4900000, guid: 46fca38ff22c159498d1b8acc67e4228, type: 3}
+    Path: ReplaceHeadset.html
+    Binary: 0
+    ContentType: text/html
+  - Asset: {fileID: 4900000, guid: a7b2253f60f868a47bc7b55abecbd18d, type: 3}
+    Path: ReplaceHeadsetMobile.html
+    Binary: 0
+    ContentType: text/html
+  - Asset: {fileID: 4900000, guid: df3ebf206d50da34489f19036e8a33dc, type: 3}
+    Path: TiltasaurusHMDOn.png
+    Binary: 1
+    ContentType: image/png
+  - Asset: {fileID: 4900000, guid: 7cdc6fe5fa1fae944936e9a9a58c2bcf, type: 3}
+    Path: TiltBrush_FavIcon.png
+    Binary: 1
+    ContentType: image/png
+--- !u!114 &114427225275620010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277329131170554394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa501e3d31099a4a886be157fd0e10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

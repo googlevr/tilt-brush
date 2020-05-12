@@ -1,0 +1,961 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>USD.NET</name>
+    </assembly>
+    <members>
+        <member name="T:USD.NET.RangeIterator">
+            <summary>
+            Convenience class to convert a UsdPrimRange into something easily enumerable. Note that
+            UsdPrimRange returns an instance of this class to implement IEnumerable.
+            </summary>
+        </member>
+        <member name="M:USD.NET.RangeIterator.PruneChildren">
+            <summary>
+            Prunes all childeren below the current prim.
+            https://github.com/PixarAnimationStudios/USD/blob/master/pxr/usd/lib/usd/primRange.h#L162
+            </summary>
+        </member>
+        <member name="M:USD.NET.RangeIterator.IsPostVisit">
+            <summary>
+            Indicates if this is the post-visit pass of a pre- and post-traversal iteration.
+            https://github.com/PixarAnimationStudios/USD/blob/master/pxr/usd/lib/usd/primRange.h#L157
+            </summary>
+        </member>
+        <member name="T:USD.NET.SubtreeIterator">
+            <summary>
+            Convenience class to convert a UsdPrimSubtreeRange into something easily enumerable. Note that
+            UsdPrimSubtreeRange returns an instance of this class to implement IEnumerable.
+            </summary>
+        </member>
+        <member name="T:USD.NET.SiblingIterator">
+            <summary>
+            Convenience class to convert a UsdPrimSiblingRange into something easily enumerable. Note that
+            UsdPrimSiblingRange returns an instance of this class to implement IEnumerable.
+            </summary>
+        </member>
+        <member name="T:USD.NET.ArrayUnpool">
+            <summary>
+            An non-pooled array allocator, to avoid forking logic when pooling is not desired.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Relationship">
+            <summary>
+            A UsdRelationship allows a prim to target another object in the scenegraph.
+            The semantic meaning of the relationship is defined by the schema, for example UsdShade
+            uses a "material:binding" relationship to indicate the material which should be bound to
+            the prim declaring the attribute.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Relationship.GetTarget(System.Int32)">
+            <summary>
+            Returns the i_th target or null if fewer than i+1 targets are specified.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Relationship.GetOnlyTarget">
+            <summary>
+            Returns the first target path. If there is not exactly one target path, an exception is
+            thrown.
+            </summary>
+        </member>
+        <member name="T:USD.NET.IntrinsicTypeConverter">
+            <summary>
+            Converts intrinsic C# types to/from USD. This is serializaiton infrastructure and should only
+            be needed when dealing directly with the low level USD API.
+            </summary>
+        </member>
+        <member name="M:USD.NET.IntrinsicTypeConverter.JoinNamespace(System.String,System.String)">
+            <summary>
+            Constructs namespaced string given two namespace element, if either element is omitted,
+            the single namespace is returned with no divider. The result is cacehd.
+            </summary>
+            <returns>Returns the stringified namespace, never null.</returns>
+            <example>JoinNamespace("foo", "bar") returns "foo:bar"</example>
+            <example>JoinNamespace("foo", null) returns "foo"</example>
+        </member>
+        <member name="T:USD.NET.ArrayPool">
+            <summary>
+            A pooled memory allocator. May be used optionally during serializaiton to avoid generation of
+            garbage.
+            </summary>
+        </member>
+        <member name="M:USD.NET.ArrayPool.Malloc``1(System.UInt32)">
+            <summary>
+            Allocates a new array of type T, returning ownership to the caller. Uses an existing array
+            from the pool if available.
+            </summary>
+            <typeparam name="T">The element type of the array</typeparam>
+            <param name="size">The number of elements to allocate in the array</param>
+            <returns></returns>
+        </member>
+        <member name="M:USD.NET.ArrayPool.MallocHandle(System.Type)">
+            <summary>
+            Allocates a new object of the specified type, transferring ownership to the caller. If an
+            an existing object is available in the pool, it will be reused.
+            </summary>
+            <remarks>
+            This is primarily intended for use with wrapped, unmanaged objects (hence the name "handle")
+            which tend to have a fixed overhead for every object instance.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.ArrayPool.FreeHandle``1(``0)">
+            <summary>
+            Adds the given handle to the allocator pool. Note that the handle need not have been
+            allocated via malloc.
+            </summary>
+            <remarks>
+            Note that objects returned to the allocator pool will not be garbage collected and will not
+            be disposed.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.ArrayPool.FreeHandle(System.Type,System.Object)">
+            <summary>
+            Adds the given handle to the allocator pool. Note that the handle need not have been
+            allocated via malloc.
+            </summary>
+            <remarks>
+            Note that objects returned to the allocator pool will not be garbage collected and will not
+            be disposed.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.ArrayPool.Free(System.Type,System.UInt32,System.Array)">
+            <summary>
+            Adds the given array to the allocator pool. Note that the array need not have been
+            allocated via malloc.
+            </summary>
+            <remarks>
+            Note that objects returned to the allocator pool will not be garbage collected and will not
+            be disposed.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.PathCollection">
+            <summary>
+            Provides custom enumeration over an SdfPathVector to avoid generation of garbage.
+            </summary>
+        </member>
+        <member name="T:USD.NET.PathEnumerator">
+            <summary>
+            Enumerates all SdfPaths in an SdfPathVector without generating garbage from temp SdfPaths.
+            </summary>
+        </member>
+        <member name="T:USD.NET.PooledArray`1">
+            <summary>
+            Decorator to hold pooled arrays and follow the RIAA pattern.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Reflect">
+            <summary>
+            Helper class for reflection operations.
+            
+            Types are not expected to change at runtime, so reflection queries are cached internally as
+            a performance optimization.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.GetCachedProperties(System.Type)">
+            <summary>
+            Constructs and caches a vector of PropertyInfo for reflection. The caching of these values
+            avoides garbage and any associated overhead with retrieving and filtering the property list.
+            </summary>
+            <param name="type">The type from which to extract PeropertyInfo.</param>
+            <returns>A vector of PeropertyInfo for the given type.</returns>
+        </member>
+        <member name="M:USD.NET.Reflect.GetCachedFields(System.Type)">
+            <summary>
+            Constructs and caches a vector of FieldInfo for reflection. The caching of these values
+            avoides garbage and any associated overhead with retrieving and filtering the field list.
+            </summary>
+            <param name="type">The type from which to extract FieldInfo.</param>
+            <returns>A vector of FieldInfo for the given type.</returns>
+        </member>
+        <member name="M:USD.NET.Reflect.GetVariability(System.Reflection.MemberInfo)">
+            <summary>
+            Indicates the variability of the member. Varying indicates the member may store multiple
+            values over time, Uniform indicates the member has one value for all time.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsPrimvar(System.Reflection.MemberInfo)">
+            <summary>
+            Primvars in USD (and RenderMan) are a generalization of vertex attributes. The can be 
+            constant (one value per object), per vertex, per face, or per-vertex-per-face. The use
+            here is limited to per vertex only.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.GetPrimvarElementSize(System.Reflection.MemberInfo)">
+            <summary>
+            When this member info represents a Primvar (see IsPrimvar), the element size indicates the
+            number of array elements to be aggregated per element on the primitive surface.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsFusedDisplayColor(System.Reflection.MemberInfo)">
+            <summary>
+            Indicates DisplayColor and DisplayOpacity have been fused into a single object in Unity.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsFusedTransform(System.Reflection.MemberInfo)">
+            <summary>
+            Indicates that the attribute represents a USD transform and may consist of many component
+            T/S/R operations, which should be automatically collapsed into a single matrix.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsCustomData(System.Reflection.MemberInfo)">
+            <summary>
+            Returns true if the MemberInfo is intened to be serialized as metadata in the custom data
+            field.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsRelationship(System.Reflection.MemberInfo)">
+            <summary>
+            Returns true if the MemberInfo is inteneded to represent a relationship.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsAssetPath(System.Reflection.MemberInfo)">
+            <summary>
+            Returns true if the MemberInfo is inteneded to represent an SdfAssetPath.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.IsNonSerialized(System.Reflection.MemberInfo)">
+            <summary>
+            Indicates the member should not be serialized.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.GetNamespace(System.Reflection.MemberInfo)">
+            <summary>
+            In USD, properties can have one or more namespaces, which manifest as a colon delimited
+            prefix, such as foo:bar:points, where "foo:bar" is the namespace and "points is the
+            property name.
+            
+            Serialization uses namespaces to in-line structures and containers, for example when
+            serializing a Dictionary, 
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.GetSchema(System.Type)">
+            <summary>
+            Returns the USD Schema associated with the given classType.
+            </summary>
+            <param name="classType">The object type to be serialized</param>
+            <returns>The name of the USD schema.</returns>
+        </member>
+        <member name="M:USD.NET.Reflect.ExtractArrays``1(``0)">
+            <summary>
+            Visits all properties and fields which are an Array type and returns the held array value,
+            if not null. Sets each extracted value to null on the object.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Reflect.InfoEntry">
+            <summary>
+            A struct of relevant metadata synthesized from member attributes.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Reflect.PrimInfoEntry">
+            <summary>
+            A struct of relevant UsdPrim metadata synthesized from attributes.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.GetCacheEntry(System.Reflection.MemberInfo)">
+            <summary>
+            Returns the cache entry for the given member info. If the cache entry doesn't exist,
+            the entry for the info is populated on demand.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Reflect.GetPrimCacheEntry(System.Type)">
+            <summary>
+            Returns the Prim cache entry for the given type. If the cache entry doesn't exist,
+            the entry for the info is populated on demand.
+            </summary>
+        </member>
+        <member name="T:USD.NET.UsdVariabilityAttribute">
+            <summary>
+            Declares the variability of the UsdAttribute that will be generated.
+            </summary>
+            
+            <remarks>
+            A setting the value to Variability.Uniform indicates the UsdAttribute may not have
+            time samples and can only hold a single value. By default, UsdAttributes will be
+            declared as Varying unless writing to a scheme which previously declared the attribute to be
+            Uniform.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.UsdNamespaceAttribute">
+            <summary>
+            Declares the USD namespace that should be prepended to this attribute.
+            </summary>
+            
+            <remarks>
+            For example setting the namespace to "foo" on an attribute called "bar" will generate a USD
+            attribute named foo:bar. Namespaces will be nested when multiple namespaces apply to a single
+            attribute, e.g. foo:bar:baz.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.UsdSchemaAttribute">
+            <summary>
+            Declares the USD schema to use when serializing an object.
+            </summary>
+            
+            <remarks>
+            For example, any C# object may be serialized as a UsdGeomMesh by declaring the schema to be
+            "Mesh". The C++ class name or any registered aliases may be used, e.g. UsdSchema("Mesh") and
+            UsdSchema("UsdGeomMesh") are equivalent.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.UsdRelationshipAttribute">
+            <summary>
+            Declares a string/string[] valued member to be serialized as a UsdRelationship.
+            </summary>
+            <remarks>
+            Relationships may have multiple targets; when only a single target is valid, the member should
+            be declared with type string, since there can only be one value. Similarly, when the
+            relationship may have multiple values, the corresponding type is string[].
+            </remarks>
+        </member>
+        <member name="T:USD.NET.UsdAssetPathAttribute">
+            <summary>
+            Declares a string value member to be serialized as an SdfAssetPath.
+            </summary>
+        </member>
+        <member name="T:USD.NET.VertexDataAttribute">
+            <summary>
+            Declares the attribute as vertex data which can be made available to the shader at render
+            time and enables repteated value compression.
+            </summary>
+            
+            <remarks>
+            This declaration is not needed for round-trip C# serialization, however it formats the
+            USD file so that it can be rendered outside of C#.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.FusedDisplayColorAttribute">
+            <summary>
+            Fused displayColor and displayOpacity.
+            </summary>
+            <remarks>
+            This special case is entirely for performance. The cost of iterating over display color and 
+            opacity in C# to fuse them back into a single vector is too great (138ms in one test), this
+            avoids that cost.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.FusedTransformAttribute">
+            <summary>
+            Indicates that this is a USD transform should should be fused into a single GfMatrix4d.
+            </summary>
+            <remarks>
+            This special case is for performance and simplicity. Transforms in USD can be composed of an
+            arbitrary number of component (translate/rotate/scale) operations, however this API is
+            designed for ease of use and performance. In this case, all component operations are
+            collapsed into a single 4x4 matrix.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.CustomDataAttribute">
+            <summary>
+            Declares the attribute should be stored as metadata under the "customData" key.
+            </summary>
+        </member>
+        <member name="T:USD.NET.SampleBase">
+            <summary>
+            The base class for all automatically serializable classes.
+            </summary>
+        </member>
+        <member name="M:USD.NET.SampleBase.Free">
+            <summary>
+            Visits all arrays held by this object and returns them to the associated allocator.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Connectable">
+            <summary>
+            An interface for type-erased access to a Connectable T.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Connectable`1">
+            <summary>
+            A USD attribute which can have a value or be connected to another attribute of matching type.
+            Conceptually, the targeted attribute value will flow into this attribute. The default value
+            is the value which will be specified when the attribute is not connected or the connection is
+            broken. The default value is only stored when the Connectable object is serialized and may be
+            time varying or uniform.
+            </summary>
+            <typeparam name="T">The underlying type held by the attribute.</typeparam>
+        </member>
+        <member name="M:USD.NET.Connectable`1.IsConnected">
+            <summary>
+            Returns true when a path has been specified, but does not check is this is a valid path in
+            the scene.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Connectable`1.GetValueType">
+            <summary>
+            Returns the C# type of this connectable object.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Connectable`1.GetValue">
+            <summary>
+            Gets the local value of the attribute, for use when no connection is established.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Connectable`1.SetValue(System.Object)">
+            <summary>
+            Sets the local value of the attribute, for use when no connection is established.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Connectable`1.GetConnectedPath">
+            <summary>
+            Gets the connection path, which may or may not be a valid connection.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Connectable`1.SetConnectedPath(System.String)">
+            <summary>
+            Connects this attribute to the targeted path.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Connectable`1.SetConnectedPath(System.String,System.String)">
+            <summary>
+            Connects this attribute to the targeted attribute. Note that the path and attribute must
+            form a valid SdfPath.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Scene">
+            <summary>
+            A Scene object represents a UsdStage and enables USD serialization and deserialization.
+            </summary>
+        </member>
+        <member name="T:USD.NET.Scene.InterpolationMode">
+            <summary>
+            Indicates how to interpolate values when requesting a value which lies between two key
+            frames.
+            </summary>
+            <remarks>
+            Held indicates each keyframe should be held (no interpolation) until the next
+            key frame is reached; linear indicates the two bracketing key frames should be linearly
+            interpolated.
+            </remarks>
+        </member>
+        <member name="T:USD.NET.Scene.UpAxes">
+            <summary>
+            Indicates the up-axis of the world contained in this cache.
+            </summary>
+            <remarks>
+            These values are defined by USD, thus are limited to Y and Z.
+            </remarks>
+        </member>
+        <member name="P:USD.NET.Scene.Stage">
+            <summary>
+            Gets the underlying UsdStage for this scene, if available.
+            </summary>
+            <remarks>
+            This is exposed only for low level, direct access to the underlying stage, not intended
+            for common use.
+            </remarks>
+        </member>
+        <member name="F:USD.NET.Scene.m_time">
+            <summary>
+            The time at which key frames should be read and written.
+            </summary>
+            <remarks>
+            Setting this value to null indicates values should be read from the "default" time
+            (e.g. to store a rest pose, etc.)
+            </remarks>
+        </member>
+        <member name="P:USD.NET.Scene.StartTime">
+            <summary>
+            The beginning bracket at which animation begins, the time of the first key frame.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.EndTime">
+            <summary>
+            The closing bracket at which animation ends, the time of the last key frame.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.FrameRate">
+            <summary>
+            The rate at which the cache should playback, in frames per second.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.UpAxis">
+            <summary>
+            The Up-axis of the world contained in the cache.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.AllPaths">
+            <summary>
+            A list of all Prim paths present in the scene.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.AllMeshes">
+            <summary>
+            A list of all mesh paths in the scene.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.AllXforms">
+            <summary>
+            A list of all Xform paths in the scene.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.Create(System.String)">
+            <summary>
+            Constructs a new scene at the given file path. If the file exists, it is erased, if
+            the file is in use or cannot be created, an exception is thrown.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.Create">
+            <summary>
+            Constructs a new scene in memory, not backed by a file.
+            </summary>
+            
+            <remarks>
+            Note that SaveAs can be used to write memory to disk.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Scene.Open(System.String)">
+            <summary>
+            Opens an existing USD file for reading.
+            An exception is thrown if the filePath cannot be opened.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.GetPrimAtPath(System.String)">
+            <summary>
+            Gets the UsdPrim at the given path, retuns null if the UsdPrim is invalid.
+            Therefore, if the return value is not null, IsValid need not be checked.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.GetAttributeAtPath(System.String)">
+            <summary>
+            Gets the UsdAttribute at the given path, retuns null if the UsdAttribute is invalid.
+            Therefore, if the return value is not null, IsValid need not be checked.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.GetRelationshipAtPath(System.String)">
+            <summary>
+            Gets the UsdRelationship at the given path, retuns null if the UsdRelationship is invalid.
+            Therefore, if the return value is not null, IsValid need not be checked.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.Close">
+            <summary>
+            Release any open files and stop asynchronous execution.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.SetInterpolation(USD.NET.Scene.InterpolationMode)">
+            <summary>
+            Sets the active interpolation mode.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.ComputeKeyFrames(System.String,System.String)">
+            <summary>
+            Retuns a dictionary of paths and the times at which each path has a keyframe for the given
+            attribute. Only paths rooted under the given rootPath are considered.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.WaitForWrites">
+            <summary>
+            Wait until all asynchronous writes complete.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.WaitForReads">
+            <summary>
+            Wait until all asynchronous reads complete.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.Save">
+            <summary>
+            Saves the current scene if backed by a file, throws an exception if this scene is in
+            memory only.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.SaveAs(System.String)">
+            <summary>
+            Write the root layer of the current scene to the given file path, preserving all references.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.FlattenAs(System.String)">
+            <summary>
+            Writes the current scene to the given file path, flattening all references.
+            </summary>
+            
+            <remarks>
+            The resulting scene will have no external file references and all referenced data will be
+            inlined.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Scene.Read``1(System.String,``0)">
+            <summary>
+            Reads and deserializes an object of type T at the given path in the current USD scene.
+            </summary>
+            
+            <remarks>
+            If reading fails, an excpetion is thrown and the object may be left in an incomplete state.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Scene.Read``1(System.String,System.Reflection.FieldInfo,``0@)">
+            <summary>
+            Reads a single field of a sample, attribute ecorations are respected.
+            </summary>
+            <remarks>
+            Note only one level of nesting is supported, e.g. if a sample has a nested structure, only
+            immediate child structures of the root may be deserialized.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Scene.Read``1(System.String,System.Reflection.PropertyInfo,``0@)">
+            <summary>
+            Reads a single property of a sample, attribute decorations are respected.
+            </summary>
+            <remarks>
+            Note only one level of nesting is supported, e.g. if a sample has a nested structure, only
+            immediate child structures of the root may be deserialized.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Scene.Write``1(System.String,``0)">
+            <summary>
+            Writes an object of type T to the given path in the current USD scene.
+            </summary>
+            
+            <remarks>
+            If writing fails, the scene description may be partially written.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.Scene.ToString">
+            <summary>
+            Returns the entire scene serialized as a string. Expensive for large scenes.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.GetSdfPath(System.String)">
+            <summary>
+            Translates a string path to an SdfPath, caching the result to avoid churn.
+            </summary>
+        </member>
+        <member name="M:USD.NET.Scene.#ctor(pxr.UsdStage)">
+            <summary>
+            Constructor declared private to force access through the static factories.
+            </summary>
+        </member>
+        <member name="P:USD.NET.Scene.TimeCode">
+            <summary>
+            Returns the current Time value as a UsdTimeCode object, converting null to Default time
+            if needed.
+            </summary>
+        </member>
+        <member name="T:USD.NET.TokenCache">
+            <summary>
+            USD TfTokens are expensive to create and destroy, both in C# and in C++. This class provides a
+            thread safe caching mechanism to avoid TfToken churn.
+            </summary>
+        </member>
+        <member name="M:USD.NET.TokenCache.GetCache(System.String,System.String)">
+            <summary>
+            Internal helper function to access the token cache.
+            </summary>
+            <param name="ns">The namespace prefix for the token, may be null.</param>
+            <param name="token">The string to tokenize, may be null.</param>
+            <returns>A TfToken holding the namespaced token string.</returns>
+            <example>GetCache("foo:bar", "baz") returns TfToken("foo:bar:baz")</example>
+        </member>
+        <member name="P:USD.NET.TokenCache.Item(System.String)">
+            <summary>
+            Returns a TfToken representing the given string. The result is cached for future use.
+            </summary>
+        </member>
+        <member name="P:USD.NET.TokenCache.Item(System.String,System.String)">
+            <summary>
+            Returns a Tftoken representing the given namespace and string. The result is cached for
+            future use.
+            </summary>
+        </member>
+        <member name="T:USD.NET.DefaultConversions">
+            Conversions discovered automatically via reflection on VtValue.
+        </member>
+        <member name="M:USD.NET.TypeBinder.BindArrayType``1(System.Type,System.Type,pxr.SdfValueTypeName,System.String)">
+            <summary>
+            Binds the specified C# type to the given USD array and scene description (Sdf) types,
+            looking for ConverterT.ToVtArray(csType) and ConverterT.FromVtArray(vtArrayType).
+            </summary>
+            
+            <typeparam name="ConverterT">
+            The C# class type providing type conversion rules ToVtArray and FromVtArray.
+            </typeparam>
+            
+            <param name="csType">The C# type to be mapped to USD</param>
+            <param name="vtArrayType">The USD C++ value type (Vt)</param>
+            <param name="sdfName">The USD scene description (Sdf) type</param>
+            
+            TODO: The C++ type can be inferred from the Sdf type, so vtArrayType is not needed.
+            
+        </member>
+        <member name="T:USD.NET.UsdIo">
+            <summary>
+            The USD serialization run-time. This class leverages the ArrayAllocator, TypeBinder,
+            TokenCache, ReflectionCache and SampleBase to perform efficient reflection based serialization
+            of arbitrary C# data types to and from USD.
+            </summary>
+        </member>
+        <member name="P:USD.NET.UsdIo.Bindings">
+            <summary>
+            Provides access to the system TypeBinder. Only one binder may be active and the binder can
+            be used to add support for new custom data types.
+            </summary>
+        </member>
+        <member name="M:USD.NET.UsdIo.Serialize``1(``0,pxr.UsdPrim,pxr.UsdTimeCode,System.String)">
+            <summary>
+            Serializes an arbitrary object descending from SampleBase from C# to USD.
+            </summary>
+            <typeparam name="T">Any type which inherits from SampleBase</typeparam>
+            <param name="t">The object/data to be serialized.</param>
+            <param name="prim">The UsdPrim to which the object should be written.</param>
+            <param name="usdTime">The tiem at which key frames should be created.</param>
+            <param name="usdNamespace">The USD namespace (if any) of the object.</param>
+        </member>
+        <member name="M:USD.NET.UsdIo.Deserialize(System.Object@,pxr.UsdPrim,pxr.UsdTimeCode,System.Reflection.FieldInfo,System.String)">
+            <summary>
+            Deserialize a single field to a single value.
+            </summary>
+            <param name="fieldValue">The referenced value of the field to populate.</param>
+            <param name="prim">The USD prim from which to read the value.</param>
+            <param name="usdTime">The time at which to sample key frames.</param>
+            <param name="field">The field to deserialize.</param>
+            <param name="usdNamespace">The USD namespace, if any.</param>
+        </member>
+        <member name="M:USD.NET.UsdIo.Deserialize(System.Object@,pxr.UsdPrim,pxr.UsdTimeCode,System.Reflection.PropertyInfo,System.String)">
+            <summary>
+            Deserialize a single property to a single value.
+            </summary>
+            <param name="propValue">The referenced value of the property to populate.</param>
+            <param name="prim">The USD prim from which to read the value.</param>
+            <param name="usdTime">The time at which to sample key frames.</param>
+            <param name="field">The field to deserialize.</param>
+            <param name="usdNamespace">The USD namespace, if any.</param>
+        </member>
+        <member name="M:USD.NET.UsdIo.Deserialize``1(``0,pxr.UsdPrim,pxr.UsdTimeCode,System.String)">
+            <summary>
+            Deserializes an arbitrary object descending from SampleBase from USD to C#.
+            </summary>
+            <typeparam name="T">The type to serialize, descending from SampleBase</typeparam>
+            <param name="t">The object to to populate.</param>
+            <param name="prim">The USD prim from which to read data.</param>
+            <param name="usdTime">The time at which to read key frames.</param>
+            <param name="usdNamespace">The object namespace, if any.</param>
+        </member>
+        <member name="M:USD.NET.UsdIo.WriteAttr(System.String,System.Type,System.Object,pxr.UsdTimeCode,pxr.UsdPrim,pxr.UsdGeomImageable,System.Reflection.MemberInfo,System.String,System.String)">
+            <summary>
+            Internal helper for serializing data to USD.
+            </summary>
+            <param name="attrName">The USD attribute name.</param>
+            <param name="csType">The C# type.</param>
+            <param name="csValue">The C# value.</param>
+            <param name="usdTime">The time at which to sample key frames.</param>
+            <param name="prim">The USD prim at which to write values.</param>
+            <param name="imgble">The UsdGeomImagable attrbiute, used when writing PrimVars.</param>
+            <param name="memberInfo">The field/property providing serialization metadata.</param>
+            <param name="usdNamespace">The optional USD namespace at which values live.</param>
+            <param name="srcObject">The source object name, used when remapping names.</param>
+            <returns>True on success.</returns>
+            <remarks>
+            Note that "success" in the return value does not indicate data was written, rather it
+            indicates that no unexpected states were encountered. E.g. calling WriteAttr on a field
+            marked as [NotSerialized] does not cause this method to return false, since non-serialized
+            fields are an expected state this function may encounter.
+            </remarks>
+        </member>
+        <member name="M:USD.NET.UsdIo.ReadAttr(System.String,System.Type,System.Object@,pxr.UsdTimeCode,pxr.UsdPrim,System.Reflection.MemberInfo,System.String,System.String)">
+            <summary>
+            Internal helper for reading data from USD.
+            </summary>
+            <param name="attrName">The USD attribute name.</param>
+            <param name="csType">The C# type.</param>
+            <param name="csValue">The C# value to populate.</param>
+            <param name="usdTime">The time at which to sample key frames.</param>
+            <param name="prim">The USD prim from which to read data.</param>
+            <param name="memberInfo">The field/property providing serialization metadata.</param>
+            <param name="usdNamespace">The optional USD namespace at which values live.</param>
+            <param name="srcObject">The source object name, used when remapping names.</param>
+            <returns>True on success.</returns>
+            <remarks>
+            Note that "success" in the return value does not indicate data was read, rather it
+            indicates that no unexpected states were encountered. E.g. calling ReadAttr on a field
+            with no value stored in USD will not return false, since that is not considered a failure
+            state.
+            </remarks>
+        </member>
+        <member name="T:pxr.GfVec3dVector.GfVec3dVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.GfVec4fVector.GfVec4fVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.JsObject.JsObjectEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.JsObjectVector.JsObjectVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.TfTokenVector.TfTokenVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.TfTypeVector.TfTypeVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.SdfLayerHandleVector.SdfLayerHandleVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.SdfLayerOffsetVector.SdfLayerOffsetVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.SdfNamespaceEditDetailVector.SdfNamespaceEditDetailVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.SdfNamespaceEditVector.SdfNamespaceEditVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.SdfPathVector.SdfPathVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomBasisCurvesComputeInterpolationInfo.UsdGeomBasisCurvesComputeInterpolationInfoEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomBoolVector.UsdGeomBoolVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomCollectionAPIVector.UsdGeomCollectionAPIVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomConstraintTargetVector.UsdGeomConstraintTargetVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomFaceSetAPIVector.UsdGeomFaceSetAPIVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomLongVector.UsdGeomLongVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomPrimvarVector.UsdGeomPrimvarVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdGeomXformOpVector.UsdGeomXformOpVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdShadeShaderVector.UsdShadeShaderVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdAttributeVector.UsdAttributeVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdPrimVector.UsdPrimVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdPropertyVector.UsdPropertyVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.UsdRelationshipVector.UsdRelationshipVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.StdDoubleVector.StdDoubleVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.StdDoubleVectorVector.StdDoubleVectorVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.StdFloatVector.StdFloatVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.StdFloatVectorVector.StdFloatVectorVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.StdIntVector.StdIntVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.StdStringVector.StdStringVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+        <member name="T:pxr.TaskCallbackVector.TaskCallbackVectorEnumerator">
+            Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+            whenever the collection is modified. This has been done for changes in the size of the
+            collection but not when one of the elements of the collection is modified as it is a bit
+            tricky to detect unmanaged code that modifies the collection under our feet.
+        </member>
+    </members>
+</doc>

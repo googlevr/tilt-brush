@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff8d00fae9f37c488530fd01c202d0f, type: 3}
+  m_Name: Pistachio
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: a9bc2bc8-6d86-4cda-82a9-283e0f3977ac
+  m_Description: Pistachio
+  m_IconTexture: {fileID: 2800000, guid: 2a89e7e499fedeb4ea79b6750b8bb861, type: 3}
+  m_RenderSettings:
+    m_FogEnabled: 1
+    m_FogColor: {r: 0.2784314, g: 0.5686275, b: 0.45882353, a: 1}
+    m_FogDensity: 0.015
+    m_FogStartDistance: 0
+    m_FogEndDistance: 0
+    m_ClearColor: {r: 0.9558824, g: 0.6708847, b: 0.51308393, a: 1}
+    m_AmbientColor: {r: 0.610186, g: 0.83823526, b: 0.75194633, a: 1}
+    m_SkyboxExposure: 1
+    m_SkyboxTint: {r: 0.797, g: 0.616, b: 0.755, a: 1}
+    m_EnvironmentPrefab: EnvironmentPrefabs/AmbientDustDim
+    m_EnvironmentReverbZonePrefab: EnvironmentAudio/ReverbZone_Room
+    m_SkyboxCubemap: {fileID: 0}
+    m_ReflectionCubemap: {fileID: 8900000, guid: 05c49abd569134d4bbc8b50f93eb37ee,
+      type: 3}
+    m_ReflectionIntensity: 0.3
+  m_Lights:
+  - m_Color: {r: 0.41963667, g: 0.4852941, b: 0.34256053, a: 1}
+    m_Intensity: 0.5
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0.57735026, y: -0.57735026, z: 0.5773503, w: 0}
+    m_Type: 1
+    m_Range: 0
+    m_SpotAngle: 0
+    m_ShadowsEnabled: 1
+  - m_Color: {r: 0.97794116, g: 0.506417, b: 0.43863538, a: 1}
+    m_Intensity: 1
+    m_Position: {x: -0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 0}
+    m_Type: 1
+    m_Range: 0
+    m_SpotAngle: 0
+    m_ShadowsEnabled: 0
+  m_TeleportBoundsHalfWidth: 50
+  m_ControllerXRayHeight: -1e+9
+  m_WidgetHome: {x: 0, y: 0, z: 0}
+  m_SkyboxColorA: {r: 1, g: 0.5176471, b: 0.3529412, a: 1}
+  m_SkyboxColorB: {r: 0.45882353, g: 0.78039217, b: 0.5529412, a: 1}

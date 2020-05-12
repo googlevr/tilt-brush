@@ -1,0 +1,15 @@
+{
+  "app_key": "application.generated.unity.steamvr.exe",
+  "bindings": {
+    "/actions/mixedreality": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    }
+  },
+  "controller_type": "vive_tracker_camera",
+  "description": "Default bindings for Tilt Brush v20",
+  "name": "Tilt Brush - Vive Tracker for Camera"
+}

@@ -1,0 +1,14 @@
+newmtl EyesSG
+illum 4
+Kd 1 1 1
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Andy.jpg
+Ni 1.00
+newmtl lambert2SG 
+illum 4
+Kd .643 .776 .224
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Andy.jpg
+Ni 1.00

@@ -1,0 +1,32 @@
+﻿// Copyright 2020 The Tilt Brush Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#pragma kernel CopyToBuffer
+
+#include "Assets/Shaders/Include/PackInt.cginc"
+
+RWStructuredBuffer<uint> OutputBuffer;
+Texture2D<float4> InputTexture;
+
+[numthreads(4,4,1)]
+void CopyToBuffer (uint3 id : SV_DispatchThreadID)
+{
+  // OutputBuffer is a 1D array of the exact size of InputTexture, which is 2D
+  // The 2D height is required to convert from a 2D index to a 1D index.
+  uint width;
+  uint height;
+  InputTexture.GetDimensions(width, height);
+  uint2 values = UnpackRgba8ToUint16x2(InputTexture[id.xy]);  // BatchId, triangle id
+  OutputBuffer[id.y * height + id.x] = (values.x << 16) | values.y;
+}

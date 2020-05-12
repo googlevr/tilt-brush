@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b2ac88638c5c41a0a0681f70d2512, type: 3}
+  m_Name: SplatterSingleSided
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: 7a1c8107-50c5-4b70-9a39-421576d6617e
+  m_DurableName: Splatter
+  m_CreationVersion: 0.0
+  m_ShaderVersion: 10.0
+  m_BrushPrefab: {fileID: 100000, guid: 4a3d323f63077ac479f379ed7692a1d4, type: 3}
+  m_Nondeterministic: 1
+  m_Supersedes: {fileID: 0}
+  m_LooksIdentical: 0
+  m_ButtonTexture: {fileID: 2800000, guid: f22b8b31df5ec524baf9042a3a2c2041, type: 3}
+  m_Description: Splatter
+  m_DescriptionExtra: 
+  m_BrushAudioLayers:
+  - {fileID: 8300000, guid: 879acab3afe5e5248a964d6e3c56cadb, type: 3}
+  - {fileID: 8300000, guid: 7234337f58b9e314286ef170f6a28fb1, type: 3}
+  - {fileID: 8300000, guid: 1cd6e40a9b1960f4f902b61e9e815d63, type: 3}
+  m_BrushAudioBasePitch: 1.2
+  m_BrushAudioMaxPitchShift: -0.05
+  m_BrushAudioMaxVolume: 0.9
+  m_BrushVolumeUpSpeed: 0.8
+  m_BrushVolumeDownSpeed: 1.5
+  m_VolumeVelocityRangeMultiplier: 2
+  m_AudioReactive: 0
+  m_ButtonAudio: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a497a4d54e6f9224496adcc25b2c6aac, type: 2}
+  m_TextureAtlasV: 4
+  m_TileRate: 0.2
+  m_UseBloomSwatchOnColorPicker: 0
+  m_BrushSizeRange: {x: 0.1, y: 0.5}
+  m_PressureSizeRange: {x: 0.2, y: 1}
+  m_SizeVariance: 0.5
+  m_PreviewPressureSizeMin: 0.001
+  m_Opacity: 1
+  m_PressureOpacityRange: {x: 1, y: 1}
+  m_ColorLuminanceMin: 0
+  m_ColorSaturationMax: 1
+  m_ParticleSpeed: 0
+  m_ParticleRate: 1
+  m_ParticleInitialRotationRange: 0
+  m_RandomizeAlpha: 0
+  m_SprayRateMultiplier: 3
+  m_RotationVariance: 180
+  m_PositionVariance: 0.05
+  m_SizeRatio: {x: 1, y: 1}
+  m_M11Compatibility: 0
+  m_SolidMinLengthMeters_PS: 0.002
+  m_TubeStoreRadiusInTexcoord0Z: 0
+  m_RenderBackfaces: 1
+  m_BackIsInvisible: 0
+  m_BackfaceHueShift: 0
+  m_BoundsPadding: 0
+  m_PlayBackAtStrokeGranularity: 0
+  m_BlendMode: 1
+  m_EmissiveFactor: 0
+  m_AllowExport: 1
+  m_SupportsSimplification: 1
+  m_HeadMinPoints: 1
+  m_HeadPointStep: 1
+  m_TailMinPoints: 1
+  m_TailPointStep: 1
+  m_MiddlePointStep: 0

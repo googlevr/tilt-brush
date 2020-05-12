@@ -1,0 +1,49 @@
+newmtl bakedSG
+illum 4
+Kd 0.00 0.00 0.00
+map_Kd Tiltasaurus.jpg
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl bakedSG1
+illum 4
+Kd 2.00 2.00 2.00
+map_Kd Tiltasaurus.jpg
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl bakedSG2
+illum 4
+Kd 0.69 0.44 0.07
+map_Kd Tiltasaurus.jpg
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl bakedSG3
+illum 4
+Kd 0.64 0.78 0.22
+map_Kd Tiltasaurus.jpg
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl bakedSG4
+illum 4
+Kd 0.75 0.24 0.23
+map_Kd Tiltasaurus.jpg
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl bakedSG8
+illum 4
+Kd 0.00 0.00 0.00
+map_Kd Tiltasaurus.jpg
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl bakedSG9
+illum 4
+Kd 0.26 0.26 0.26
+map_Kd Tiltasaurus.jpg	
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

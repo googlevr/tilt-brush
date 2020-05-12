@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b2ac88638c5c41a0a0681f70d2512, type: 3}
+  m_Name: WaveformParticles
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: 6a1cf9f9-032c-45ec-9b6e-a6680bee30f7
+  m_DurableName: WaveformParticles
+  m_CreationVersion: 
+  m_ShaderVersion: 10.0
+  m_BrushPrefab: {fileID: 100000, guid: 8f13dc3dd8fedc54299512b3a339bfdb, type: 3}
+  m_Nondeterministic: 1
+  m_Supersedes: {fileID: 0}
+  m_LooksIdentical: 0
+  m_ButtonTexture: {fileID: 2800000, guid: 3e063230f3451664a8ce497d5fce1da9, type: 3}
+  m_Description: Waveform Particles
+  m_DescriptionExtra: 
+  m_BrushAudioLayers: []
+  m_BrushAudioBasePitch: 1
+  m_BrushAudioMaxPitchShift: 0
+  m_BrushAudioMaxVolume: 1
+  m_BrushVolumeUpSpeed: 4
+  m_BrushVolumeDownSpeed: 4
+  m_VolumeVelocityRangeMultiplier: 1
+  m_AudioReactive: 1
+  m_ButtonAudio: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a281b8caca2469e4dba7680667e77366, type: 2}
+  m_TextureAtlasV: 1
+  m_TileRate: 1
+  m_UseBloomSwatchOnColorPicker: 0
+  m_BrushSizeRange: {x: 0.1, y: 0.1}
+  m_PressureSizeRange: {x: 0.1, y: 1}
+  m_SizeVariance: 0
+  m_PreviewPressureSizeMin: 0.001
+  m_Opacity: 1
+  m_PressureOpacityRange: {x: 1, y: 1}
+  m_ColorLuminanceMin: 0.04
+  m_ColorSaturationMax: 1
+  m_ParticleSpeed: 0
+  m_ParticleRate: 0
+  m_ParticleInitialRotationRange: 0
+  m_RandomizeAlpha: 0
+  m_SprayRateMultiplier: 4
+  m_RotationVariance: 0
+  m_PositionVariance: 0
+  m_SizeRatio: {x: 1, y: 1}
+  m_M11Compatibility: 0
+  m_SolidMinLengthMeters_PS: 0.002
+  m_TubeStoreRadiusInTexcoord0Z: 0
+  m_RenderBackfaces: 0
+  m_BackIsInvisible: 0
+  m_BackfaceHueShift: 0
+  m_BoundsPadding: 0
+  m_PlayBackAtStrokeGranularity: 0
+  m_BlendMode: 2
+  m_EmissiveFactor: 0
+  m_AllowExport: 1
+  m_SupportsSimplification: 1
+  m_HeadMinPoints: 1
+  m_HeadPointStep: 1
+  m_TailMinPoints: 1
+  m_TailPointStep: 1
+  m_MiddlePointStep: 0

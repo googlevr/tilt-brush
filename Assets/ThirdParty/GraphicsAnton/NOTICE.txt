@@ -1,0 +1,2 @@
+This product includes software developed by Anton Kirczenow.
+https://www.shadertoy.com/view/ldsGWX

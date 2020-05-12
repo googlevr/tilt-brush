@@ -1,0 +1,40 @@
+{
+  "EnvironmentPreset": "ab080599-e465-4a6d-8587-43bf495af68b",
+  "ThumbnailCameraTransformInRoomSpace": [ [ 5.343855, 2.04565525, 0.6044197 ], [ -0.0360228159, -0.5052547, -0.00634147273, 0.862194836 ], 1.0 ],
+  "SceneTransformInRoomSpace": [ [ 3.890662, 0.650271058, 1.37509334 ], [ 0.0, 0.7706074, 0.0, 0.6373102 ], 0.214649066 ],
+  "Authors": [
+    "Monica"
+  ],
+  "BrushIndex": [
+    "c515dad7-4393-4681-81ad-162ef052241b",
+    "759f1ebd-20cd-4720-8d41-234e0da63716",
+    "429ed64a-4e97-4466-84d3-145a861ef684",
+    "2241cd32-8ba2-48a5-9ee7-2caef7e9ed62",
+    "cf019139-d41c-4eb0-a1d0-5cf54b0a42f3",
+    "cb92b597-94ca-4255-b017-0e3f42f12f9e",
+    "02ffb866-7fb2-4d15-b761-1012cefb1360",
+    "c0012095-3ffd-4040-8ee1-fc180d346eaa",
+    "d902ed8b-d0d1-476c-a8de-878a79e3a34c",
+    "79168f10-6961-464a-8be1-57ed364c5600",
+    "d229d335-c334-495a-a801-660ac8a87360",
+    "d90c6ad8-af0f-4b54-b422-e0f92abe1b3c",
+    "6a1cf9f9-032c-45ec-9b1d-a6680bee30f7",
+    "4391aaaa-df73-4396-9e33-31e4e4930b27",
+    "f6e85de3-6dcc-4e7f-87fd-cee8c3d25d51",
+    "ad1ad437-76e2-450d-a23a-e17f8310b960",
+    "4391385a-df73-4396-9e33-31e4e4930b27",
+    "89d104cd-d012-426b-b5b3-bbaee63ac43c",
+    "70d79cca-b159-4f35-990c-f02193947fe8",
+    "6a1cf9f9-032c-45ec-9b6e-a6680bee32e9",
+    "2f212815-f4d3-c1a4-681a-feeaf9c6dc37",
+    "b2ffef01-eaaa-4ab5-aa64-95a2c4f5dbc6",
+    "700f3aa8-9a7c-2384-8b8a-ea028905dd8c",
+    "0f0ff7b2-a677-45eb-a7d6-0cd7206f4816"
+  ],
+  "SchemaVersion": 2,
+  "Mirror": {
+    "Transform": [ [ 3.890662, 3.870007, 1.37509334 ], [ 0.0, 0.7706074, 0.0, 0.6373102 ], 1.0 ]
+  },
+  "Videos": [],
+  "CameraPaths": []
+}

@@ -1,0 +1,93 @@
+buildscript {
+  repositories {
+    google()
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.2.0'
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    jcenter()
+    flatDir {
+      dirs 'libs'
+    }
+  }
+}
+
+apply plugin: 'com.android.application'
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  **DEPS**
+}
+
+android {
+  compileSdkVersion **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
+
+  defaultConfig {
+    minSdkVersion **MINSDKVERSION**
+    versionCode **VERSIONCODE**
+    versionName '**VERSIONNAME**'
+    targetSdkVersion **TARGETSDKVERSION**
+    applicationId '**APPLICATIONID**'
+    ndk {
+      abiFilters **ABIFILTERS**
+    }
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  aaptOptions {
+    noCompress '.unity3d', '.ress', '.resource', '.obb' **STREAMING_ASSETS**
+  }
+
+  **SIGN**
+
+  // For Tilt Brush:
+  // Oculus Quest does not yet support v2 or v3 signing.
+  signingConfigs {
+    release {
+      v1SigningEnabled true
+      v2SigningEnabled true
+    }
+  }
+
+  buildTypes {
+    debug {
+      minifyEnabled **MINIFY_DEBUG**
+      useProguard **PROGUARD_DEBUG**
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt' **USER_PROGUARD**
+      jniDebuggable true
+    }
+    release {
+      minifyEnabled **MINIFY_RELEASE**
+      useProguard **PROGUARD_RELEASE**
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt' **USER_PROGUARD**
+      **SIGNCONFIG**
+    }
+  }
+  **PACKAGING_OPTIONS**
+
+  bundle {
+    language {
+      enableSplit = false
+    }
+    density {
+      enableSplit = false
+    }
+    abi {
+      enableSplit = true
+    }
+  }
+}
+
+
+**SOURCE_BUILD_SETUP**

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b2ac88638c5c41a0a0681f70d2512, type: 3}
+  m_Name: Snow
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: d902ed8b-d0d1-476c-a8de-878a79e3a34c
+  m_DurableName: Snow
+  m_CreationVersion: 10.0
+  m_ShaderVersion: 10.0
+  m_BrushPrefab: {fileID: 1000012812167754, guid: 24aca64ac0ed6654f9ec99da6d0d5692,
+    type: 3}
+  m_Nondeterministic: 1
+  m_Supersedes: {fileID: 0}
+  m_LooksIdentical: 0
+  m_ButtonTexture: {fileID: 2800000, guid: 3aebc1f61692f694fafe1c4e6f8d0940, type: 3}
+  m_Description: Snow
+  m_DescriptionExtra: 
+  m_BrushAudioLayers:
+  - {fileID: 8300000, guid: cf808ac691c2d604bb7369101e35f4e6, type: 3}
+  - {fileID: 8300000, guid: 3bbbb0f182ce0514dadbff67306bfaf8, type: 3}
+  - {fileID: 8300000, guid: 0f52ad5a5a8f03a448701d587f3470de, type: 3}
+  m_BrushAudioBasePitch: 1
+  m_BrushAudioMaxPitchShift: 0
+  m_BrushAudioMaxVolume: 0.9
+  m_BrushVolumeUpSpeed: 0.7
+  m_BrushVolumeDownSpeed: 1
+  m_VolumeVelocityRangeMultiplier: 2
+  m_AudioReactive: 1
+  m_ButtonAudio: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: d9b61806f687734429fc724853fb9085, type: 2}
+  m_TextureAtlasV: 1
+  m_TileRate: 1
+  m_UseBloomSwatchOnColorPicker: 0
+  m_BrushSizeRange: {x: 0.025, y: 0.15}
+  m_PressureSizeRange: {x: 0, y: 1}
+  m_SizeVariance: 0
+  m_PreviewPressureSizeMin: 0.001
+  m_Opacity: 1
+  m_PressureOpacityRange: {x: 1, y: 1}
+  m_ColorLuminanceMin: 0.04
+  m_ColorSaturationMax: 1
+  m_ParticleSpeed: 1
+  m_ParticleRate: 0.35
+  m_ParticleInitialRotationRange: 0
+  m_RandomizeAlpha: 1
+  m_SprayRateMultiplier: 1
+  m_RotationVariance: 360
+  m_PositionVariance: 0
+  m_SizeRatio: {x: 1, y: 1}
+  m_M11Compatibility: 0
+  m_SolidMinLengthMeters_PS: 0.002
+  m_TubeStoreRadiusInTexcoord0Z: 0
+  m_RenderBackfaces: 0
+  m_BackIsInvisible: 0
+  m_BackfaceHueShift: 0
+  m_BoundsPadding: 0.31
+  m_PlayBackAtStrokeGranularity: 0
+  m_BlendMode: 2
+  m_EmissiveFactor: 0
+  m_AllowExport: 1
+  m_SupportsSimplification: 0
+  m_HeadMinPoints: 1
+  m_HeadPointStep: 1
+  m_TailMinPoints: 1
+  m_TailPointStep: 1
+  m_MiddlePointStep: 1

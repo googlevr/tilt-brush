@@ -1,0 +1,12 @@
+diff --git a/Source/fbxsdk.i b/Source/fbxsdk.i
+index 095a610..d2d7207 100644
+--- a/Source/fbxsdk.i
++++ b/Source/fbxsdk.i
+@@ -229,6 +229,7 @@
+  * templates don't seem to work in swig-3.7.12.
+  */
+ %include "fbxtemplates.i"
++%include "tilt_brush.i"
+ 
+ /***************************************************************************
+  * Ignore everything, and force the devs to allow certain items back in one by

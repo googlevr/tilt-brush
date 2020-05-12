@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71b2ac88638c5c41a0a0681f70d2512, type: 3}
+  m_Name: MarkerGeometry
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: 66ec961b-e5ea-5464-4a97-c601ac31047c
+  m_DurableName: Marker Geometry
+  m_CreationVersion: 
+  m_ShaderVersion: 10.0
+  m_BrushPrefab: {fileID: 100000, guid: bd26b79d6c58ea846b094269cb3aa77b, type: 3}
+  m_Nondeterministic: 0
+  m_Supersedes: {fileID: 0}
+  m_LooksIdentical: 0
+  m_ButtonTexture: {fileID: 2800000, guid: 6e665ea69b3463c47ae0660d94d50b93, type: 3}
+  m_Description: Marker (Geometry)
+  m_DescriptionExtra: 
+  m_BrushAudioLayers: []
+  m_BrushAudioBasePitch: 1
+  m_BrushAudioMaxPitchShift: 0.05
+  m_BrushAudioMaxVolume: 1
+  m_BrushVolumeUpSpeed: 4
+  m_BrushVolumeDownSpeed: 4
+  m_VolumeVelocityRangeMultiplier: 1
+  m_AudioReactive: 0
+  m_ButtonAudio: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: aacfdf40f1bcb264a8b67bbe213b5021, type: 2}
+  m_TextureAtlasV: 1
+  m_TileRate: 0.15
+  m_UseBloomSwatchOnColorPicker: 0
+  m_BrushSizeRange: {x: 0.05, y: 3}
+  m_PressureSizeRange: {x: 0, y: 1}
+  m_SizeVariance: 0
+  m_PreviewPressureSizeMin: 0.001
+  m_Opacity: 1
+  m_PressureOpacityRange: {x: 1, y: 1}
+  m_ColorLuminanceMin: 0
+  m_ColorSaturationMax: 1
+  m_ParticleSpeed: 0
+  m_ParticleRate: 1
+  m_ParticleInitialRotationRange: 0
+  m_RandomizeAlpha: 0
+  m_SprayRateMultiplier: 1
+  m_RotationVariance: 360
+  m_PositionVariance: 0
+  m_SizeRatio: {x: 1, y: 1}
+  m_M11Compatibility: 0
+  m_SolidMinLengthMeters_PS: 0.002
+  m_TubeStoreRadiusInTexcoord0Z: 0
+  m_RenderBackfaces: 0
+  m_BackIsInvisible: 0
+  m_BackfaceHueShift: 0
+  m_BoundsPadding: 0
+  m_PlayBackAtStrokeGranularity: 0
+  m_BlendMode: 1
+  m_EmissiveFactor: 0
+  m_AllowExport: 1
+  m_SupportsSimplification: 1
+  m_HeadMinPoints: 1
+  m_HeadPointStep: 1
+  m_TailMinPoints: 1
+  m_TailPointStep: 1
+  m_MiddlePointStep: 0

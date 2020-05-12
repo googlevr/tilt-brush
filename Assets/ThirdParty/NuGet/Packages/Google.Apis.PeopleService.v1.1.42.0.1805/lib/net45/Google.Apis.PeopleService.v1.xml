@@ -1,0 +1,1873 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.PeopleService.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleServiceService">
+            <summary>The PeopleService Service.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleServiceService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleServiceService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.BatchUri">
+            <summary>Gets the batch base URI; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.BatchPath">
+            <summary>Gets the batch base path; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleServiceService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the People API.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.Contacts">
+            <summary>See, edit, download, and permanently delete your contacts</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.ContactsReadonly">
+            <summary>See and download your contacts</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.UserAddressesRead">
+            <summary>View your street addresses</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.UserBirthdayRead">
+            <summary>View your complete date of birth</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.UserEmailsRead">
+            <summary>View your email addresses</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.UserPhonenumbersRead">
+            <summary>View your phone numbers</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.UserinfoEmail">
+            <summary>View your email address</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.Scope.UserinfoProfile">
+            <summary>See your personal info, including any personal info you've made publicly available</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants">
+            <summary>Available OAuth 2.0 scope constants for use with the People API.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.Contacts">
+            <summary>See, edit, download, and permanently delete your contacts</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.ContactsReadonly">
+            <summary>See and download your contacts</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.UserAddressesRead">
+            <summary>View your street addresses</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.UserBirthdayRead">
+            <summary>View your complete date of birth</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.UserEmailsRead">
+            <summary>View your email addresses</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.UserPhonenumbersRead">
+            <summary>View your phone numbers</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.UserinfoEmail">
+            <summary>View your email address</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceService.ScopeConstants.UserinfoProfile">
+            <summary>See your personal info, including any personal info you've made publicly available</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.ContactGroups">
+            <summary>Gets the ContactGroups resource.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceService.People">
+            <summary>Gets the People resource.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1">
+            <summary>A base abstract class for PeopleService requests.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new PeopleServiceBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+            [default: json]
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleServiceBaseServiceRequest`1.InitParameters">
+            <summary>Initializes PeopleService parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource">
+            <summary>The "contactGroups" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.ContactGroupsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.Members">
+            <summary>Gets the Members resource.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource">
+            <summary>The "members" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.Modify(Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersRequest,System.String)">
+             <summary>Modify the members of a contact group owned by the authenticated user.
+            
+             The only system contact groups that can have members added are `contactGroups/myContacts` and
+             `contactGroups/starred`. Other system contact groups are deprecated and can only have contacts
+             removed.</summary>
+             <param name="body">The body of the request.</param>
+             <param name="resourceName">Required. The resource name of the contact group to modify.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest">
+             <summary>Modify the members of a contact group owned by the authenticated user.
+            
+             The only system contact groups that can have members added are `contactGroups/myContacts` and
+             `contactGroups/starred`. Other system contact groups are deprecated and can only have contacts
+             removed.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersRequest,System.String)">
+            <summary>Constructs a new Modify request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.ResourceName">
+            <summary>Required. The resource name of the contact group to modify.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.MembersResource.ModifyRequest.InitParameters">
+            <summary>Initializes Modify parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGet">
+            <summary>Get a list of contact groups owned by the authenticated user by specifying a list of contact group
+            resource names.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest">
+            <summary>Get a list of contact groups owned by the authenticated user by specifying a list of contact group
+            resource names.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new BatchGet request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.ResourceNames">
+            <summary>Required. The resource names of the contact groups to get.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.MaxMembers">
+            <summary>Optional. Specifies the maximum number of members to return for each group. Defaults to 0 if
+            not set, which will return zero members.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.BatchGetRequest.InitParameters">
+            <summary>Initializes BatchGet parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.Create(Google.Apis.PeopleService.v1.Data.CreateContactGroupRequest)">
+            <summary>Create a new contact group owned by the authenticated user.</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest">
+            <summary>Create a new contact group owned by the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.PeopleService.v1.Data.CreateContactGroupRequest)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.Delete(System.String)">
+            <summary>Delete an existing contact group owned by the authenticated user by specifying a contact group
+            resource name.</summary>
+            <param name="resourceName">Required. The resource name of the contact group to delete.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest">
+            <summary>Delete an existing contact group owned by the authenticated user by specifying a contact group
+            resource name.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.ResourceName">
+            <summary>Required. The resource name of the contact group to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.DeleteContacts">
+            <summary>Optional. Set to true to also delete the contacts in the specified group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.Get(System.String)">
+            <summary>Get a specific contact group owned by the authenticated user by specifying a contact group resource
+            name.</summary>
+            <param name="resourceName">Required. The resource name of the contact group to get.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest">
+            <summary>Get a specific contact group owned by the authenticated user by specifying a contact group resource
+            name.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.ResourceName">
+            <summary>Required. The resource name of the contact group to get.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.MaxMembers">
+            <summary>Optional. Specifies the maximum number of members to return. Defaults to 0 if not set, which
+            will return zero members.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.List">
+            <summary>List all contact groups owned by the authenticated user. Members of the contact groups are not
+            populated.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest">
+            <summary>List all contact groups owned by the authenticated user. Members of the contact groups are not
+            populated.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.PageToken">
+            <summary>The next_page_token value returned from a previous call to
+            [ListContactGroups](/people/api/rest/v1/contactgroups/list). Requests the next page of
+            resources.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.PageSize">
+            <summary>Optional. The maximum number of resources to return. Valid values are between 1 and 1000,
+            inclusive. Defaults to 30 if not set or set to 0.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.SyncToken">
+            <summary>A sync token, returned by a previous call to `contactgroups.list`. Only resources changed since
+            the sync token was created will be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.Update(Google.Apis.PeopleService.v1.Data.UpdateContactGroupRequest,System.String)">
+            <summary>Update the name of an existing contact group owned by the authenticated user.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="resourceName">The resource name for the contact group, assigned by the server. An ASCII string, in the
+            form of `contactGroups/`contact_group_id.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest">
+            <summary>Update the name of an existing contact group owned by the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.PeopleService.v1.Data.UpdateContactGroupRequest,System.String)">
+            <summary>Constructs a new Update request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.ResourceName">
+            <summary>The resource name for the contact group, assigned by the server. An ASCII string, in the form
+            of `contactGroups/`contact_group_id.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.ContactGroupsResource.UpdateRequest.InitParameters">
+            <summary>Initializes Update parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource">
+            <summary>The "people" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.Connections">
+            <summary>Gets the Connections resource.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource">
+            <summary>The "connections" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.List(System.String)">
+             <summary>Provides a list of the authenticated user's contacts merged with any connected profiles.
+            
+             The request throws a 400 error if 'personFields' is not specified.</summary>
+             <param name="resourceName">Required. The resource name to return connections for. Only `people/me` is
+             valid.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest">
+             <summary>Provides a list of the authenticated user's contacts merged with any connected profiles.
+            
+             The request throws a 400 error if 'personFields' is not specified.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.ResourceName">
+            <summary>Required. The resource name to return connections for. Only `people/me` is valid.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.SyncToken">
+            <summary>A sync token returned by a previous call to `people.connections.list`. Only resources
+            changed since the sync token was created will be returned. Sync requests that specify `sync_token`
+            have an additional rate limit.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.PersonFields">
+             <summary>Required. A field mask to restrict which fields on each person are returned. Multiple
+             fields can be specified by separating them with commas. Valid values are:
+            
+             * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses *
+             events * genders * imClients * interests * locales * memberships * metadata * names * nicknames *
+             occupations * organizations * phoneNumbers * photos * relations * relationshipInterests *
+             relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.SortOrder">
+            <summary>The order in which the connections should be sorted. Defaults to
+            `LAST_MODIFIED_ASCENDING`.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.SortOrderEnum">
+            <summary>The order in which the connections should be sorted. Defaults to
+            `LAST_MODIFIED_ASCENDING`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.RequestSyncToken">
+            <summary>Whether the response should include a sync token, which can be used to get all changes
+            since the last request. For subsequent sync requests use the `sync_token` param instead. Initial
+            sync requests that specify `request_sync_token` have an additional rate limit.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.PageToken">
+            <summary>The token of the page to be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.RequestMaskIncludeField">
+            <summary>Required. Comma-separated list of person fields to be included in the response. Each path
+            should start with `person.`: for example, `person.names` or `person.photos`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.PageSize">
+            <summary>Optional. The number of connections to include in the response. Valid values are between 1
+            and 2000, inclusive. Defaults to 100 if not set or set to 0.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.ConnectionsResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.CreateContact(Google.Apis.PeopleService.v1.Data.Person)">
+            <summary>Create a new contact and return the person resource for that contact.</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest">
+            <summary>Create a new contact and return the person resource for that contact.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.PeopleService.v1.Data.Person)">
+            <summary>Constructs a new CreateContact request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.CreateContactRequest.InitParameters">
+            <summary>Initializes CreateContact parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.DeleteContact(System.String)">
+            <summary>Delete a contact person. Any non-contact data will not be deleted.</summary>
+            <param name="resourceName">Required. The resource name of the contact to delete.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest">
+            <summary>Delete a contact person. Any non-contact data will not be deleted.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new DeleteContact request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest.ResourceName">
+            <summary>Required. The resource name of the contact to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactRequest.InitParameters">
+            <summary>Initializes DeleteContact parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhoto(System.String)">
+            <summary>Delete a contact's photo.</summary>
+            <param name="resourceName">Required. The resource name of the contact whose photo will be deleted.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest">
+            <summary>Delete a contact's photo.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new DeleteContactPhoto request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.ResourceName">
+            <summary>Required. The resource name of the contact whose photo will be deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.PersonFields">
+             <summary>Optional. A field mask to restrict which fields on the person are returned. Multiple fields can
+             be specified by separating them with commas. Defaults to empty if not set, which will skip the post
+             mutate get. Valid values are:
+            
+             * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses *
+             events * genders * imClients * interests * locales * memberships * metadata * names * nicknames *
+             occupations * organizations * phoneNumbers * photos * relations * relationshipInterests *
+             relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.DeleteContactPhotoRequest.InitParameters">
+            <summary>Initializes DeleteContactPhoto parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.Get(System.String)">
+             <summary>Provides information about a person by specifying a resource name. Use `people/me` to indicate the
+             authenticated user.
+            
+             The request throws a 400 error if 'personFields' is not specified.</summary>
+             <param name="resourceName">Required. The resource name of the person to provide information about.
+            
+             - To get information about the authenticated user, specify `people/me`. - To get information about a google account,
+             specify  `people/`account_id. - To get information about a contact, specify the resource name that   identifies the
+             contact as returned by [`people.connections.list`](/people/api/rest/v1/people.connections/list).</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.GetRequest">
+             <summary>Provides information about a person by specifying a resource name. Use `people/me` to indicate the
+             authenticated user.
+            
+             The request throws a 400 error if 'personFields' is not specified.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.ResourceName">
+             <summary>Required. The resource name of the person to provide information about.
+            
+             - To get information about the authenticated user, specify `people/me`. - To get information about a
+             google account, specify `people/`account_id. - To get information about a contact, specify the resource
+             name that identifies the contact as returned by
+             [`people.connections.list`](/people/api/rest/v1/people.connections/list).</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.PersonFields">
+             <summary>Required. A field mask to restrict which fields on the person are returned. Multiple fields can
+             be specified by separating them with commas. Valid values are:
+            
+             * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses *
+             events * genders * imClients * interests * locales * memberships * metadata * names * nicknames *
+             occupations * organizations * phoneNumbers * photos * relations * relationshipInterests *
+             relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.RequestMaskIncludeField">
+            <summary>Required. Comma-separated list of person fields to be included in the response. Each path
+            should start with `person.`: for example, `person.names` or `person.photos`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGet">
+             <summary>Provides information about a list of specific people by specifying a list of requested resource
+             names. Use `people/me` to indicate the authenticated user.
+            
+             The request throws a 400 error if 'personFields' is not specified.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest">
+             <summary>Provides information about a list of specific people by specifying a list of requested resource
+             names. Use `people/me` to indicate the authenticated user.
+            
+             The request throws a 400 error if 'personFields' is not specified.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new GetBatchGet request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.ResourceNames">
+             <summary>Required. The resource names of the people to provide information about.
+            
+             - To get information about the authenticated user, specify `people/me`. - To get information about a
+             google account, specify `people/`account_id. - To get information about a contact, specify the resource
+             name that identifies the contact as returned by
+             [`people.connections.list`](/people/api/rest/v1/people.connections/list).
+            
+             You can include up to 50 resource names in one request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.PersonFields">
+             <summary>Required. A field mask to restrict which fields on each person are returned. Multiple fields
+             can be specified by separating them with commas. Valid values are:
+            
+             * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses *
+             events * genders * imClients * interests * locales * memberships * metadata * names * nicknames *
+             occupations * organizations * phoneNumbers * photos * relations * relationshipInterests *
+             relationshipStatuses * residences * sipAddresses * skills * taglines * urls * userDefined</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.RequestMaskIncludeField">
+            <summary>Required. Comma-separated list of person fields to be included in the response. Each path
+            should start with `person.`: for example, `person.names` or `person.photos`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.GetBatchGetRequest.InitParameters">
+            <summary>Initializes GetBatchGet parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContact(Google.Apis.PeopleService.v1.Data.Person,System.String)">
+             <summary>Update contact data for an existing contact person. Any non-contact data will not be modified.
+            
+             The request throws a 400 error if `updatePersonFields` is not specified.
+            
+             The request throws a 400 error if `person.metadata.sources` is not specified for the contact to be updated.
+            
+             The request throws a 400 error with an error with reason `"failedPrecondition"` if
+             `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed
+             since its data was read. Clients should get the latest person and re-apply their updates to the latest
+             person.</summary>
+             <param name="body">The body of the request.</param>
+             <param name="resourceName">The resource name for the person, assigned by the server. An ASCII string with a max
+             length of 27 characters, in the form of `people/`person_id.</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest">
+             <summary>Update contact data for an existing contact person. Any non-contact data will not be modified.
+            
+             The request throws a 400 error if `updatePersonFields` is not specified.
+            
+             The request throws a 400 error if `person.metadata.sources` is not specified for the contact to be updated.
+            
+             The request throws a 400 error with an error with reason `"failedPrecondition"` if
+             `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed
+             since its data was read. Clients should get the latest person and re-apply their updates to the latest
+             person.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.PeopleService.v1.Data.Person,System.String)">
+            <summary>Constructs a new UpdateContact request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.ResourceName">
+            <summary>The resource name for the person, assigned by the server. An ASCII string with a max length of
+            27 characters, in the form of `people/`person_id.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.UpdatePersonFields">
+             <summary>Required. A field mask to restrict which fields on the person are updated. Multiple fields can
+             be specified by separating them with commas. All updated fields will be replaced. Valid values are:
+            
+             * addresses * biographies * birthdays * emailAddresses * events * genders * imClients * interests *
+             locales * memberships * names * nicknames * occupations * organizations * phoneNumbers * relations *
+             residences * sipAddresses * urls * userDefined</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactRequest.InitParameters">
+            <summary>Initializes UpdateContact parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhoto(Google.Apis.PeopleService.v1.Data.UpdateContactPhotoRequest,System.String)">
+            <summary>Update a contact's photo.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="resourceName">Required. Person resource name</param>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest">
+            <summary>Update a contact's photo.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.PeopleService.v1.Data.UpdateContactPhotoRequest,System.String)">
+            <summary>Constructs a new UpdateContactPhoto request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.ResourceName">
+            <summary>Required. Person resource name</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.PeopleService.v1.PeopleResource.UpdateContactPhotoRequest.InitParameters">
+            <summary>Initializes UpdateContactPhoto parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Address">
+            <summary>A person's physical address. May be a P.O. box or street address. All fields are optional.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.City">
+            <summary>The city of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.Country">
+            <summary>The country of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.CountryCode">
+            <summary>The [ISO 3166-1 alpha-2](http://www.iso.org/iso/country_codes.htm) country code of the
+            address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.ExtendedAddress">
+            <summary>The extended address of the address; for example, the apartment number.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.FormattedType">
+            <summary>Output only. The type of the address translated and formatted in the viewer's account locale or the
+            `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.FormattedValue">
+            <summary>The unstructured value of the address. If this is not set by the user it will be automatically
+            constructed from structured values.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.Metadata">
+            <summary>Metadata about the address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.PoBox">
+            <summary>The P.O. box of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.PostalCode">
+            <summary>The postal code of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.Region">
+            <summary>The region of the address; for example, the state or province.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.StreetAddress">
+            <summary>The street address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.Type">
+             <summary>The type of the address. The type can be custom or one of these predefined values:
+            
+             * `home` * `work` * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Address.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.AgeRangeType">
+            <summary>A person's age range.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.AgeRangeType.AgeRange">
+            <summary>The age range.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.AgeRangeType.Metadata">
+            <summary>Metadata about the age range.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.AgeRangeType.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.BatchGetContactGroupsResponse">
+            <summary>The response to a batch get contact groups request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.BatchGetContactGroupsResponse.Responses">
+            <summary>The list of responses for each requested contact group resource.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.BatchGetContactGroupsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Biography">
+            <summary>A person's short biography.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Biography.ContentType">
+            <summary>The content type of the biography.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Biography.Metadata">
+            <summary>Metadata about the biography.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Biography.Value">
+            <summary>The short biography.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Biography.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Birthday">
+            <summary>A person's birthday. At least one of the `date` and `text` fields are specified. The `date` and `text`
+            fields typically represent the same date, but are not guaranteed to.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Birthday.Date">
+            <summary>The date of the birthday.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Birthday.Metadata">
+            <summary>Metadata about the birthday.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Birthday.Text">
+            <summary>A free-form string representing the user's birthday.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Birthday.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.BraggingRights">
+            <summary>A person's bragging rights.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.BraggingRights.Metadata">
+            <summary>Metadata about the bragging rights.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.BraggingRights.Value">
+            <summary>The bragging rights; for example, `climbed mount everest`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.BraggingRights.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ContactGroup">
+            <summary>A contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.ETag">
+            <summary>The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the resource. Used for web cache
+            validation.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.FormattedName">
+            <summary>Output only. The name translated and formatted in the viewer's account locale or the `Accept-
+            Language` HTTP header locale for system groups names. Group names set by the owner are the same as
+            name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.GroupType">
+            <summary>Output only. The contact group type.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.MemberCount">
+            <summary>Output only. The total number of contacts in the group irrespective of max members in specified in
+            the request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.MemberResourceNames">
+            <summary>Output only. The list of contact person resource names that are members of the contact group. The
+            field is not populated for LIST requests and can only be updated through the
+            [ModifyContactGroupMembers](/people/api/rest/v1/contactgroups/members/modify).</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.Metadata">
+            <summary>Output only. Metadata about the contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.Name">
+            <summary>The contact group name set by the group owner or a system provided name for system
+            groups.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroup.ResourceName">
+            <summary>The resource name for the contact group, assigned by the server. An ASCII string, in the form of
+            `contactGroups/`contact_group_id.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ContactGroupMembership">
+            <summary>A Google contact group membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupMembership.ContactGroupId">
+            <summary>Output only. The contact group ID for the contact group membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupMembership.ContactGroupResourceName">
+            <summary>The resource name for the contact group, assigned by the server. An ASCII string, in the form of
+            `contactGroups/`contact_group_id. Only contact_group_resource_name can be used for modifying memberships.
+            Any contact group membership can be removed, but only user group or "myContacts" or "starred" system groups
+            memberships can be added. A contact must always have at least one contact group membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupMembership.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ContactGroupMetadata">
+            <summary>The metadata about a contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupMetadata.Deleted">
+            <summary>Output only. True if the contact group resource has been deleted. Populated only for
+            [`ListContactGroups`](/people/api/rest/v1/contactgroups/list) requests that include a sync token.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupMetadata.UpdateTime">
+            <summary>Output only. The time the group was last updated.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupMetadata.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ContactGroupResponse">
+            <summary>The response for a specific contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupResponse.ContactGroup">
+            <summary>The contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupResponse.RequestedResourceName">
+            <summary>The original requested resource name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupResponse.Status">
+            <summary>The status of the response.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ContactGroupResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.CoverPhoto">
+            <summary>A person's cover photo. A large image shown on the person's profile page that represents who they are
+            or what they care about.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.CoverPhoto.Default__">
+            <summary>True if the cover photo is the default cover photo; false if the cover photo is a user-provided
+            cover photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.CoverPhoto.Metadata">
+            <summary>Metadata about the cover photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.CoverPhoto.Url">
+            <summary>The URL of the cover photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.CoverPhoto.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.CreateContactGroupRequest">
+            <summary>A request to create a new contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.CreateContactGroupRequest.ContactGroup">
+            <summary>Required. The contact group to create.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.CreateContactGroupRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Date">
+             <summary>Represents a whole or partial calendar date, e.g. a birthday. The time of day and time zone are either
+             specified elsewhere or are not significant. The date is relative to the Proleptic Gregorian Calendar. This can
+             represent:
+            
+             * A full date, with non-zero year, month and day values * A month and day value, with a zero year, e.g. an
+             anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, e.g.
+             a credit card expiration date
+            
+             Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Date.Day">
+            <summary>Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a year by
+            itself or a year and month where the day is not significant.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Date.Month">
+            <summary>Month of year. Must be from 1 to 12, or 0 if specifying a year without a month and day.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Date.Year">
+            <summary>Year of date. Must be from 1 to 9999, or 0 if specifying a date without a year.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Date.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.DeleteContactPhotoResponse">
+            <summary>The response for deleteing a contact's photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.DeleteContactPhotoResponse.Person">
+            <summary>The updated person, if person_fields is set in the DeleteContactPhotoRequest; otherwise this will
+            be unset.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.DeleteContactPhotoResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.DomainMembership">
+            <summary>A G Suite Domain membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.DomainMembership.InViewerDomain">
+            <summary>True if the person is in the viewer's G Suite domain.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.DomainMembership.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.EmailAddress">
+            <summary>A person's email address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.EmailAddress.DisplayName">
+            <summary>The display name of the email.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.EmailAddress.FormattedType">
+            <summary>Output only. The type of the email address translated and formatted in the viewer's account locale
+            or the `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.EmailAddress.Metadata">
+            <summary>Metadata about the email address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.EmailAddress.Type">
+             <summary>The type of the email address. The type can be custom or one of these predefined values:
+            
+             * `home` * `work` * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.EmailAddress.Value">
+            <summary>The email address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.EmailAddress.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Empty">
+             <summary>A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A
+             typical example is to use it as the request or the response type of an API method. For instance:
+            
+             service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
+            
+             The JSON representation for `Empty` is empty JSON object `{}`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Empty.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Event">
+            <summary>An event related to the person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Event.Date">
+            <summary>The date of the event.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Event.FormattedType">
+            <summary>Output only. The type of the event translated and formatted in the viewer's account locale or the
+            `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Event.Metadata">
+            <summary>Metadata about the event.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Event.Type">
+             <summary>The type of the event. The type can be custom or one of these predefined values:
+            
+             * `anniversary` * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Event.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.FieldMetadata">
+            <summary>Metadata about a field.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.FieldMetadata.Primary">
+            <summary>True if the field is the primary field; false if the field is a secondary field.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.FieldMetadata.Source">
+            <summary>The source of the field.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.FieldMetadata.Verified">
+            <summary>Output only. True if the field is verified; false if the field is unverified. A verified field is
+            typically a name, email address, phone number, or website that has been confirmed to be owned by the
+            person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.FieldMetadata.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Gender">
+            <summary>A person's gender.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Gender.FormattedValue">
+            <summary>Output only. The value of the gender translated and formatted in the viewer's account locale or the
+            `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Gender.Metadata">
+            <summary>Metadata about the gender.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Gender.Value">
+             <summary>The gender for the person. The gender can be custom or one of these predefined values:
+            
+             * `male` * `female` * `other` * `unknown`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Gender.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.GetPeopleResponse.Responses">
+            <summary>The response for each requested resource name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.GetPeopleResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ImClient">
+            <summary>A person's instant messaging client.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.FormattedProtocol">
+            <summary>Output only. The protocol of the IM client formatted in the viewer's account locale or the `Accept-
+            Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.FormattedType">
+            <summary>Output only. The type of the IM client translated and formatted in the viewer's account locale or
+            the `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.Metadata">
+            <summary>Metadata about the IM client.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.Protocol">
+             <summary>The protocol of the IM client. The protocol can be custom or one of these predefined values:
+            
+             * `aim` * `msn` * `yahoo` * `skype` * `qq` * `googleTalk` * `icq` * `jabber` * `netMeeting`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.Type">
+             <summary>The type of the IM client. The type can be custom or one of these predefined values:
+            
+             * `home` * `work` * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.Username">
+            <summary>The user name used in the IM client.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ImClient.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Interest">
+            <summary>One of the person's interests.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Interest.Metadata">
+            <summary>Metadata about the interest.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Interest.Value">
+            <summary>The interest; for example, `stargazing`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Interest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListConnectionsResponse.Connections">
+            <summary>The list of people that the requestor is connected to.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListConnectionsResponse.NextPageToken">
+            <summary>The token that can be used to retrieve the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListConnectionsResponse.NextSyncToken">
+            <summary>The token that can be used to retrieve changes since the last request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListConnectionsResponse.TotalItems">
+            <summary>The total number of items in the list without pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListConnectionsResponse.TotalPeople">
+            <summary>**DEPRECATED** (Please use totalItems) The total number of people in the list without
+            pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListConnectionsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ListContactGroupsResponse">
+            <summary>The response to a list contact groups request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListContactGroupsResponse.ContactGroups">
+            <summary>The list of contact groups. Members of the contact groups are not populated.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListContactGroupsResponse.NextPageToken">
+            <summary>The token that can be used to retrieve the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListContactGroupsResponse.NextSyncToken">
+            <summary>The token that can be used to retrieve changes since the last request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListContactGroupsResponse.TotalItems">
+            <summary>The total number of items in the list without pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ListContactGroupsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Locale">
+            <summary>A person's locale preference.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Locale.Metadata">
+            <summary>Metadata about the locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Locale.Value">
+            <summary>The well-formed [IETF BCP 47](https://tools.ietf.org/html/bcp47) language tag representing the
+            locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Locale.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Membership">
+            <summary>A person's membership in a group. Only contact group memberships can be modified.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Membership.ContactGroupMembership">
+            <summary>The contact group membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Membership.DomainMembership">
+            <summary>Output only. The domain membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Membership.Metadata">
+            <summary>Metadata about the membership.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Membership.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersRequest">
+            <summary>A request to modify an existing contact group's members. Contacts can be removed from any group but
+            they can only be added to a user group or "myContacts" or "starred" system groups.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersRequest.ResourceNamesToAdd">
+            <summary>The resource names of the contact people to add in the form of `people/`person_id.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersRequest.ResourceNamesToRemove">
+            <summary>The resource names of the contact people to remove in the form of `people/`person_id.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersResponse">
+            <summary>The response to a modify contact group members request.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersResponse.CanNotRemoveLastContactGroupResourceNames">
+            <summary>The contact people resource names that cannot be removed from their last contact group.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersResponse.NotFoundResourceNames">
+            <summary>The contact people resource names that were not found.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ModifyContactGroupMembersResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Name">
+            <summary>A person's name. If the name is a mononym, the family name is empty.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.DisplayName">
+            <summary>Output only. The display name formatted according to the locale specified by the viewer's account
+            or the `Accept-Language` HTTP header.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.DisplayNameLastFirst">
+            <summary>Output only. The display name with the last name first formatted according to the locale specified
+            by the viewer's account or the `Accept-Language` HTTP header.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.FamilyName">
+            <summary>The family name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.GivenName">
+            <summary>The given name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.HonorificPrefix">
+            <summary>The honorific prefixes, such as `Mrs.` or `Dr.`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.HonorificSuffix">
+            <summary>The honorific suffixes, such as `Jr.`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.Metadata">
+            <summary>Metadata about the name.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.MiddleName">
+            <summary>The middle name(s).</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.PhoneticFamilyName">
+            <summary>The family name spelled as it sounds.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.PhoneticFullName">
+            <summary>The full name spelled as it sounds.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.PhoneticGivenName">
+            <summary>The given name spelled as it sounds.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.PhoneticHonorificPrefix">
+            <summary>The honorific prefixes spelled as they sound.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.PhoneticHonorificSuffix">
+            <summary>The honorific suffixes spelled as they sound.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.PhoneticMiddleName">
+            <summary>The middle name(s) spelled as they sound.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Name.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Nickname">
+            <summary>A person's nickname.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Nickname.Metadata">
+            <summary>Metadata about the nickname.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Nickname.Type">
+            <summary>The type of the nickname.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Nickname.Value">
+            <summary>The nickname.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Nickname.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Occupation">
+            <summary>A person's occupation.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Occupation.Metadata">
+            <summary>Metadata about the occupation.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Occupation.Value">
+            <summary>The occupation; for example, `carpenter`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Occupation.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Organization">
+            <summary>A person's past or current organization. Overlapping date ranges are permitted.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Current">
+            <summary>True if the organization is the person's current organization; false if the organization is a past
+            organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Department">
+            <summary>The person's department at the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Domain">
+            <summary>The domain name associated with the organization; for example, `google.com`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.EndDate">
+            <summary>The end date when the person left the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.FormattedType">
+            <summary>Output only. The type of the organization translated and formatted in the viewer's account locale
+            or the `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.JobDescription">
+            <summary>The person's job description at the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Location">
+            <summary>The location of the organization office the person works at.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Metadata">
+            <summary>Metadata about the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Name">
+            <summary>The name of the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.PhoneticName">
+            <summary>The phonetic name of the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.StartDate">
+            <summary>The start date when the person joined the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Symbol">
+            <summary>The symbol associated with the organization; for example, a stock ticker symbol, abbreviation, or
+            acronym.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Title">
+            <summary>The person's job title at the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.Type">
+             <summary>The type of the organization. The type can be custom or  one of these predefined values:
+            
+             * `work` * `school`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Organization.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Person">
+             <summary>Information about a person merged from various data sources such as the authenticated user's contacts
+             and profile data.
+            
+             Most fields can have multiple items. The items in a field have no guaranteed order, but each non-empty field is
+             guaranteed to have exactly one field with `metadata.primary` set to true.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Addresses">
+            <summary>The person's street addresses.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.AgeRange">
+             <summary>Output only. **DEPRECATED** (Please use `person.ageRanges` instead)**
+            
+             The person's age range.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.AgeRanges">
+            <summary>Output only. The person's age ranges.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Biographies">
+            <summary>The person's biographies.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Birthdays">
+            <summary>The person's birthdays.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.BraggingRights">
+            <summary>The person's bragging rights.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.CoverPhotos">
+            <summary>Output only. The person's cover photos.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.EmailAddresses">
+            <summary>The person's email addresses.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.ETag">
+            <summary>The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the resource. Used for web cache
+            validation.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Events">
+            <summary>The person's events.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Genders">
+            <summary>The person's genders.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.ImClients">
+            <summary>The person's instant messaging clients.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Interests">
+            <summary>The person's interests.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Locales">
+            <summary>The person's locale preferences.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Memberships">
+            <summary>The person's group memberships.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Metadata">
+            <summary>Output only. Metadata about the person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Names">
+            <summary>The person's names.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Nicknames">
+            <summary>The person's nicknames.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Occupations">
+            <summary>The person's occupations.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Organizations">
+            <summary>The person's past or current organizations.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.PhoneNumbers">
+            <summary>The person's phone numbers.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Photos">
+            <summary>Output only. The person's photos.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Relations">
+            <summary>The person's relations.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.RelationshipInterests">
+            <summary>Output only. The person's relationship interests.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.RelationshipStatuses">
+            <summary>Output only. The person's relationship statuses.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Residences">
+            <summary>The person's residences.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.ResourceName">
+            <summary>The resource name for the person, assigned by the server. An ASCII string with a max length of 27
+            characters, in the form of `people/`person_id.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.SipAddresses">
+            <summary>The person's SIP addresses.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Skills">
+            <summary>The person's skills.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Taglines">
+            <summary>Output only. The person's taglines.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.Urls">
+            <summary>The person's associated URLs.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Person.UserDefined">
+            <summary>The person's user defined data.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.PersonMetadata">
+            <summary>The metadata about a person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonMetadata.Deleted">
+            <summary>Output only. True if the person resource has been deleted. Populated only for
+            [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync
+            token.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonMetadata.LinkedPeopleResourceNames">
+            <summary>Output only. Resource names of people linked to this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonMetadata.ObjectType">
+             <summary>Output only. **DEPRECATED** (Please use `person.metadata.sources.profileMetadata.objectType`
+             instead)
+            
+             The type of the person object.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonMetadata.PreviousResourceNames">
+             <summary>Output only. Any former resource names this person has had. Populated only for
+             [`connections.list`](/people/api/rest/v1/people.connections/list) requests that include a sync token.
+            
+             The resource name may change when adding or removing fields that link a contact and profile such as a
+             verified email, verified phone number, or profile URL.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonMetadata.Sources">
+            <summary>The sources of data for the person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonMetadata.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.PersonResponse">
+            <summary>The response for a single person</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonResponse.HttpStatusCode">
+             <summary>**DEPRECATED** (Please use status instead)
+            
+             [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonResponse.Person">
+            <summary>The person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonResponse.RequestedResourceName">
+             <summary>The original requested resource name. May be different than the resource name on the returned
+             person.
+            
+             The resource name can change when adding or removing fields that link a contact and profile such as a
+             verified email, verified phone number, or a profile URL.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonResponse.Status">
+            <summary>The status of the response.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PersonResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.PhoneNumber">
+            <summary>A person's phone number.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PhoneNumber.CanonicalForm">
+            <summary>Output only. The canonicalized [ITU-T
+            E.164](https://law.resource.org/pub/us/cfr/ibr/004/itu-t.E.164.1.2008.pdf) form of the phone
+            number.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PhoneNumber.FormattedType">
+            <summary>Output only. The type of the phone number translated and formatted in the viewer's account locale
+            or the `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PhoneNumber.Metadata">
+            <summary>Metadata about the phone number.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PhoneNumber.Type">
+             <summary>The type of the phone number. The type can be custom or one of these predefined values:
+            
+             * `home` * `work` * `mobile` * `homeFax` * `workFax` * `otherFax` * `pager` * `workMobile` * `workPager` *
+             `main` * `googleVoice` * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PhoneNumber.Value">
+            <summary>The phone number.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.PhoneNumber.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Photo">
+            <summary>A person's photo. A picture shown next to the person's name to help others recognize the
+            person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Photo.Default__">
+            <summary>True if the photo is a default photo; false if the photo is a user-provided photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Photo.Metadata">
+            <summary>Metadata about the photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Photo.Url">
+            <summary>The URL of the photo. You can change the desired size by appending a query parameter `sz=`size at
+            the end of the url. Example: `https://lh3.googleusercontent.com/-T_wVWLlmg7w/AAAAAAAAAAI/AAAAAAAABa8/00gzXvD
+            BYqw/s100/photo.jpg?sz=50`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Photo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.ProfileMetadata">
+            <summary>The metadata about a profile.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ProfileMetadata.ObjectType">
+            <summary>Output only. The profile object type.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ProfileMetadata.UserTypes">
+            <summary>Output only. The user types.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.ProfileMetadata.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Relation">
+            <summary>A person's relation to another person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Relation.FormattedType">
+            <summary>Output only. The type of the relation translated and formatted in the viewer's account locale or
+            the locale specified in the Accept-Language HTTP header.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Relation.Metadata">
+            <summary>Metadata about the relation.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Relation.Person">
+            <summary>The name of the other person this relation refers to.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Relation.Type">
+             <summary>The person's relation to the other person. The type can be custom or one of these predefined
+             values:
+            
+             * `spouse` * `child` * `mother` * `father` * `parent` * `brother` * `sister` * `friend` * `relative` *
+             `domesticPartner` * `manager` * `assistant` * `referredBy` * `partner`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Relation.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.RelationshipInterest">
+            <summary>A person's relationship interest .</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipInterest.FormattedValue">
+            <summary>Output only. The value of the relationship interest translated and formatted in the viewer's
+            account locale or the locale specified in the Accept-Language HTTP header.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipInterest.Metadata">
+            <summary>Metadata about the relationship interest.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipInterest.Value">
+             <summary>The kind of relationship the person is looking for. The value can be custom or one of these
+             predefined values:
+            
+             * `friend` * `date` * `relationship` * `networking`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipInterest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.RelationshipStatus">
+            <summary>A person's relationship status.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipStatus.FormattedValue">
+            <summary>Output only. The value of the relationship status translated and formatted in the viewer's account
+            locale or the `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipStatus.Metadata">
+            <summary>Metadata about the relationship status.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipStatus.Value">
+             <summary>The relationship status. The value can be custom or one of these predefined values:
+            
+             * `single` * `inARelationship` * `engaged` * `married` * `itsComplicated` * `openRelationship` * `widowed` *
+             `inDomesticPartnership` * `inCivilUnion`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.RelationshipStatus.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Residence">
+            <summary>A person's past or current residence.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Residence.Current">
+            <summary>True if the residence is the person's current residence; false if the residence is a past
+            residence.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Residence.Metadata">
+            <summary>Metadata about the residence.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Residence.Value">
+            <summary>The address of the residence.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Residence.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.SipAddress">
+            <summary>A person's SIP address. Session Initial Protocol addresses are used for VoIP communications to make
+            voice or video calls over the internet.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.SipAddress.FormattedType">
+            <summary>Output only. The type of the SIP address translated and formatted in the viewer's account locale or
+            the `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.SipAddress.Metadata">
+            <summary>Metadata about the SIP address.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.SipAddress.Type">
+             <summary>The type of the SIP address. The type can be custom or or one of these predefined values:
+            
+             * `home` * `work` * `mobile` * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.SipAddress.Value">
+            <summary>The SIP address in the [RFC 3261 19.1](https://tools.ietf.org/html/rfc3261#section-19.1) SIP URI
+            format.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.SipAddress.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Skill">
+            <summary>A skill that the person has.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Skill.Metadata">
+            <summary>Metadata about the skill.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Skill.Value">
+            <summary>The skill; for example, `underwater basket weaving`.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Skill.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Source">
+            <summary>The source of a field.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Source.ETag">
+             <summary>**Only populated in `person.metadata.sources`.**
+            
+             The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the source. Used for web cache
+             validation.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Source.Id">
+            <summary>The unique identifier within the source type generated by the server.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Source.ProfileMetadata">
+             <summary>Output only. **Only populated in `person.metadata.sources`.**
+            
+             Metadata about a source of type PROFILE.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Source.Type">
+            <summary>The source type.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Source.UpdateTime">
+             <summary>Output only. **Only populated in `person.metadata.sources`.**
+            
+             Last update timestamp of this source.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Status">
+             <summary>The `Status` type defines a logical error model that is suitable for different programming
+             environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status`
+             message contains three pieces of data: error code, error message, and error details.
+            
+             You can find out more about this error model and how to work with it in the [API Design
+             Guide](https://cloud.google.com/apis/design/errors).</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Status.Code">
+            <summary>The status code, which should be an enum value of google.rpc.Code.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Status.Details">
+            <summary>A list of messages that carry the error details.  There is a common set of message types for APIs
+            to use.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Status.Message">
+            <summary>A developer-facing error message, which should be in English. Any user-facing error message should
+            be localized and sent in the google.rpc.Status.details field, or localized by the client.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Status.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Tagline">
+            <summary>A brief one-line description of the person.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Tagline.Metadata">
+            <summary>Metadata about the tagline.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Tagline.Value">
+            <summary>The tagline.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Tagline.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.UpdateContactGroupRequest">
+            <summary>A request to update an existing user contact group. All updated fields will be replaced.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactGroupRequest.ContactGroup">
+            <summary>Required. The contact group to update.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactGroupRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoRequest">
+            <summary>A request to update an existing contact's photo. All requests must have a valid photo format: JPEG or
+            PNG.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoRequest.PersonFields">
+             <summary>Optional. A field mask to restrict which fields on the person are returned. Multiple fields can be
+             specified by separating them with commas. Defaults to empty if not set, which will skip the post mutate get.
+             Valid values are:
+            
+             * addresses * ageRanges * biographies * birthdays * braggingRights * coverPhotos * emailAddresses * events *
+             genders * imClients * interests * locales * memberships * metadata * names * nicknames * occupations *
+             organizations * phoneNumbers * photos * relations * relationshipInterests * relationshipStatuses *
+             residences * sipAddresses * skills * taglines * urls * userDefined</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoRequest.PhotoBytes">
+            <summary>Required. Raw photo bytes</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoResponse">
+            <summary>The response for updating a contact's photo.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoResponse.Person">
+            <summary>The updated person, if person_fields is set in the UpdateContactPhotoRequest; otherwise this will
+            be unset.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UpdateContactPhotoResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.Url">
+            <summary>A person's associated URLs.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Url.FormattedType">
+            <summary>Output only. The type of the URL translated and formatted in the viewer's account locale or the
+            `Accept-Language` HTTP header locale.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Url.Metadata">
+            <summary>Metadata about the URL.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Url.Type">
+             <summary>The type of the URL. The type can be custom or one of these predefined values:
+            
+             * `home` * `work` * `blog` * `profile` * `homePage` * `ftp` * `reservations` * `appInstallPage`: website for
+             a Google+ application. * `other`</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Url.Value">
+            <summary>The URL.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.Url.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.PeopleService.v1.Data.UserDefined">
+            <summary>Arbitrary user data that is populated by the end users.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UserDefined.Key">
+            <summary>The end user specified key of the user defined data.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UserDefined.Metadata">
+            <summary>Metadata about the user defined data.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UserDefined.Value">
+            <summary>The end user specified value of the user defined data.</summary>
+        </member>
+        <member name="P:Google.Apis.PeopleService.v1.Data.UserDefined.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>

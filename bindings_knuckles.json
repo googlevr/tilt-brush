@@ -1,0 +1,157 @@
+{
+   "action_manifest_version" : 0,
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.tiltbrush.exe",
+   "bindings" : {
+      "/actions/tiltbrush" : {
+         "chords" : [],
+         "haptics" : [
+            {
+               "output" : "/actions/tiltbrush/out/haptic",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/tiltbrush/out/haptic",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "poses" : [
+            {
+               "output" : "/actions/tiltbrush/in/pose",
+               "path" : "/user/hand/left/pose/raw"
+            },
+            {
+               "output" : "/actions/tiltbrush/in/pose",
+               "path" : "/user/hand/right/pose/raw"
+            }
+         ],
+         "skeleton" : [],
+         "sources" : [
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/tiltbrush/in/ri_trigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/tiltbrush/in/ri_trigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "position" : {
+                     "output" : "/actions/tiltbrush/in/ri_thumbstick"
+                  },
+                  "touch" : {
+                     "output" : "/actions/tiltbrush/in/ri_thumbsticktouch"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/left/input/thumbstick"
+            },
+            {
+               "inputs" : {
+                  "position" : {
+                     "output" : "/actions/tiltbrush/in/ri_thumbstick"
+                  },
+                  "touch" : {
+                     "output" : "/actions/tiltbrush/in/ri_thumbsticktouch"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/right/input/thumbstick"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/tiltbrush/in/ri_gripbinary"
+                  }
+               },
+               "mode" : "button",
+               "parameters" : {
+                  "click_activate_threshold" : "0.4",
+                  "click_deactivate_threshold" : "0.25",
+                  "force_input" : "force"
+               },
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/tiltbrush/in/ri_gripbinary"
+                  }
+               },
+               "mode" : "button",
+               "parameters" : {
+                  "click_activate_threshold" : "0.4",
+                  "click_deactivate_threshold" : "0.25",
+                  "force_input" : "force"
+               },
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/tiltbrush/in/ri_primarybutton"
+                  },
+                  "touch" : {
+                     "output" : "/actions/tiltbrush/in/ri_primarybuttontouch"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/b"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/tiltbrush/in/ri_primarybutton"
+                  },
+                  "touch" : {
+                     "output" : "/actions/tiltbrush/in/ri_primarybuttontouch"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/b"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/tiltbrush/in/ri_secondarybutton"
+                  },
+                  "touch" : {
+                     "output" : "/actions/tiltbrush/in/ri_secondarybuttontouch"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/a"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/tiltbrush/in/ri_secondarybutton"
+                  },
+                  "touch" : {
+                     "output" : "/actions/tiltbrush/in/ri_secondarybuttontouch"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/a"
+            }
+         ]
+      }
+   },
+   "category" : "steamvr_input",
+   "controller_type" : "knuckles",
+   "description" : "Default bindings for Tilt Brush v20",
+   "name" : "Tilt Brush - Valve Index",
+   "options" : {},
+   "simulated_actions" : []
+}

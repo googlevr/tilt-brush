@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 65d8eda911e0ba548a3674f65c43308b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: finger_index_0_l
+    100002: finger_index_1_l
+    100004: finger_index_2_l
+    100006: finger_index_l_aux
+    100008: finger_index_l_end
+    100010: finger_index_meta_l
+    100012: finger_middle_0_l
+    100014: finger_middle_1_l
+    100016: finger_middle_2_l
+    100018: finger_middle_l_aux
+    100020: finger_middle_l_end
+    100022: finger_middle_meta_l
+    100024: finger_pinky_0_l
+    100026: finger_pinky_1_l
+    100028: finger_pinky_2_l
+    100030: finger_pinky_l_aux
+    100032: finger_pinky_l_end
+    100034: finger_pinky_meta_l
+    100036: finger_ring_0_l
+    100038: finger_ring_1_l
+    100040: finger_ring_2_l
+    100042: finger_ring_l_aux
+    100044: finger_ring_l_end
+    100046: finger_ring_meta_l
+    100048: finger_thumb_0_l
+    100050: finger_thumb_1_l
+    100052: finger_thumb_2_l
+    100054: finger_thumb_l_aux
+    100056: finger_thumb_l_end
+    100058: Root
+    100060: //RootNode
+    100062: vr_glove_left_slim
+    100064: wrist_l
+    400000: finger_index_0_l
+    400002: finger_index_1_l
+    400004: finger_index_2_l
+    400006: finger_index_l_aux
+    400008: finger_index_l_end
+    400010: finger_index_meta_l
+    400012: finger_middle_0_l
+    400014: finger_middle_1_l
+    400016: finger_middle_2_l
+    400018: finger_middle_l_aux
+    400020: finger_middle_l_end
+    400022: finger_middle_meta_l
+    400024: finger_pinky_0_l
+    400026: finger_pinky_1_l
+    400028: finger_pinky_2_l
+    400030: finger_pinky_l_aux
+    400032: finger_pinky_l_end
+    400034: finger_pinky_meta_l
+    400036: finger_ring_0_l
+    400038: finger_ring_1_l
+    400040: finger_ring_2_l
+    400042: finger_ring_l_aux
+    400044: finger_ring_l_end
+    400046: finger_ring_meta_l
+    400048: finger_thumb_0_l
+    400050: finger_thumb_1_l
+    400052: finger_thumb_2_l
+    400054: finger_thumb_l_aux
+    400056: finger_thumb_l_end
+    400058: Root
+    400060: //RootNode
+    400062: vr_glove_left_slim
+    400064: wrist_l
+    4300000: vr_glove_left_slim
+    9500000: //RootNode
+    13700000: vr_glove_left_slim
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 8f32b3d74401443479c643e48c21915a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

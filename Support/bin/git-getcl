@@ -1,0 +1,159 @@
+#!/bin/env python
+
+# Copyright 2020 The Tilt Brush Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import contextlib
+import os
+import re
+import subprocess
+import sys
+
+from subprocess import CalledProcessError, check_output, check_call, PIPE, Popen
+
+def get_latest_patchset(remote, changelist):
+  """Returns the ref for changelist's most-recent patchset."""
+  changelist = int(changelist)
+  # output is of the form
+  # <sha>   refs/changes/nn/nnnn/n
+  stdout = check_output('git ls-remote %s refs/changes/%02d/%d/*' % (
+    remote, changelist % 100, changelist))
+  lines = filter(None, stdout.strip().split('\n'))
+  refs = [line.split()[1] for line in lines]
+  refs = filter(lambda r: not r.endswith('/meta'), refs)
+  def by_patchset(line):
+    last = line.rsplit('/', 1)[1]
+    return int(last)
+  refs.sort(key=by_patchset)
+  if len(refs) == 0:
+    raise LookupError("No patchsets for changelist %d" % changelist)
+  return refs[-1]
+
+
+def progress(txt):
+  sys.stdout.write('%-78s\r' % txt)
+  sys.stdout.flush()
+
+
+def git1(*args):
+  """Run git, returning first line of output."""
+  args = list(args)
+  args.insert(0, 'git')
+  proc = Popen(args, stdout=PIPE, stderr=PIPE)
+  stdout, stderr = proc.communicate()
+  ret = proc.wait()
+  if ret != 0:
+    raise CalledProcessError(ret, stderr)
+  return stdout.split('\n', 1)[0].strip()
+
+
+@contextlib.contextmanager
+def not_on(branch):
+  """Ensures that current branch is not |branch|."""
+  try:
+    head = git1('symbolic-ref', 'head')
+  except CalledProcessError:
+    yield None
+    return
+
+  if not branch.startswith('refs/'):
+    branch = 'refs/heads/%s' % branch
+  if branch != head:
+    # Already switched away
+    yield None
+    return
+
+  # Switch away temporarily
+  git1('checkout', '--detach')
+  try:
+    yield
+  finally:
+    # "git checkout" detaches if you pass a fully-qualified head
+    # like refs/heads/blah. So shorten it
+    if head.startswith('refs/heads/'):
+      short_head = head[len('refs/heads/'):]
+      try:
+        git1('checkout', short_head)
+      except Exception as e:
+        print "Couldn't go back to %s: %s" % (short_head, e)
+
+
+def arg_to_ref(remote, arg):
+  """Given a command-line changelist argument, returns a (ref, cl) pair.
+The argument may be of the following forms:
+  12894
+  12894/3 (explicit patchset)
+
+  Raises LookupError on error."""
+  # Explicit patchset
+  m = re.match(r'^(\d+)[/.](\d+)$', arg)
+  if m is not None:
+    cl = int(m.group(1))
+    patchset = int(m.group(2))
+    ref = 'refs/changes/%02d/%d/%d' % (cl % 100, cl, patchset)
+    local_name = 'cl/%d.%d' % (cl, patchset)
+    return (ref, local_name)
+
+  # Url or bare number
+  m = re.search(r'#/c/(\d+)', arg) or re.search(r'^(\d+)$', arg)
+  if m is None:
+    raise ValueError("Does not look like a CL or URL: %r" % arg)
+
+  cl = int(m.group(1))
+  progress('%s: Find patchset' % cl)
+  ref = get_latest_patchset(remote, cl)
+  local_name = 'cl/%d' % cl
+  return (ref, local_name)
+
+
+def main():
+  import argparse
+
+  parser = argparse.ArgumentParser(usage="%(prog)s CHANGE [ CHANGE ... ]")
+  parser.add_argument('changelists', metavar='CHANGE', type=str, nargs='+',
+                      help='Changelist number')
+  parser.add_argument('--remote', help='Remote to fetch from (default %(default)s)',
+                      default='origin')
+
+  args = parser.parse_args()
+  remote = args.remote
+
+  url_pat = re.compile(r'#/c/(\d+)')
+  for arg in args.changelists:
+    try:
+      ref, branch_name = arg_to_ref(remote, arg)
+    except ValueError as e:
+      print >>sys.stderr, "ERROR: %s" % (e,)
+      continue
+
+    _, _, _, cl, patch = ref.split('/', 4)
+
+    try:
+      progress('%s: Fetch' % cl)
+      check_call(['git', 'fetch', '-q', remote, ref])
+      with not_on(branch_name):
+        check_call(['git', 'branch', '-q', '-f', branch_name, 'FETCH_HEAD'])
+        check_call(['git', 'branch', '-q', '-u', remote + '/master', branch_name])
+    except CalledProcessError as e:
+      progress('')
+      print >>sys.stderr, "ERROR: %s" % e
+      continue
+    else:
+      patch = ref.split('/')[-1]
+      progress('')
+      print 'Fetched %s patch %s to %s' % (cl, patch, branch_name)
+
+
+if __name__ == '__main__':
+  main()

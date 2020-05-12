@@ -1,0 +1,217 @@
+{
+  "assetId": "3iGBlyCvubV",
+  "displayName": "Lost and Found",
+  "description": "Artist: Dan Potter",
+  "createTime": "2019-12-11T21:29:56.753659Z",
+  "updateTime": "2019-12-11T21:30:24.753684Z",
+  "thumbnail": [
+    {
+      "elementId": "7S831lTOqW0",
+      "filePath": "thumbnail.png",
+      "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/t/default_thumbnail",
+      "elementType": "PNG",
+      "typeInfo": {
+        "imageInfo": {
+          "fifeUrl": "https://lh3.googleusercontent.com/MG_BXM3zIwhi7B4lf99JRhSuUjH8XPR__AP7Rs26h0KdNVgxxXEq8Jr-b2c2ZmY"
+        }
+      },
+      "contentInfo": {
+        "byteSize": "266847",
+        "crc32cHash": 3917812956
+      }
+    }
+  ],
+  "accountId": "8AmB_t7GDcL",
+  "accessLevel": "UNLISTED",
+  "remixInfo": {
+    "sourceAsset": [
+      ""
+    ]
+  },
+  "formatList": {
+    "35": {
+      "format": [
+        {
+          "root": {
+            "elementId": "b0q_ZBPpKgu",
+            "filePath": "sketch.gltf",
+            "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/ckBCopeJBk2/sketch.gltf",
+            "elementType": "GLTF",
+            "typeInfo": {
+              "modelInfo": {}
+            },
+            "contentInfo": {
+              "byteSize": "115402",
+              "crc32cHash": 3450500818
+            }
+          },
+          "resource": [
+            {
+              "elementId": "bIkY9jvgnfl",
+              "filePath": "sketch.bin",
+              "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/ckBCopeJBk2/sketch.bin",
+              "elementType": "BINARY",
+              "typeInfo": {
+                "otherInfo": {}
+              },
+              "contentInfo": {
+                "byteSize": "25255808",
+                "crc32cHash": 3538726229
+              }
+            }
+          ],
+          "formatId": "ckBCopeJBk2",
+          "formatComplexity": {},
+          "formatType": "FORMAT_GLTF_2_TILT_BRUSH"
+        }
+      ]
+    },
+    "4": {
+      "format": [
+        {
+          "root": {
+            "elementId": "6T58-Lnqbqd",
+            "filePath": "sketch.gltf",
+            "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/08mt-F-JQ7i/sketch.gltf",
+            "elementType": "GLTF",
+            "typeInfo": {
+              "modelInfo": {}
+            },
+            "contentInfo": {
+              "byteSize": "99017",
+              "crc32cHash": 1096239452
+            }
+          },
+          "resource": [
+            {
+              "elementId": "1XMlegO9OQR",
+              "filePath": "sketch.bin",
+              "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/08mt-F-JQ7i/sketch.bin",
+              "elementType": "BINARY",
+              "typeInfo": {
+                "otherInfo": {}
+              },
+              "contentInfo": {
+                "byteSize": "25255808",
+                "crc32cHash": 3538726229
+              }
+            }
+          ],
+          "formatId": "08mt-F-JQ7i",
+          "formatComplexity": {
+            "triangleCount": "176558",
+            "shaderCount": "10"
+          },
+          "formatType": "FORMAT_GLTF"
+        }
+      ]
+    },
+    "38": {
+      "format": [
+        {
+          "root": {
+            "elementId": "dYCvfAfDjCo",
+            "filePath": "sketch.glb",
+            "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/5F6cIiXP1j7/sketch.glb",
+            "elementType": "GLTF_BINARY",
+            "typeInfo": {
+              "modelInfo": {}
+            },
+            "contentInfo": {
+              "byteSize": "25374468",
+              "crc32cHash": 1336816771
+            }
+          },
+          "formatId": "5F6cIiXP1j7",
+          "formatComplexity": {},
+          "formatType": "FORMAT_PGLTF_BINARY"
+        }
+      ]
+    },
+    "2": {
+      "format": [
+        {
+          "root": {
+            "elementId": "eRiD579ghFN",
+            "filePath": "sketch.tilt",
+            "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/cLak9ze18x-/sketch.tilt",
+            "elementType": "TILT_BRUSH",
+            "typeInfo": {
+              "modelInfo": {}
+            },
+            "contentInfo": {
+              "byteSize": "4259618",
+              "crc32cHash": 2877154749
+            }
+          },
+          "formatId": "cLak9ze18x-",
+          "formatComplexity": {},
+          "formatType": "FORMAT_TILT_BRUSH"
+        }
+      ]
+    },
+    "30": {
+      "format": [
+        {
+          "root": {
+            "elementId": "eSfjPx_elv8",
+            "filePath": "sketch.gltf",
+            "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/7Vnl7lat1uA/sketch.gltf",
+            "elementType": "GLTF",
+            "typeInfo": {
+              "modelInfo": {}
+            },
+            "contentInfo": {
+              "byteSize": "118698",
+              "crc32cHash": 3293404145
+            }
+          },
+          "resource": [
+            {
+              "elementId": "bIkY9jvgnfl",
+              "filePath": "sketch.bin",
+              "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/7Vnl7lat1uA/sketch.bin",
+              "elementType": "BINARY",
+              "typeInfo": {
+                "otherInfo": {}
+              },
+              "contentInfo": {
+                "byteSize": "25255808",
+                "crc32cHash": 3538726229
+              }
+            }
+          ],
+          "formatId": "7Vnl7lat1uA",
+          "formatComplexity": {},
+          "formatType": "FORMAT_PGLTF"
+        }
+      ]
+    },
+    "32": {
+      "format": [
+        {
+          "root": {
+            "elementId": "eFOOTyzeKE-",
+            "filePath": "editor_settings.pb",
+            "dataUrl": "https://vrassets-pa.googleusercontent.com/downloads/c/fp/1576099824753684/3iGBlyCvubV/675AgM1F1Qp/editor_settings.pb",
+            "elementType": "SPACECRAFT_EDITOR_SETTINGS",
+            "typeInfo": {
+              "otherInfo": {}
+            },
+            "contentInfo": {
+              "byteSize": "358",
+              "crc32cHash": 1662847341
+            }
+          },
+          "formatId": "675AgM1F1Qp",
+          "formatComplexity": {},
+          "formatType": "FORMAT_SPACECRAFT_EDITOR"
+        }
+      ]
+    }
+  },
+  "license": "CREATIVE_COMMONS_BY",
+  "cameraParams": {},
+  "originalAssetId": "fdSpcojlYXa",
+  "category": "uncategorized"
+}

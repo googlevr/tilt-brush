@@ -1,0 +1,152 @@
+{
+  "app_key": "application.generated.unity.tiltbrush.exe",
+  "bindings": {
+    "/actions/tiltbrush": {
+      "chords": [],
+      "poses": [
+        {
+          "output": "/actions/tiltbrush/in/pose",
+          "path": "/user/hand/left/pose/tip"
+        },
+        {
+          "output": "/actions/tiltbrush/in/pose",
+          "path": "/user/hand/right/pose/tip"
+        }
+      ],
+      "haptics": [
+        {
+          "output": "/actions/tiltbrush/out/haptic",
+          "path": "/user/hand/left/output/haptic"
+        },
+        {
+          "output": "/actions/tiltbrush/out/haptic",
+          "path": "/user/hand/right/output/haptic"
+        }
+      ],
+      "sources": [
+        {
+          "path": "/user/hand/left/input/trigger",
+          "mode": "trigger",
+          "parameters": {},
+          "inputs": {
+            "pull": {
+              "output": "/actions/tiltbrush/in/ri_trigger"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trigger",
+          "mode": "trigger",
+          "parameters": {},
+          "inputs": {
+            "pull": {
+              "output": "/actions/tiltbrush/in/ri_trigger"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/grip",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/tiltbrush/in/ri_gripbinary"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/grip",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/tiltbrush/in/ri_gripbinary"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/joystick",
+          "mode": "joystick",
+          "parameters": {},
+          "inputs": {
+            "position": {
+              "output": "/actions/tiltbrush/in/ri_thumbstick"
+            },
+            "touch": {
+              "output": "/actions/tiltbrush/in/ri_thumbsticktouch"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/joystick",
+          "mode": "joystick",
+          "parameters": {},
+          "inputs": {
+            "position": {
+              "output": "/actions/tiltbrush/in/ri_thumbstick"
+            },
+            "touch": {
+              "output": "/actions/tiltbrush/in/ri_thumbsticktouch"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/trackpad",
+          "mode": "trackpad",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/tiltbrush/in/ri_padclick"
+            },
+            "position": {
+              "output": "/actions/tiltbrush/in/ri_paddirectional"
+            },
+            "touch": {
+              "output": "/actions/tiltbrush/in/ri_padtouch"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trackpad",
+          "mode": "trackpad",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/tiltbrush/in/ri_padclick"
+            },
+            "position": {
+              "output": "/actions/tiltbrush/in/ri_paddirectional"
+            },
+            "touch": {
+              "output": "/actions/tiltbrush/in/ri_padtouch"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/application_menu",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/tiltbrush/in/ri_primarybutton"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/application_menu",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/tiltbrush/in/ri_primarybutton"
+            }
+          }
+        }
+      ],
+      "skeleton": []
+    }
+  },
+  "controller_type": "holographic_controller",
+  "description": "Default bindings for Tilt Brush v20",
+  "name": "Tilt Brush - Windows Mixed Reality"
+}

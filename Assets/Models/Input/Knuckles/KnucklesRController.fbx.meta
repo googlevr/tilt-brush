@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 2977d97abb4ff004592563aaa441ded4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: KnucklesRController_AButton
+    100004: KnucklesRController_AButtonSlice
+    100006: KnucklesRController_BButton
+    100008: KnucklesRController_BButtonSlice
+    100010: KnucklesRController_Body
+    100012: KnucklesRController_Grip
+    100014: KnucklesRController_Thumbstick
+    100016: KnucklesRController_ThumbstickSlice
+    100018: KnucklesRController_Trigger
+    100020: SteamVR_KnucklesController_RSlices:polySurface2
+    100022: KnucklesLController_Grip
+    400000: //RootNode
+    400002: KnucklesRController_AButton
+    400004: KnucklesRController_AButtonSlice
+    400006: KnucklesRController_BButton
+    400008: KnucklesRController_BButtonSlice
+    400010: KnucklesRController_Body
+    400012: KnucklesRController_Grip
+    400014: KnucklesRController_Thumbstick
+    400016: KnucklesRController_ThumbstickSlice
+    400018: KnucklesRController_Trigger
+    400020: SteamVR_KnucklesController_RSlices:polySurface2
+    400022: KnucklesLController_Grip
+    2100000: button_a1_knuckles_right1
+    2100002: button_b_knuckles_right1
+    2100004: gripsqueeze_knuckles_right1
+    2100006: thumbstick_knuckles_right1
+    2100008: trigger_knuckles_right1
+    2100010: body3_knuckles_left1
+    2100012: lambert1
+    2100014: lambert2
+    2100016: button_a1_knuckles_right2
+    2100018: button_b_knuckles_right2
+    2100020: gripsqueeze_knuckles_right2
+    2100022: thumbstick_knuckles_right2
+    2100024: trigger_knuckles_right2
+    2300000: KnucklesRController_AButton
+    2300002: KnucklesRController_AButtonSlice
+    2300004: KnucklesRController_BButton
+    2300006: KnucklesRController_BButtonSlice
+    2300008: KnucklesRController_Body
+    2300010: KnucklesRController_Grip
+    2300012: KnucklesRController_Thumbstick
+    2300014: KnucklesRController_ThumbstickSlice
+    2300016: KnucklesRController_Trigger
+    2300018: KnucklesLController_Grip
+    3300000: KnucklesRController_AButton
+    3300002: KnucklesRController_AButtonSlice
+    3300004: KnucklesRController_BButton
+    3300006: KnucklesRController_BButtonSlice
+    3300008: KnucklesRController_Body
+    3300010: KnucklesRController_Grip
+    3300012: KnucklesRController_Thumbstick
+    3300014: KnucklesRController_ThumbstickSlice
+    3300016: KnucklesRController_Trigger
+    3300018: KnucklesLController_Grip
+    4300000: KnucklesRController_AButton
+    4300002: KnucklesRController_BButton
+    4300004: KnucklesRController_Grip
+    4300006: KnucklesRController_Thumbstick
+    4300008: KnucklesRController_Trigger
+    4300010: KnucklesRController_Body
+    4300012: KnucklesRController_ThumbstickSlice
+    4300014: KnucklesRController_BButtonSlice
+    4300016: KnucklesRController_AButtonSlice
+    4300018: KnucklesLController_Grip
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

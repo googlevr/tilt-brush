@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff8d00fae9f37c488530fd01c202d0f, type: 3}
+  m_Name: Hot
+  m_EditorClassIdentifier: 
+  m_Guid:
+    m_storage: a2c32b35-0fbb-4714-9e35-7150ce155d45
+  m_Description: Hot
+  m_IconTexture: {fileID: 2800000, guid: 3e557e282cfb2d744aeb660b4a02fcb0, type: 3}
+  m_RenderSettings:
+    m_FogEnabled: 1
+    m_FogColor: {r: 0.8901961, g: 0.5058824, b: 0.28235295, a: 1}
+    m_FogDensity: 0
+    m_FogStartDistance: 0
+    m_FogEndDistance: 15
+    m_ClearColor: {r: 1, g: 0.39215687, b: 0.19607843, a: 1}
+    m_AmbientColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    m_SkyboxExposure: 2
+    m_SkyboxTint: {r: 1, g: 1, b: 1, a: 1}
+    m_EnvironmentPrefab: EnvironmentPrefabs/
+    m_EnvironmentReverbZonePrefab: EnvironmentAudio/ReverbZone_Room
+    m_SkyboxCubemap: {fileID: 0}
+    m_ReflectionCubemap: {fileID: 0}
+    m_ReflectionIntensity: 1
+  m_Lights: []
+  m_TeleportBoundsHalfWidth: 1000
+  m_ControllerXRayHeight: -1e+9
+  m_WidgetHome: {x: 0, y: 0, z: 0}
+  m_SkyboxColorA: {r: 0, g: 0, b: 0, a: 1}
+  m_SkyboxColorB: {r: 0, g: 0, b: 0, a: 1}

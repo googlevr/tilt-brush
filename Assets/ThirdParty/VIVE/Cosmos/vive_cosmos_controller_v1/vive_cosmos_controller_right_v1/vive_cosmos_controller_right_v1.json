@@ -1,0 +1,138 @@
+{
+    "thumbnail" : "vive_controller_thumbnail.png",
+    "components": {
+        "trigger": {
+            "filename": "R_button_R2.obj",
+            "motion":{
+                "type":"rotate",
+                "controller_axis":1,
+                "controller_axis_component":0,
+                "trigger_path" : "/input/trigger",
+                "value_mapping": [0.0,-14.0],
+                "pivot": [-0.009180015, -0.03216, 0.04856],
+                "axis": [1.0, 0.0, 0.0]
+            },
+            "component_local" : {
+                "origin": [-0.009180015, -0.04170412, 0.04856],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+		"bumper": {
+            "filename": "R_button_R1.obj",
+            "motion":{
+                "type":"translate",
+				"controller_button":0,
+                "controller_axis_component":0,
+                "pressed_path" : "/input/bumper/click",
+                "value_mapping": [0.0, 0.002],
+                "axis": [0.0, 0.8, 0.6]
+            },
+            "component_local" : {
+                "origin": [-0.009180015, -0.03393953, 0.03721584],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+        "joystick": {
+            "filename": "R_joystick.obj",
+            "motion":{
+                "type":"joystick",
+                "controller_axis": 0,
+                "component_path" : "/input/joystick",
+                "center": [0.0005084827, -0.01099285, 0.0443548],
+                "rotate_xyz": [-0.1, 0.8, -0.6],
+                "joystick_rotation_x": [15,-15],
+                "joystick_rotation_y": [15,-15],
+                "press_translate": [0.0, -0.001, 0.0]
+            },
+            "component_local" : {
+                "origin": [0.0005084827, -0.01099285, 0.0443548],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+        "grip": {
+            "filename": "R_grip.obj",
+            "motion":{
+                "type":"translate",
+                "pressed_path" : "/input/paddle_heavy/click",
+                "controller_button": 2,
+                "value_mapping": [0.0, 0.003],
+                "axis": [1.0, 0.0, 0.0]
+            },
+            "component_local" : {
+                "origin": [-0.003263032, -0.02365892, 0.07347573],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+        "button": {
+            "filename": "R_button_B.obj",
+            "motion":{
+                "type":"translate",
+                "pressed_path" : "/input/a/click",
+                "controller_button": 0,
+                "value_mapping": [0.0, -0.002],
+                "axis": [0.1, 0.9, -0.4]
+            },
+            "component_local" : {
+                "origin": [-0.01343058, 0.002227074, 0.05918439],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+		"buttonB": {
+            "filename": "R_button_A.obj",
+            "motion":{
+                "type":"translate",
+				"controller_button": 0,
+                "pressed_path" : "/input/b/click",
+                "value_mapping": [0.0, -0.002],
+                "axis": [0.0, 0.8, -0.6]
+            },
+            "component_local" : {
+                "origin": [-0.01816171, -0.00419547, 0.04686322],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+		"buttonC": {
+            "filename": "R_button_C.obj",
+            "motion":{
+                "type":"translate",
+                "pressed_path" : "/input/system/click",
+                "controller_button": 0,
+                "value_mapping": [0.0, -0.002],
+                "axis": [0.1, 0.9, -0.4]
+            },
+            "component_local" : {
+                "origin": [0.00449872, -0.0001478121, 0.05654907],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+        "body": {
+            "filename": "R_body.obj",
+            "component_local" : {
+                "origin": [0.0, 0.0, 0.0],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+        "base": {
+            "component_local" : {
+                "origin": [0.0, 0.0, 0.0],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            }
+        },
+		"tip": {
+            "component_local" : {
+                "origin": [-0.01, -0.025, 0.029],
+                "rotate_xyz" : [0.0,45.0,90.0]
+            }
+        },
+        "status": {
+            "filename": "status.obj",
+            "component_local" : {
+                "origin": [0.0, 0.0, 0.0],
+                "rotate_xyz" : [0.0,0.0,0.0]
+            },
+            "visibility": {
+                "default": false
+            }
+        }
+    }
+}

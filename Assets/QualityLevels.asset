@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834d4fddb4ee8a74c9458f52562d8a65, type: 3}
+  m_Name: QualityLevels
+  m_EditorClassIdentifier: 
+  m_qualityLevels:
+  - m_Bloom: 0
+    m_Hdr: 0
+    m_Fxaa: 0
+    m_MsaaLevel: 1
+    m_MaxLod: 150
+    m_Anisotropic: 1
+    m_BloomLevels: 2,2,2
+    m_ViewportScale: 1
+    m_EyeTextureScale: 1
+    m_StrokeSimplification: 0
+    m_TargetMaxControlPoints: 100000
+    m_MaxSimplification: 150
+    m_MaxSimplificationUserStrokes: 10
+    m_GpuLevel: 4
+    m_FixedFoveationLevel: 0
+  - m_Bloom: 1
+    m_Hdr: 0
+    m_Fxaa: 1
+    m_MsaaLevel: 1
+    m_MaxLod: 99999999
+    m_Anisotropic: 1
+    m_BloomLevels: 2,2,2
+    m_ViewportScale: 1
+    m_EyeTextureScale: 1
+    m_StrokeSimplification: 0
+    m_TargetMaxControlPoints: 500000
+    m_MaxSimplification: 150
+    m_MaxSimplificationUserStrokes: 10
+    m_GpuLevel: 4
+    m_FixedFoveationLevel: 0
+  - m_Bloom: 2
+    m_Hdr: 1
+    m_Fxaa: 1
+    m_MsaaLevel: 1
+    m_MaxLod: 99999999
+    m_Anisotropic: 1
+    m_BloomLevels: 2,2,2
+    m_ViewportScale: 1
+    m_EyeTextureScale: 1
+    m_StrokeSimplification: 0
+    m_TargetMaxControlPoints: 2500000
+    m_MaxSimplification: 150
+    m_MaxSimplificationUserStrokes: 10
+    m_GpuLevel: 4
+    m_FixedFoveationLevel: 0
+  - m_Bloom: 2
+    m_Hdr: 1
+    m_Fxaa: 1
+    m_MsaaLevel: 4
+    m_MaxLod: 99999999
+    m_Anisotropic: 1
+    m_BloomLevels: 2,2,2
+    m_ViewportScale: 1
+    m_EyeTextureScale: 1
+    m_StrokeSimplification: 0
+    m_TargetMaxControlPoints: 10000000
+    m_MaxSimplification: 150
+    m_MaxSimplificationUserStrokes: 10
+    m_GpuLevel: 4
+    m_FixedFoveationLevel: 0
+  m_tiltMeterWeights:
+  - Brush: {fileID: 11400000, guid: f15499e689c21834283473d09b16eb4a, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 33e508d3a4797de4c85b68342b174163, type: 2}
+    Weight: 5.5
+  - Brush: {fileID: 11400000, guid: 659158fcdc71ae74c95d543604d4e9a2, type: 2}
+    Weight: 2.5
+  - Brush: {fileID: 11400000, guid: 38318c20b5172439fa13885f1fdd14f0, type: 2}
+    Weight: 3
+  - Brush: {fileID: 11400000, guid: 07c0ab5926b4f8e429ab3e9033e65ee3, type: 2}
+    Weight: 2.5
+  - Brush: {fileID: 11400000, guid: cda3391ff768d1b49ab892abdcbe3c56, type: 2}
+    Weight: 1
+  - Brush: {fileID: 11400000, guid: 4e0276a2779e02649886e0eabd8cc6f0, type: 2}
+    Weight: 1
+  - Brush: {fileID: 11400000, guid: c969cee8911aa4d4293ee395f822a70c, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: f6a32da0f64c45847a73dffe57f213c1, type: 2}
+    Weight: 6.5
+  - Brush: {fileID: 11400000, guid: ebea59c8451485a4fa398d5c45688a1a, type: 2}
+    Weight: 7.5
+  - Brush: {fileID: 11400000, guid: d7a4edd7b40a3ad47918b4d6868e30af, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: f2a3ea577216f00419871f50d71cc885, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: dcc92c1f4cbe8b8408027df56e38a838, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: b3384ba6cddfeb64ba4b7d4abed9a3e8, type: 2}
+    Weight: 3.5
+  - Brush: {fileID: 11400000, guid: 022499c12baee6c40bc9a6866e164351, type: 2}
+    Weight: 1
+  - Brush: {fileID: 11400000, guid: 816add3f326839c4cafce8bfc4a7e26b, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: b802f6ef146800b4bb78e9c705622cad, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: 2b446bb08278e5440a49b5e6cf6abdee, type: 2}
+    Weight: 3
+  - Brush: {fileID: 11400000, guid: 79aad858cfe754d4bad6bb41091669d5, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: 2264f93e06f07674bb5327af480f9ffb, type: 2}
+    Weight: 8.5
+  - Brush: {fileID: 11400000, guid: c80c2ea05a3d85e48858a322a18cf5bb, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: b477bd8a0ed72b643833f1c162ac6d0a, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 6faa0b9ee9bc6c349a8651b00f161161, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 5c998fe180ae6e147990ad3586897e35, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: 2be0ab3685124a24ab6666cd66a7d0e7, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: bac1fa1f07e59644b935b9e3b2647421, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 695c0f01b9a7e91449b541ab1b30fc4f, type: 2}
+    Weight: 3
+  - Brush: {fileID: 11400000, guid: 5d951be2a6eef8948b26abcf9f2a4456, type: 2}
+    Weight: 4.5
+  - Brush: {fileID: 11400000, guid: f45e726a3d60b0f42804a2d5efb2c868, type: 2}
+    Weight: 2.5
+  - Brush: {fileID: 11400000, guid: d7e129b9879e8b3499ccc4d81ca68ee2, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 4fff8e60f5ea7a843b57a7e35501241a, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: 7a3a9d5ee2e492c49b1146ed03806398, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 5061d2801862f4be9b0a635f8c7c8535, type: 2}
+    Weight: 4
+  - Brush: {fileID: 11400000, guid: b0da087bf95190d43aa3cc44ed2bc009, type: 2}
+    Weight: 1.5
+  - Brush: {fileID: 11400000, guid: 7811dc4b8e48ae745be1ddf9401e4aa4, type: 2}
+    Weight: 2
+  - Brush: {fileID: 11400000, guid: 991f6df195c83734f927996b42c074cb, type: 2}
+    Weight: 2.5
+  m_maxPolySketchTriangles: 2147483647
+  m_warningPolySketchTriangles: 2147483647
+  m_HigherQualityGpuTrigger: 0
+  m_HigherQualityFpsTrigger: 0
+  m_LowerQualityGpuTrigger: 0
+  m_LowerQualityFpsTrigger: 0
+  m_FramesForLowerQuality: 10
+  m_FramesForHigherQuality: 30
+  m_BloomFadeTime: 0.5
