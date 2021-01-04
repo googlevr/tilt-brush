@@ -25,7 +25,7 @@ Get the Tilt Brush open-source application running on your own devices.
 *   [Python 2.7.0](https://www.python.org/download/releases/2.7/) (Optional —
     needed only if you wish to run the scripts in the `Support/bin` directory)
 
-### Changing the application name  {:#changing-the-application-name}
+### Changing the application name
 
 _Tilt Brush_ is a Google trademark. If you intend to publish a cloned version of
 the application, you are required to choose a different name to distinguish it
