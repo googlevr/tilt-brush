@@ -19,3 +19,6 @@ Assets/Scripts/Protobuf/**/*.cs text eol=lf
 
 # Oculus ships its files with LFs; let's just keep them that way
 Assets/ThirdParty/Oculus/** -text
+
+# Keep the ffmpeg build script with Unix line endings.
+Support/ThirdParty/ffmpeg/BuildFfmpeg.sh text eol=lf

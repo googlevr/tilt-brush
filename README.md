@@ -287,15 +287,17 @@ Follow these steps to enable camera path support:
 
 ## Video support
 
+To get video support you will need to put an ffmpeg.exe binary in to 
+`/Support/ThirdParty/ffmpeg/bin`. We have created a script to build one for
+you - it temporarily requires around 2GB of space to build but will clear up
+after itself.
+
 Follow these steps to get video support:
 
-1.  Place an FFmpeg binary distribution in `/Support/ThirdParty/ffmpeg`. Make
-    sure the FFmpeg executable is named
-    `/Support/ThirdParty/ffmpeg/bin/ffmpeg.exe`. The commercial version of Tilt
-    Brush uses build `20160610-git-0a9e781` from
-    <http://ffmpeg.zeranoe.com/builds/>.
-1.  In Unity, modify `/Assets/PlatformConfigPC` and add 'Video' to 'Enabled
-    Multicam Styles'. 'Snapshot' should always be enabled.
+1. Find '/Support/ThirdParty/ffmpeg/BuildFfmpeg.ps1', right-click on it in explorer and select
+   'Run with Powershell'. It will take some time to build.
+2. In Unity, modify `/Assets/PlatformConfigPC` and add 'Video' to 'Enabled Multicam Styles'.
+   'Snapshot' should always be enabled.
 
 ### Video support bug fix
 
